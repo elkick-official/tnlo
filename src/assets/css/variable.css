@@ -1,0 +1,42 @@
+:root {
+  /* color */
+  --tnl-primary-rgb: #4863E1;
+  --tnl-white: #ffffff;
+  --tnl-black: #000000;
+  --tnl-tristesse: #DAE0F9;
+  --tnl-night-night: #183883;
+  --tnl-rapunzel-silver: #111111;
+  --tnl-white-edgar: #5E5E5E;
+  --tnl-steam: #444444;
+  --tnl-dr-white: #F3F0F0;
+  --tnl-grey-heather: #E0E7F8;
+  --tnl-dark-rift: #F6F8FC;
+  --tnl-retro-lime: #47B177;
+  --tnl-red-radish: #7B7C7E;
+  --tnl-canadian-pine: #E8ECFA;
+  --tnl-aquamarine-ocean: #D0D0D0;
+  --tnl-freshmint: #F6F8FC;
+  --tnl-whiteout: #9F9F9F;
+  --tnl-blue-antarctic: #666666;
+  --tnl-nero: #1C1B1F;
+  --tnl-insignia-white: #E7E7E7;
+  --tnl-delicate-viola: #F2F6FC;
+  --tnl-red: red;
+  /* box shadow */
+  --tnl-tnl-primary-shadow: -6px 6px 48.8px 0px #00000026;
+  --tnl-tnl-secondary-shadow: 0px 2px 2px 0px #00000003;
+  /* space */
+  --tnl-space-md: 40px;
+  --tnl-space-sm: 30px;
+  --tnl-space-xs: 20px;
+  /* header height */
+  --header-height: 80px;
+  /* container */
+  --container-size: calc(100% - 80px);
+  /* transition */
+  --transition-smooth: all 0.3s;
+  /* section default space */
+  --section-default-space: 20px;
+  /* fonts */
+  --tnl-primary-font: "Inter", Arial, sans-serif;
+}

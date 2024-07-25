@@ -6,10 +6,12 @@ import Layout from "./layout/Layout";
 import { routeList, routeListProps } from "./routes";
 import { configProvider, lightTheme } from "./utils";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { TNFooter, TNHeader } from "./components";
 
 function App() {
   return (
     <>
+    <TNHeader/>
       <ErrorBoundary>
         <Suspense fallback={<>Loading</>}>
           <ConfigProvider {...configProvider} theme={lightTheme}>
@@ -30,6 +32,7 @@ function App() {
           </ConfigProvider>
         </Suspense>
       </ErrorBoundary>
+      <TNFooter/>
     </>
   );
 }
