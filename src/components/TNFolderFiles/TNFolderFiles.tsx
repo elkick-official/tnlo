@@ -1,6 +1,6 @@
 import React from "react";
 import { noticeFile } from "../../const/imageData";
-import { dataLegencyFolder } from "../../const/data";
+import { dataLegencyFile, dataLegencyFolder } from "../../const/data";
 import "./TNFolderFiles.css";
 
   export const TNFolderFiles = () => {
@@ -27,14 +27,17 @@ import "./TNFolderFiles.css";
                 <h3 className="pb-3 fw-500">Files</h3>
                 <hr className="opacity-03"/>
                 <div className="data-legency-files-view grid mt-5">
-                        <div className="data-legency-folder-box transition-smooth">
-                            <h4 className="fw-500 h5 mb-3">File 001</h4>
-                            <img src={noticeFile} alt="notice-pdf" className="img-fluid" />
-                        </div>
-                        <div className="data-legency-folder-box transition-smooth">
-                            <h4 className="fw-500 h5 mb-3">File 002</h4>
-                            <img src={noticeFile} alt="notice-pdf" className="img-fluid" />
-                        </div>
+                {dataLegencyFile.map((dlFileItem, dlFileIndex) => {
+                        return(
+                            <>
+                                <div className="data-legency-folder-box transition-smooth" key={dlFileIndex}>
+                                    <h4 className="fw-500 h5 mb-3">{dlFileItem.name}</h4>
+                                    <img src={dlFileItem.img} alt="notice-pdf" className="img-fluid" />
+                                </div>
+                            </>
+                        )
+                    })}
+                        
                 </div>
             </div>
         </>

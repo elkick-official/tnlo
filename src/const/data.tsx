@@ -1,3 +1,5 @@
+import { noticeFile } from "./imageData";
+
 export const legencyTypeOptions = [
     { label: "Type 1", value: "1" },
     { label: "Type 2", value: "2" },
@@ -24,5 +26,15 @@ export const dataLegencyFolder = [
     {
         name: "Drug Offenses",
         files: "18 files",
+    },
+]
+export const dataLegencyFile = [
+    {
+        name: "File 001",
+        img: noticeFile,
+    },
+    {
+        name: "File 002",
+        img: noticeFile,
     },
 ]
