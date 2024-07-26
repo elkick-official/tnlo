@@ -1,7 +1,7 @@
 import { Header } from "antd/es/layout/layout";
 import { FC, MouseEventHandler, ReactNode } from "react";
-import styles from "./TNHeader.module.css";
 import { Icons } from "../../../const/icons";
+import "./TNHeader.css";
 interface TNButtonProps {
     children?: ReactNode;
   }
@@ -12,7 +12,7 @@ export const TNHeader: FC<TNButtonProps> = ({
     
     return(
         <>
-        <Header className="flex bg-tnl-white xy-space"  {...rest}>
+        <Header className="flex bg-tnl-white xx-space sticky top-0 z-999"  {...rest}>
             <h3>{children}</h3>
             <div className="ml-auto">
                 <div className="flex items-center gap-4">

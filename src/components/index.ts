@@ -19,5 +19,6 @@ import {TNPagination} from "./common/TNPagination/TNPagination.tsx";
 import {TNSwitch} from "./common/TNSwitch/TNSwitch.tsx";
 import {TNInfoCard} from "./common/TNInfoCard/TNInfoCard.tsx";
 import {TNFullPageCalendar} from "./common/TNFullPageCalendar/TNFullPageCalendar.tsx";
+import {TNFolderFiles} from "./TNFolderFiles/TNFolderFiles.tsx"
 
-export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar }
+export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles }

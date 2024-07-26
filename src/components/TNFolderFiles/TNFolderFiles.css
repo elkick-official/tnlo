@@ -1,0 +1,26 @@
+.data-legency-folder-view{
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 25px;
+}
+.data-legency-folder-box{
+    width: 100%;
+    min-height: 115px;
+    border-radius: 20px;
+    padding: 12px 24px;
+}
+.data-legency-folder-box h4{
+    color: var(--tnl-black);
+}
+.data-legency-folder-box h6{
+    color: var(--tnl-grey-les);
+}
+.data-legency-folder-box.active h4{
+    color: var(--tnl-white);
+}
+.data-legency-folder-box.active h6{
+    color: var(--tnl-dr-white);
+}
+.data-legency-files-view{
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 25px;
+}

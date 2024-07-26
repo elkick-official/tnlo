@@ -27,8 +27,8 @@ const LegacyDataDigitilization = () => {
   // select option js end
   return <div>
         <TNHeader children="Legacy Data Digitization"/>
-        <section className="xy-space">
-          <div className="legency-data-digitization-head-wrap flex items-center legency-data-top-space">
+        <section className="xx-space yy-space">
+          <div className="legency-data-digitization-head-wrap flex items-center">
             <div>
               <TNInput
                 id="legency-search"

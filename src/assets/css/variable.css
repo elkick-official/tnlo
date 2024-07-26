@@ -1,6 +1,7 @@
 :root {
   /* color */
   --tnl-primary-rgb: #4863E1;
+  --tnl-primary-rgb-light: #6985E2;
   --tnl-white: #ffffff;
   --tnl-black: #000000;
   --tnl-tristesse: #DAE0F9;
@@ -21,6 +22,7 @@
   --tnl-nero: #1C1B1F;
   --tnl-insignia-white: #E7E7E7;
   --tnl-delicate-viola: #F2F6FC;
+  --tnl-grey-les: #8A8D96;
   --tnl-red: red;
   /* box shadow */
   --tnl-tnl-primary-shadow: -6px 6px 48.8px 0px #00000026;
@@ -37,7 +39,8 @@
   --transition-smooth: all 0.3s;
   /* section default space */
   --section-default-space: 20px;
-  --xy-space: 30px;
+  --xx-space: 30px;
+  --yy-space: 30px;
   /* form control space */
   --mid-space: 20px;
   /* fonts */

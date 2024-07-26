@@ -1,5 +1,6 @@
 import { Tabs, TabsProps } from "antd";
-import styles from "./TNTab.css";
+import { TNFolderFiles } from "../../TNFolderFiles/TNFolderFiles";
+import "./TNTab.css";
 const onChange = (key: string) => {
     console.log(key);
   };
@@ -8,12 +9,12 @@ const items: TabsProps['items'] = [
 {
     key: '1',
     label: 'List',
-    children: 'Content of Tab Pane 1',
+    children: <TNFolderFiles/>,
 },
 {
     key: '2',
     label: 'Grid',
-    children: 'Content of Tab Pane 2',
+    children: 'Coming soon',
 },
 ];
 export const TNTab = () => {

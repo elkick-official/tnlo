@@ -561,9 +561,13 @@ header .active {
 .content-section-space{
   padding: 0 30px;
 }
-.xy-space{
-  padding-left: var(--xy-space);
-  padding-right: var(--xy-space);
+.xx-space{
+  padding-left: var(--xx-space);
+  padding-right: var(--xx-space);
+}
+.yy-space{
+  padding-top: var(--yy-space);
+  padding-bottom: var(--yy-space);
 }
 /* block */
 .d-block{
@@ -571,4 +575,12 @@ header .active {
 }
 .inline-block{
   display: inline-block;
+}
+/* opacity */
+.opacity-03{
+  opacity: 0.3;
+}
+/* top */
+.top-0{
+  top: 0;
 }
