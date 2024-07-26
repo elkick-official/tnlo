@@ -1,6 +1,10 @@
 .legency-data-top-space{
-    padding-top: 20px;
+    padding-top: 30px;
 }
 .legency-data-seacrhbar-input input{
     min-width: 315px;
+}
+.legency-data-tab-wrap{
+    margin-top: 50px;
+    padding: 15px 25px 25px;
 }
