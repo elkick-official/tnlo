@@ -6,9 +6,10 @@
     font-weight: 500;
     border-radius: 8px;
     color: var(--tnl-black);
-    background-color: transparent;
+    background-color: var(--tnl-white);
     border: 1px solid var(--tnl-aquamarine-ocean);
     transition: var(--transition-smooth);
+    min-width: 150px;
   }
   .ant-select.ILTextInput .ant-select-selector:hover{
     background-color: var(--tnl-white);
@@ -21,13 +22,13 @@
     outline: none;
     box-shadow: none;
 }
-.ant-select.ILTextInput .ant-select-selector::placeholder {
-    font-weight: 400;
-    color: var(--tnl-red-radish);
-}
 .ILInputLabelText {
   font-size: 14px;
   font-weight: 500;
   color: var(--tnl-tristesse);
   margin-bottom: 8px;
+}
+.ant-select.ILTextInput .ant-select-arrow,
+.ant-select.ILTextInput .ant-select-selection-search .ant-select-selection-search-input{
+    height: 100%;
 }

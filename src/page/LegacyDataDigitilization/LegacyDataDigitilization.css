@@ -1,6 +1,6 @@
 .legency-data-top-space{
     padding-top: 20px;
 }
-.legency-data-seacrhbar-input input,.legency-data-select-box .ant-select-selector{
-    min-width: 300px;
+.legency-data-seacrhbar-input input{
+    min-width: 315px;
 }
