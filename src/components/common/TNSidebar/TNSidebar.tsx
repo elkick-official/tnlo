@@ -39,32 +39,32 @@ const items: MenuItem[] = [
   getItem(
     <Link to="/">Dashboard</Link>,
     "1",
-    <AppstoreOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <AppstoreOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
   getItem(
     <Link to="/legacy-data-digitilization">Legacy Data Digitization</Link>,
     "2",
-    <DatabaseOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <DatabaseOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
   getItem(
     <Link to="/data-repository">Data Repository</Link>,
     "3",
-    <CodeSandboxOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <CodeSandboxOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
   getItem(
     <Link to="/dynamic-forms">Dynamic Forms</Link>,
     "4",
-    <FormOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <FormOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
   getItem(
     <Link to="/calendar-forecast">Calendar Forecast</Link>,
     "5",
-    <CalendarOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <CalendarOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
   getItem(
     <Link to="/press-note">Press Note</Link>,
     "6",
-    <BookOutlined style={{ fontSize: "20px", color: "#4863E1" }} />
+    <BookOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
 ];
 export const TNSidebar = () => {
