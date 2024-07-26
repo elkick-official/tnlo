@@ -1,4 +1,4 @@
-.ant-select.ILTextInput .ant-select-selector {
+.form-control {
     padding: 4px var(--mid-space);
     min-height: 46px;
     font-size: 16px;
@@ -9,24 +9,53 @@
     border: 1px solid var(--tnl-aquamarine-ocean);
     transition: var(--transition-smooth);
   }
-  .ant-select.ILTextInput .ant-select-selector:hover{
+  .form-control:hover{
     background-color: var(--tnl-white);
   }  
-.ant-select.ILTextInput .ant-select-selector:focus,
-.ant-select.ILTextInput .ant-select-selector:focus-within,
-.ant-select.ILTextInput .ant-select-selector:focus-visible{
+.form-control:focus,
+.form-control:focus-within,
+.form-control:focus-visible{
     border-color: var(--tnl-primary-rgb);
     background-color: var(--tnl-tristesse);
     outline: none;
     box-shadow: none;
-}
-.ant-select.ILTextInput .ant-select-selector::placeholder {
+  }
+  
+.form-control::placeholder {
     font-weight: 400;
     color: var(--tnl-red-radish);
-}
-.ILInputLabelText {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--tnl-tristesse);
-  margin-bottom: 8px;
-}
+  }
+  
+  textarea.form-control {
+    padding-top: var(--mid-space);
+  }
+  
+  .searchBarWrap input.form-control {
+    padding-right: 50px;
+  }
+  
+  .ILInputLabel,.searchBarWrap {
+    margin-bottom: 30px;
+  }
+  .ILInputLabelText {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tnl-tristesse);
+    margin-bottom: 8px;
+  }
+  
+  .searchBarWrap .searchIcon {
+    top: 50%;
+    right: var(--mid-space);
+    transform: translateY(-50%);
+    width: max-content;
+  }
+  
+  .searchPositionStyle .searchIcon {
+    left: var(--mid-space);
+    right: unset;
+  }
+  .searchPositionStyle input.form-control {
+    padding: 0 var(--mid-space) 0 50px;
+  }
+  

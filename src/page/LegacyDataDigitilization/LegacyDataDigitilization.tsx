@@ -69,7 +69,7 @@ const LegacyDataDigitilization = () => {
               </TNButton>
             </div>
           </div>
-          <div className="legency-data-top-space legency-data-search">
+          <div className="legency-data-top-space legency-data-select-box">
             <TNSelect
                label="Select an type"
                options={legencyTypeOptions}

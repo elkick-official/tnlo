@@ -1,10 +1,5 @@
-.ILInputLabelText {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--tnl-tristesse);
-    margin-bottom: 8px;
-  }
-.form-control {
+
+.ant-select.ILTextInput .ant-select-selector {
     padding: 4px var(--mid-space);
     min-height: 46px;
     font-size: 16px;
@@ -14,24 +9,25 @@
     background-color: transparent;
     border: 1px solid var(--tnl-aquamarine-ocean);
     transition: var(--transition-smooth);
-}
-.form-control:hover{
+  }
+  .ant-select.ILTextInput .ant-select-selector:hover{
     background-color: var(--tnl-white);
-}  
-.form-control:focus,
-.form-control:focus-within,
-.form-control:focus-visible{
+  }  
+.ant-select.ILTextInput .ant-select-selector:focus,
+.ant-select.ILTextInput .ant-select-selector:focus-within,
+.ant-select.ILTextInput .ant-select-selector:focus-visible{
     border-color: var(--tnl-primary-rgb);
     background-color: var(--tnl-tristesse);
     outline: none;
     box-shadow: none;
 }
-
-.form-control::placeholder {
+.ant-select.ILTextInput .ant-select-selector::placeholder {
     font-weight: 400;
     color: var(--tnl-red-radish);
 }
-
-textarea.form-control {
-    padding-top: var(--mid-space);
+.ILInputLabelText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tnl-tristesse);
+  margin-bottom: 8px;
 }
