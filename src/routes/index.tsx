@@ -1,4 +1,9 @@
 import { LegacyDataDigitilization } from "../page";
+import CalendarForecast from "../page/CalendarForecast/CalendarForecast";
+import Dashboard from "../page/Dashboard/Dashboard";
+import DataRepository from "../page/DataRepository/DataRepository";
+import DynamicForms from "../page/DynamicForms/DynamicForms";
+import PressNote from "../page/PressNote/PressNote";
 
 export interface routeListProps {
   id: string | number;
@@ -9,7 +14,32 @@ export interface routeListProps {
 export const routeList: routeListProps[] = [
   {
     id: "ROUTE-1",
+    to: "/",
+    element: <Dashboard />,
+  },
+  {
+    id: "ROUTE-2",
     to: "/legacy-data-digitilization",
     element: <LegacyDataDigitilization />,
+  },
+  {
+    id: "ROUTE-3",
+    to: "/data-repository",
+    element: <DataRepository />,
+  },
+  {
+    id: "ROUTE-4",
+    to: "/dynamic-forms",
+    element: <DynamicForms />,
+  },
+  {
+    id: "ROUTE-5",
+    to: "/calendar-forecast",
+    element: <CalendarForecast />,
+  },
+  {
+    id: "ROUTE-6",
+    to: "/press-note",
+    element: <PressNote />,
   },
 ];

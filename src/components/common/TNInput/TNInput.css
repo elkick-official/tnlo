@@ -1,0 +1,59 @@
+.form-control {
+    padding: 4px var(--mid-space);
+    min-height: 46px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: var(--tnl-black);
+    background-color: transparent;
+    border: 1px solid var(--tnl-rapunzel-silver);
+    transition: var(--transition-smooth);
+  }
+  
+.form-control:hover,
+.form-control:focus,
+.form-control:focus-within,
+.form-control:focus-visible{
+    border-color: var(--tnl-blue-antarctic);
+    outline: none;
+    box-shadow: none;
+  }
+  
+.form-control::placeholder {
+    font-weight: 400;
+    color: var(--tnl-night-night);
+  }
+  
+  textarea.form-control {
+    padding-top: var(--mid-space);
+  }
+  
+  .searchBarWrap input.form-control {
+    padding-right: 50px;
+  }
+  
+  .ILInputLabel,.searchBarWrap {
+    margin-bottom: 30px;
+  }
+  .ILInputLabelText {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tnl-tristesse);
+    margin-bottom: 8px;
+  }
+  
+  .searchBarWrap .searchIcon {
+    top: 50%;
+    right: var(--mid-space);
+    transform: translateY(-50%);
+    width: max-content;
+  }
+  
+  .searchPositionStyle .searchIcon {
+    left: var(--mid-space);
+    right: unset;
+  }
+  .searchPositionStyle input.form-control {
+    padding: 0 var(--mid-space) 0 50px;
+  }
+  

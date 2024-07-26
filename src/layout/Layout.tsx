@@ -1,14 +1,24 @@
 import { Outlet } from "react-router-dom";
+import { TNSidebar } from "../components";
+import { Layout } from 'antd';
+const {Content} = Layout;
 
-const Layout = () => {
+const LayoutMain = () => {
   return (
     <section>
-      <h1>Sidebar</h1>
-      <main>
-        <Outlet />
-      </main>
+      <Layout style={{ minHeight: '100vh' }}>
+
+      <TNSidebar/>
+      <Layout>
+        {/* <Header style={{ padding: 0, background: colorBgContainer }} >asdas</Header> */}
+        <Content>
+          <Outlet />
+        </Content>
+      
+      </Layout>
+      </Layout>
     </section>
   );
 };
 
-export default Layout;
+export default LayoutMain;

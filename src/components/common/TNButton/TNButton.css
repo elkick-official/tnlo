@@ -1,0 +1,57 @@
+.customButton {
+    border: none;
+    width: auto;
+    padding: 5px;
+    background-color: transparent;
+}
+.customButton span{
+    width: 100%;
+    min-width: 100px;
+    min-height: 46px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    overflow: hidden;
+    background-color: var(--tnl-primary-rgb);
+    border: 1px solid var(--tnl-primary-rgb);
+}
+.btn3::before,
+.btn3::after,
+.hoverBorder::before,
+.hoverBorder::after{
+    position: absolute;
+    content: "";
+}
+.btn3::before,
+.btn3::after {
+  background: transparent;
+  z-index: 2;
+}
+.hoverBorder::before,
+.hoverBorder::after {
+  width: 0%; height: 0%;
+  opacity: 0;
+}
+.hoverBorder::before {
+  top: 0; right: 0;
+  border-top: 1px solid var(--tnl-primary-rgb);
+  border-left: 1px solid var(--tnl-primary-rgb);
+  transition: width 0.2s 0.5s ease-out, height 0.15s 0.35s linear, opacity 0s 0.7s;
+}
+.hoverBorder::after {
+  bottom: 0; left: 0px;
+  border-bottom: 1px solid var(--tnl-primary-rgb);
+  border-right: 1px solid var(--tnl-primary-rgb);
+  transition: width 0.2s 0.15s linear, height 0.15s ease-in, opacity 0s 0.35s;
+}
+.hoverBorder:hover::before,
+.hoverBorder:hover::after {
+  width: 100%; height: 100%;
+  opacity: 1;
+}
+.hoverBorder:hover::before {
+  transition: width 0.2s ease-in, height 0.15s 0.2s linear, opacity 0s;   /* 1,2 */
+}
+.hoverBorder:hover::after {
+  transition: width 0.2s 0.35s linear, height 0.15s 0.5s ease-out, opacity 0s 0.3s; 
+}

@@ -37,6 +37,9 @@
   --transition-smooth: all 0.3s;
   /* section default space */
   --section-default-space: 20px;
+  --xy-space: 30px;
+  /* form control space */
+  --mid-space: 20px;
   /* fonts */
   --tnl-primary-font: "Inter", Arial, sans-serif;
 }

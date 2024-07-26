@@ -1,0 +1,45 @@
+
+.custom-sidebar.ant-layout-sider{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.custom-sidebar.ant-layout-sider,
+.custom-sidebar.ant-layout-sider ul {
+    background-color: var(--tnl-dark-rift);   
+}
+.custom-sidebar.ant-layout-sider ul{
+    padding: 0;
+}
+.custom-sidebar .demo-logo-vertical{
+    padding: 20px;
+}
+.custom-sidebar .ant-menu-item{
+    color: var(--tnl-rapunzel-silver);
+    font-size: 16px;
+    font-weight: 500;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+}
+.custom-sidebar .ant-menu-item{
+    border-left: 5px solid transparent;
+    border-radius: 0;
+}
+.custom-sidebar .ant-menu-item.ant-menu-item-selected{
+    background-color: transparent;
+    border-color: var(--tnl-primary-rgb);
+}
+.custom-sidebar .logo{
+    max-width: 50px;
+}
+.custom-sidebar.ant-layout-sider-collapsed .demo-logo-vertical {
+    padding: 20px 15px;
+}
+.custom-sidebar.ant-layout-sider-collapsed .ant-menu-item{
+    padding-inline: calc(50% - 8px - 10px);
+}
+.custom-sidebar .ant-menu-item:hover .ant-menu-title-content{
+    color: var(--tnl-primary-rgb);
+}
+.custom-sidebar .ant-layout-sider-trigger{
+    background-color: var(--tnl-primary-rgb);
+}

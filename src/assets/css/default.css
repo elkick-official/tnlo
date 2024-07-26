@@ -536,3 +536,39 @@ header .active {
   color: var(--tnl-red);
   font-weight: 500;
 }
+/* ml */
+.ml-auto{
+  margin-left: auto;
+}
+
+/* fw */
+.fw-300{
+  font-weight: 300;
+}
+.fw-400{
+  font-weight: 400;
+}
+.fw-500{
+  font-weight: 500;
+}
+.fw-600{
+  font-weight: 600;
+}
+.fw-700{
+  font-weight: 700;
+}
+/* content-section-space */
+.content-section-space{
+  padding: 0 30px;
+}
+.xy-space{
+  padding-left: var(--xy-space);
+  padding-right: var(--xy-space);
+}
+/* block */
+.d-block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
