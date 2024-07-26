@@ -7,6 +7,7 @@
     min-height: 115px;
     border-radius: 20px;
     padding: 12px 24px;
+    background-color: var(--tnl-tristesse);
 }
 .data-legency-folder-box h4{
     color: var(--tnl-black);
@@ -14,10 +15,13 @@
 .data-legency-folder-box h6{
     color: var(--tnl-grey-les);
 }
-.data-legency-folder-box.active h4{
+.data-legency-folder-box:hover{
+    background-color: var(--tnl-primary-rgb-light);
+}
+.data-legency-folder-box:hover h4{
     color: var(--tnl-white);
 }
-.data-legency-folder-box.active h6{
+.data-legency-folder-box:hover h6{
     color: var(--tnl-dr-white);
 }
 .data-legency-files-view{
