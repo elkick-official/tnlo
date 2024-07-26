@@ -51,7 +51,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       {textAreaShow ? (
         <>
           <label
-            className={clsx("ILInputLabel ILInputLabelClass w-full")}
+            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (
@@ -82,7 +82,7 @@ export const TNInput: React.FC<TNInputProps> = ({
         <>
           <div
             className={clsx(
-              "searchBarWrap ILInputLabelClass relative w-full",
+              "searchBarWrap relative w-full", ILInputLabelClass,
               {
                 ["searchPositionStyle"]: searchIconPositionLeft,
               }
@@ -102,7 +102,7 @@ export const TNInput: React.FC<TNInputProps> = ({
             />
             <span
               className={clsx(
-                "searchIcon line-height-0 position-absolute cursor-pointer",
+                "searchIcon lh-0 absolute cursor-pointer",
               )}
             >
               {Icons.search}
@@ -112,7 +112,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       ) : (
         <>
           <label
-            className={clsx("ILInputLabel ILInputLabelClass w-full")}
+            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (

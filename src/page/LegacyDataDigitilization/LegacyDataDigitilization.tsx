@@ -1,8 +1,9 @@
 import { Breadcrumb } from "antd";
 import { Header } from "antd/es/layout/layout";
-import { TNButton, TNHeader, TNInput } from "../../components";
+import { TNButton, TNHeader, TNInput, TNSelect } from "../../components";
 import "./LegacyDataDigitilization.css";
 import { useState } from "react";
+import { legencyTypeOptions } from "../../const/data";
 
 const LegacyDataDigitilization = () => {
   // button js start
@@ -17,34 +18,33 @@ const LegacyDataDigitilization = () => {
     setInputValue(e.target.value);
   };
   // input js end
+  // select option js start
+  const [selectedValue, setSelectedValue] = useState<string | number | undefined>(undefined);
+
+  const handleSelectChange = (value: string | number) => {
+    setSelectedValue(value);
+  };
+  // select option js end
   return <div>
-     {/* <Breadcrumb style={{ margin: '16px 0' }}>
-      <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-      <Breadcrumb.Item>Legacy Data Digitization</Breadcrumb.Item>
-    </Breadcrumb> */}
-        {/* <Header className="d-flex bg-tnl-white" >
-            <h3>Legacy Data Digitization</h3>
-        </Header> */}
         <TNHeader children="Legacy Data Digitization"/>
         <section className="xy-space">
-          <div className="legency-data-digitization-head-wrap flex items-center">
+          <div className="legency-data-digitization-head-wrap flex items-center legency-data-top-space">
             <div>
               <TNInput
-                id="example-input"
-                datatestid="example-input-testid"
+                id="legency-search"
+                datatestid="legency-search-testid"
                 type="text"
-                name="exampleName"
+                name="legencySearch"
                 value={inputValue}
-                label="Example Label"
-                placeholder="Enter some text"
-                ILInputLabelClass="custom-class"
+                label="Seacrh something"
+                placeholder="Type something"
+                ILInputLabelClass="mb-0 legency-data-seacrhbar-input"
                 handleChange={handleInputChange}
                 textAreaShow={false}
                 readOnly={false}
-                errorMsg="This is an error message"
                 searchBarControl
+                errorMsg="This is an error message"
               />
-
             </div>
             <div className="ml-auto flex items-center gap-6">
                 <TNButton
@@ -68,6 +68,15 @@ const LegacyDataDigitilization = () => {
                 Upload Folder
               </TNButton>
             </div>
+          </div>
+          <div className="legency-data-top-space legency-data-search">
+            <TNSelect
+               label="Select an type"
+               options={legencyTypeOptions}
+               value={selectedValue}
+               onChange={handleSelectChange}
+               placeholder="Please select"
+            />
           </div>
         </section>
   </div>;

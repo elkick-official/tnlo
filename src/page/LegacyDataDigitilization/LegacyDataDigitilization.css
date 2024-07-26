@@ -1,3 +1,6 @@
-.legency-data-digitization-head-wrap{
+.legency-data-top-space{
     padding-top: 20px;
+}
+.legency-data-seacrhbar-input input{
+    min-width: 300px;
 }
