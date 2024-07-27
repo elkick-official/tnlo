@@ -38,3 +38,13 @@ export const dataLegencyFile = [
         img: noticeFile,
     },
 ]
+export const drNoteOptions = [
+    { label: "Status 1", value: "1" },
+    { label: "Status 2", value: "2" },
+    { label: "Status 3", value: "3" },
+];
+// export const callModifiedOptions = [
+//     { label: "Status 1", value: "1" },
+//     { label: "Status 2", value: "2" },
+//     { label: "Status 3", value: "3" },
+// ];

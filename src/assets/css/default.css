@@ -231,11 +231,13 @@ p,
 }
 
 .min-w-auto,
-.min-w-auto .ant-select .ant-select-selector {
+.min-w-auto .ant-select .ant-select-selector,
+.width.min-w-auto {
   min-width: auto;
 }
 
 .min-h-auto,
+.height.min-h-auto,
 .min-h-auto .ant-select .ant-select-selector {
   min-height: auto;
 }

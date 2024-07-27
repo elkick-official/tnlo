@@ -1,6 +1,6 @@
 import { Tabs, TabsProps } from "antd";
-import { TNFolderFiles } from "../../TNFolderFiles/TNFolderFiles";
-import "./TNTab.css";
+import { TNFolderFiles } from "../TNFolderFiles/TNFolderFiles";
+import "./TNLDTab.css";
 const onChange = (key: string) => {
     console.log(key);
   };
@@ -17,7 +17,7 @@ const items: TabsProps['items'] = [
     children: 'Coming soon',
 },
 ];
-export const TNTab = () => {
+export const TNLDTab = () => {
     return(
         <>
             <Tabs defaultActiveKey="1" items={items} onChange={onChange} />

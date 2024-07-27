@@ -4,7 +4,7 @@ import {TNButton} from "./common/TNButton/TNButton.tsx";
 import {TNInput} from "./common/TNInput/TNInput.tsx";
 import {TNCheckbox} from "./common/TNCheckbox/TNCheckbox.tsx";
 import {TNSelect} from "./common/TNSelect/TNSelect.tsx";
-import {TNTab} from "./common/TNTab/TNTab.tsx";
+import {TNLDTab} from "./TNLDTab/TNLDTab.tsx";
 import {TNUpload} from "./common/TNUpload/TNUpload.tsx";
 import {TNAccordion} from "./common/TNAccordion/TNAccordion.tsx";
 import {TNSidebar} from "./common/TNSidebar/TNSidebar.tsx";
@@ -20,5 +20,7 @@ import {TNSwitch} from "./common/TNSwitch/TNSwitch.tsx";
 import {TNInfoCard} from "./common/TNInfoCard/TNInfoCard.tsx";
 import {TNFullPageCalendar} from "./common/TNFullPageCalendar/TNFullPageCalendar.tsx";
 import {TNFolderFiles} from "./TNFolderFiles/TNFolderFiles.tsx"
-
-export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles }
+import {TNDRNoteTab} from "./TNDRNoteTab/TNDRNoteTab.tsx";
+import { TNDRNotes } from "./TNDRNoteTab/TNDRNotes/TNDRNotes.tsx"; 
+import { TNDatePicker } from "./common/TNDatePicker/TNDatePicker.tsx";
+export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, TNDRNoteTab, TNDRNotes, TNDatePicker }
