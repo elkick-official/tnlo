@@ -16,9 +16,9 @@ import {
 import type { MenuProps } from "antd";
 import { Layout, Menu } from "antd";
 import { logo } from "../../../const/imageData";
-import "./TNSidebar.css";
 import { Icons } from "../../../const/icons";
 import { Link } from "react-router-dom";
+import "./TNSidebar.css";
 const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
@@ -68,16 +68,18 @@ const items: MenuItem[] = [
   ),
 ];
 export const TNSidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true); // Collapsed by default
 
   return (
     <>
       <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
+    //  breakpoint="xxl"
+     collapsible
+     collapsed={collapsed}
+     onCollapse={(value) => setCollapsed(value)}
         className="custom-sidebar"
         width="265"
+        collapsedWidth="0" // Optional: Fully hide sidebar on smaller screens
       >
         <div className="demo-logo-vertical">
           <img src={logo} alt="" className="logo" />

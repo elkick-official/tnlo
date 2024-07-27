@@ -43,3 +43,7 @@
 .custom-sidebar .ant-layout-sider-trigger{
     background-color: var(--tnl-primary-rgb);
 }
+.custom-sidebar.ant-layout-sider-collapsed {
+    min-width: 80px !important;
+    width: 80px !important;
+}
