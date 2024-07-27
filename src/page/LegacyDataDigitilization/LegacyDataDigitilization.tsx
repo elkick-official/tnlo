@@ -1,9 +1,7 @@
-import { Breadcrumb } from "antd";
-import { Header } from "antd/es/layout/layout";
-import { TNButton, TNHeader, TNInput, TNSelect, TNTab } from "../../components";
-import "./LegacyDataDigitilization.css";
 import { useState } from "react";
+import { TNButton, TNHeader, TNInput, TNSelect, TNTab } from "../../components";
 import { legencyModifiedOptions, legencyTypeOptions } from "../../const/data";
+import "./LegacyDataDigitilization.css";
 
 const LegacyDataDigitilization = () => {
   // button js start
@@ -74,14 +72,14 @@ const LegacyDataDigitilization = () => {
         </div>
         <div className="legency-data-top-space legency-data-select-box flex items-center gap-6">
           <TNSelect
-            label="Select an type"
+            label="Type"
             options={legencyTypeOptions}
             value={selectedValue}
             onChange={handleSelectChange}
             placeholder="Please select"
           />
           <TNSelect
-            label="Select modified"
+            label="Modified"
             options={legencyModifiedOptions}
             value={selectedValue}
             onChange={handleSelectChange}
