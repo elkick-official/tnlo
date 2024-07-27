@@ -1,6 +1,6 @@
 import { Breadcrumb } from "antd";
 import { Header } from "antd/es/layout/layout";
-import { TNButton, TNHeader, TNInput, TNSelect, TNTab } from "../../components";
+import { TNButton, TNHeader, TNInput, TNLDTab, TNSelect } from "../../components";
 import "./LegacyDataDigitilization.css";
 import { useState } from "react";
 import { legencyModifiedOptions, legencyTypeOptions } from "../../const/data";
@@ -89,7 +89,7 @@ const LegacyDataDigitilization = () => {
           />
         </div>
         <div className="legency-data-tab-wrap bg-tnl-white">
-          <TNTab />
+          <TNLDTab />
         </div>
       </section>
     </div>
