@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import {drNoteOptions, DRnotesData } from "../../../const/data";
+import {drNoteOptions, DRnotesData, DROngoingIssuesData } from "../../../const/data";
 import { TNInput } from "../../common/TNInput/TNInput";
 import { TNButton } from "../../common/TNButton/TNButton";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { TNSelect } from "../../common/TNSelect/TNSelect";
 import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
-import "./TNDRNotes.css";
+import "./TNDROngoingIssues.css";
 
-  export const TNDRNotes = () => {
+  export const TNDROngoingIssues = () => {
      // button js start
     const handleButtonClick = () => {
         console.log("Button clicked");
@@ -78,7 +78,7 @@ import "./TNDRNotes.css";
             <div className="mt-3">
                 <h3 className="pb-3 fw-500">Notes</h3>
                 <div className="notes-grid-wrap grid">
-                    {DRnotesData.map((DRnotesItem, DRnotesIndex) => {
+                    {DROngoingIssuesData.map((DRnotesItem, DRnotesIndex) => {
                         return(
                             <>
                                 <div className="notes-col w-full h-full transition-smooth" key={DRnotesIndex}>

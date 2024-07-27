@@ -22,5 +22,6 @@ import {TNFullPageCalendar} from "./common/TNFullPageCalendar/TNFullPageCalendar
 import {TNFolderFiles} from "./TNFolderFiles/TNFolderFiles.tsx"
 import {TNDRNoteTab} from "./TNDRNoteTab/TNDRNoteTab.tsx";
 import { TNDRNotes } from "./TNDRNoteTab/TNDRNotes/TNDRNotes.tsx"; 
+import { TNDROngoingIssues } from "./TNDRNoteTab/TNDROngoingIssues/TNDROngoingIssues.tsx";
 import { TNDatePicker } from "./common/TNDatePicker/TNDatePicker.tsx";
-export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, TNDRNoteTab, TNDRNotes, TNDatePicker }
+export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker }
