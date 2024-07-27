@@ -63,7 +63,7 @@ import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
                     errorMsg="This is an error message"
                     />
                 </div>
-                <div className="ml-auto flex items-center gap-6">
+                <div className="ml-auto flex gap-6">
                     <TNSelect
                         label="Status"
                         options={drNoteOptions}
@@ -71,7 +71,7 @@ import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
                         onChange={handleSelectChange}
                         placeholder="Please select value"
                     />
-                   <TNDatePicker label="Status" options={[]}/>
+                   <TNDatePicker label="Modified" options={[]}/>
                 </div>
             </div>
         </>
