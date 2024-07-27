@@ -10,8 +10,10 @@ import {
   FileOutlined,
   FormOutlined,
   PieChartOutlined,
+  SettingOutlined,
   TeamOutlined,
   UserOutlined,
+  // SettingOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu } from "antd";
@@ -66,6 +68,11 @@ const items: MenuItem[] = [
     "6",
     <BookOutlined style={{ fontSize: "20px", color: "black" }} />
   ),
+  getItem(
+    <Link to="/settings">Settings</Link>,
+    "7",
+    <SettingOutlined style={{ fontSize: "20px", color: "black" }} />
+  ),
 ];
 export const TNSidebar = () => {
   const [collapsed, setCollapsed] = useState(true); // Collapsed by default
@@ -73,10 +80,10 @@ export const TNSidebar = () => {
   return (
     <>
       <Sider
-    //  breakpoint="xxl"
-     collapsible
-     collapsed={collapsed}
-     onCollapse={(value) => setCollapsed(value)}
+        //  breakpoint="xxl"
+        collapsible
+        collapsed={collapsed}
+        onCollapse={(value) => setCollapsed(value)}
         className="custom-sidebar"
         width="265"
         collapsedWidth="0" // Optional: Fully hide sidebar on smaller screens

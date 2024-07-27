@@ -42,4 +42,22 @@ export const routeList: routeListProps[] = [
     to: "/press-note",
     element: <PressNote />,
   },
+  {
+    id: "ROUTE-7",
+    to: "/settings",
+    element: (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+          fontSize: "24px",
+          fontWeight: "700",
+        }}
+      >
+        Coming Soon
+      </div>
+    ),
+  },
 ];
