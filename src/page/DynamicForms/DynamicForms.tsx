@@ -1,23 +1,15 @@
-import { Breadcrumb } from "antd";
-import { TNHeader } from "../../components";
+import { TNDynamicFormsTab, TNHeader } from "../../components";
 import "./DynamicForms.css";
 
 const DynamicForms = () => {
   return (
     <div>
       <TNHeader children="Dynamic Forms" />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "80vh",
-          fontSize: "24px",
-          fontWeight: "700",
-        }}
-      >
-        Coming Soon
-      </div>
+      <section className="xx-space yy-space">
+        <div className="legency-data-tab-wrap bg-tnl-white mt-0">
+          <TNDynamicFormsTab />
+        </div>
+      </section>
     </div>
   );
 };

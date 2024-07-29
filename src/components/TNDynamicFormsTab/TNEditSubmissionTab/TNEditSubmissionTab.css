@@ -1,0 +1,9 @@
+.edit-mode-name-number-wrap{
+    background-color: var(--tnl-grey-heather);
+    border-radius: 8px;
+    padding: 5px 15px;
+    min-height: 50px;
+}
+.edit-mode-name-number-wrap:not(:last-child){
+    margin-bottom: 10px;
+}

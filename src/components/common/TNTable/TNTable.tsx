@@ -1,7 +1,17 @@
-import styles from "./TNTable.module.css";
-
-export const TNTable = () => {
+import { Table } from "antd";
+import "./TNTable.css";
+import { FC } from "react";
+interface tableProps {
+    dataSource: object[],
+    columns: object[]
+}
+export const TNTable:FC<tableProps> = ({
+    dataSource,
+    columns
+}) => {
     return(
-        <>Table</>
+        <>
+            <Table dataSource={dataSource} columns={columns} />;
+        </>
     )
 }

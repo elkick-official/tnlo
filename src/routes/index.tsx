@@ -3,6 +3,8 @@ import CalendarForecast from "../page/CalendarForecast/CalendarForecast";
 import Dashboard from "../page/Dashboard/Dashboard";
 import DataRepository from "../page/DataRepository/DataRepository";
 import DynamicForms from "../page/DynamicForms/DynamicForms";
+import TNAdminEditSubmissionCard from "../page/DynamicForms/TNAdminEditSubmissionCard/TNAdminEditSubmissionCard";
+import TNFormEditSubmissionCard from "../page/DynamicForms/TNFormEditSubmissionCard/TNFormEditSubmissionCard";
 import PressNote from "../page/PressNote/PressNote";
 
 export interface routeListProps {
@@ -59,5 +61,15 @@ export const routeList: routeListProps[] = [
         Coming Soon
       </div>
     ),
+  },
+  {
+    id: "ROUTE-8",
+    to: "/admin-edit-submission-card",
+    element: <TNAdminEditSubmissionCard />,
+  },
+  {
+    id: "ROUTE-9",
+    to: "/form-edit-submission-card",
+    element: <TNFormEditSubmissionCard />,
   },
 ];

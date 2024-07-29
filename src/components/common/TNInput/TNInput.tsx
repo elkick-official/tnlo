@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import { Icons } from "../../../const/icons";
 import "./TNInput.css";
+import { DeleteOutlined } from "@ant-design/icons";
 
 interface TNInputProps {
   id: string;
@@ -22,6 +23,7 @@ interface TNInputProps {
   searchIconPositionLeft?: boolean;
   readOnly?: boolean;
   errorMsg?: string;
+  deleteMsg?: boolean;
   [rest: string]: any;
 }
 
@@ -44,6 +46,7 @@ export const TNInput: React.FC<TNInputProps> = ({
   searchIconPositionLeft,
   readOnly,
   errorMsg,
+  deleteMsg,
   ...rest
 }) => {
   return (
@@ -51,7 +54,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       {textAreaShow ? (
         <>
           <label
-            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
+            className={clsx("ILInputLabel w-full d-block", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (
@@ -70,7 +73,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               value={value}
               placeholder={placeholder}
               maxLength={maxLength}
-              className={clsx("ILTextInput form-control")}
+              className={clsx("ILTextInput form-control w-full")}
             //   onChange={handleChange}
               // prefix={prefix}
             //   autoSize={autoSize ? 'true' : undefined}
@@ -95,7 +98,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               name={name}
               value={value}
               placeholder={placeholder}
-              className={clsx("ILTextInput form-control")}
+              className={clsx("ILTextInput form-control w-full")}
               onChange={handleChange}
               // prefix={prefix}
               {...rest}
@@ -112,7 +115,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       ) : (
         <>
           <label
-            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
+            className={clsx("ILInputLabel w-full d-block", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (
@@ -124,18 +127,25 @@ export const TNInput: React.FC<TNInputProps> = ({
                 {label}
               </span>
             )}
-            <input
-              id={id}
-              data-testid={datatestid}
-              type={type}
-              name={name}
-              value={value}
-              placeholder={placeholder}
-              className={"ILTextInput form-control"}
-              onChange={handleChange}
-              readOnly={readOnly}
-              {...rest}
-            />
+            <div className="flex items-center gap-6">
+              <input
+                id={id}
+                data-testid={datatestid}
+                type={type}
+                name={name}
+                value={value}
+                placeholder={placeholder}
+                className={"ILTextInput form-control w-full"}
+                onChange={handleChange}
+                readOnly={readOnly}
+                {...rest}
+              />
+               {deleteMsg && (
+                 <span className="lh-0 cursor-pointer">
+                 <DeleteOutlined className="icon-width-mid svg-hover-red"/>
+              </span>
+            )}
+            </div>
             {errorMsg && (
               <span
                 className={clsx(

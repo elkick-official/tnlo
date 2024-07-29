@@ -82,3 +82,97 @@ export const DROngoingIssuesData = [
         label: "Death"
     },
 ]
+export const DfAdminData = [
+    {
+        title: "Political Rally",
+        titleLabel: "Political rally in Thambaram ",
+        dateTime: "Jul 20, 2024, 2:44:30 PM",
+        show: "Published",
+        number: "10",
+        label: "Published"
+    },
+    {
+        title: "Political Rally",
+        titleLabel: "Political rally in Thambaram ",
+        dateTime: "Jul 20, 2024, 2:44:30 PM",
+        show: "Published",
+        number: "10",
+        label: "Published"
+    },
+]
+export const submitDataSource = [
+    {
+      key: '1',
+      name: "Natrajan R.",
+      id: '1483256',
+      sid: "SID45761",
+      phoneNumber: '+91 25654 46216',
+      email: "Natrajan@gmail.com",
+      submittedOn: "19/07/2024"
+    },
+    {
+        key: '2',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+    {
+        key: '3',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+    {
+        key: '4',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+];
+export const submitColumns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'ID',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'SID',
+      dataIndex: 'sid',
+      key: 'sid',
+    },
+    {
+        title: 'Phone Number',
+        dataIndex: 'phoneNumber',
+        key: 'phoneNumber',
+    },
+    {
+        title: 'Email',
+        dataIndex: 'email',
+        key: 'email',
+    },
+    {
+        title: 'Submitted On',
+        dataIndex: 'submittedOn',
+        key: 'submittedOn',
+    },
+];
+export const dfAddSectionTypeOptions = [
+    { label: "Text", value: "1" },
+    { label: "Text area", value: "2" },
+    { label: "Email", value: "3" },
+    { label: "Phone", value: "4" },
+];

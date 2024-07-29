@@ -1,0 +1,8 @@
+.dynamic-form-admin-card:hover{
+    background-color: transparent;
+    border-color: var(--tnl-primary-rgb);
+}
+.dynamic-form-admin-card:hover h3,
+.dynamic-form-admin-card:hover h5{
+    color: var(--tnl-rapunzel-silver);
+}

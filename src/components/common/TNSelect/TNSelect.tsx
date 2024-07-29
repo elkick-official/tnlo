@@ -16,7 +16,7 @@ export const TNSelect: React.FC<CustomSelectProps> = ({
   return (
     <div className="custom-select-container">
       {label && <label className="ILInputLabelText fw-500 text-tnl-white-edgar d-block">{label}</label>}
-      <Select {...rest} className="ILTextInput">
+      <Select {...rest} className="ILTextInput w-full">
         {options.map((option) => (
           <Select.Option key={option.value} value={option.value}>
             {option.label}
