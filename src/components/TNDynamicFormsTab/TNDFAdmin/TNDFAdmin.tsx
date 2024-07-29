@@ -142,7 +142,7 @@ import "./TNDFAdmin.css";
                 </div>
             </div>
 
-            {/* modal */}
+            {/* Create New Form modal */}
             <Modal title="Create New Form" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} centered width={700} className="remove-footer-btn">
                 <hr className="opacity-03 mb-4"/>
                 <div>

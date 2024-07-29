@@ -100,3 +100,78 @@ export const DfAdminData = [
         label: "Published"
     },
 ]
+export const submitDataSource = [
+    {
+      key: '1',
+      name: "Natrajan R.",
+      id: '1483256',
+      sid: "SID45761",
+      phoneNumber: '+91 25654 46216',
+      email: "Natrajan@gmail.com",
+      submittedOn: "19/07/2024"
+    },
+    {
+        key: '2',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+    {
+        key: '3',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+    {
+        key: '4',
+        name: "Natrajan R.",
+        id: '1483256',
+        sid: "SID45761",
+        phoneNumber: '+91 25654 46216',
+        email: "Natrajan@gmail.com",
+        submittedOn: "19/07/2024"
+    },
+];
+export const submitColumns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'ID',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'SID',
+      dataIndex: 'sid',
+      key: 'sid',
+    },
+    {
+        title: 'Phone Number',
+        dataIndex: 'phoneNumber',
+        key: 'phoneNumber',
+    },
+    {
+        title: 'Email',
+        dataIndex: 'email',
+        key: 'email',
+    },
+    {
+        title: 'Submitted On',
+        dataIndex: 'submittedOn',
+        key: 'submittedOn',
+    },
+];
+export const dfAddSectionTypeOptions = [
+    { label: "Type 1", value: "1" },
+    { label: "Type 2", value: "2" },
+    { label: "Type 3", value: "3" },
+];

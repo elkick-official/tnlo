@@ -347,6 +347,10 @@ a {
   color: var(--tnl-primary-rgb);
 }
 
+.svg-hover-red:hover{
+  color: var(--tnl-red);
+}
+
 a:hover,
 .svg-hover:hover,
 .hover-text:hover,
@@ -593,4 +597,23 @@ header .active {
 /* modal */
 .remove-footer-btn .ant-modal-footer{
   display: none;
+}
+/* box-shadow-default */
+.box-shadow-default{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* icon-width-mid */
+.icon-width-mid svg{
+  width: 20px;
+  height: 20px;
+}
+/* table */
+.ant-table-content table{
+  border: 1px solid var(--tnl-aquamarine-ocean);
+}
+.ant-table-content table thead tr th.ant-table-cell{
+  background-color: var(--tnl-grey-heather);
+}
+.ant-table-content table tbody tr:nth-child(even){
+  background-color: var(--tnl-white-f1);
 }

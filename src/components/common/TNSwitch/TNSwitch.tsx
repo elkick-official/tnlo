@@ -15,7 +15,7 @@ export const TNSwitch:FC<switchProps> = ({
     return(
         <>
             <Switch defaultChecked onChange={handleChange} checked={checked}/>
-            <label className="fw-600">{label}</label>
+            <label className="fw-600 ml-1">{label}</label>
         </>
     )
 }
