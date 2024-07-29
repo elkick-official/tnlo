@@ -9,6 +9,7 @@ import { TNSwitch } from "../../common/TNSwitch/TNSwitch";
 import { Modal } from "antd";
 import { Link } from "react-router-dom";
 import "./TNDFAdmin.css";
+import { TNDFCreateNewFormModal } from "../TNDFCreateNewFormModal/TNDFCreateNewFormModal";
 
   export const TNDFAdmin = () => {
      // button js start
@@ -63,18 +64,7 @@ import "./TNDFAdmin.css";
     return(
         <>
             <div className="flex w-100">
-                <TNButton
-                id="add-new-note"
-                datatestid="add-new-note-testid"
-                type="button"
-                ILBtnClass="additional-class ml-auto"
-                handleChange={showModal}
-                disabled={false}
-                >
-                   
-                    <PlusCircleOutlined className="w-auto width min-w-auto pa-0 me-2 height min-h-auto"/>
-                    Create New Form
-                </TNButton>
+               <TNDFCreateNewFormModal/>
             </div>
            <div className="legency-data-digitization-head-wrap flex items-end mt-3">
                 <div>
@@ -124,7 +114,7 @@ import "./TNDFAdmin.css";
                     {DfAdminData.map((DFItem, DFIndex) => {
                         return(
                             <>
-                                <Link className="notes-col w-full h-full transition-smooth dynamic-form-admin-card" key={DFIndex} to={"/edit-submission-card"}>
+                                <Link className="notes-col w-full h-full transition-smooth dynamic-form-admin-card" key={DFIndex} to={"/admin-edit-submission-card"}>
                                     <div className="flex items-center flex-wrap gap-3 mb-4">
                                         <h3 className="mb-0">{DFItem.title}</h3>
                                         <h5 className="ml-auto date-label-text fw fw-500 transition-smooth"><b>Updated at :</b>&nbsp;{DFItem.dateTime}</h5>
@@ -141,64 +131,6 @@ import "./TNDFAdmin.css";
                     }) }
                 </div>
             </div>
-
-            {/* Create New Form modal */}
-            <Modal title="Create New Form" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} centered width={700} className="remove-footer-btn">
-                <hr className="opacity-03 mb-4"/>
-                <div>
-                    <TNInput
-                    id="df-title"
-                    datatestid="df-title-testid"
-                    type="text"
-                    name="dfTitle"
-                    value={inputValue}
-                    label="Title"
-                    placeholder="Enter title"
-                    ILInputLabelClass=""
-                    handleChange={handleInputChange}
-                    textAreaShow={false}
-                    readOnly={false}
-                    errorMsg="This is an error message"
-                    />
-                     <TNInput
-                        id="df-textarea"
-                        datatestid="df-textarea-testid"
-                        rows={6}
-                        value={inputValue}
-                        placeholder="Enter Description (Optional)"
-                        label="Description (Optional)"
-                        ILInputLabelClass=""
-                        // handleChange={handleInputChange}
-                        textAreaShow={true}
-                        readOnly={false}
-                        errorMsg="This is an error message" handleChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
-                            throw new Error("Function not implemented.");
-                        } }                    />
-                </div>
-                <hr className="opacity-03 mt-4"/>
-                <div className="flex items-center justify-end pt-4 ">
-                    <TNButton
-                    id="create"
-                    datatestid="create-testid"
-                    type="button"
-                    ILBtnClass="btn-transparent"
-                    handleChange={handleCancel}
-                    disabled={false}
-                    >
-                        Create
-                    </TNButton>
-                    <TNButton
-                    id="close"
-                    datatestid="close-testid"
-                    type="button"
-                    ILBtnClass=""
-                    handleChange={handleCancel}
-                    disabled={false}
-                    >
-                        Cancel
-                    </TNButton>
-                </div>
-            </Modal>
         </>
     )
 }

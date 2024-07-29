@@ -171,7 +171,8 @@ export const submitColumns = [
     },
 ];
 export const dfAddSectionTypeOptions = [
-    { label: "Type 1", value: "1" },
-    { label: "Type 2", value: "2" },
-    { label: "Type 3", value: "3" },
+    { label: "Text", value: "1" },
+    { label: "Text area", value: "2" },
+    { label: "Email", value: "3" },
+    { label: "Phone", value: "4" },
 ];

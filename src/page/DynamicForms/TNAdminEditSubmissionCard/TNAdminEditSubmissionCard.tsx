@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TNButton, TNDynamicFormsTab, TNEditSubmissionTab, TNHeader, TNSwitch } from "../../../components";
-import "./TNEditSubmissionCard.css";
- const TNEditSubmissionCard = () => {
+import "./TNAdminEditSubmissionCard.css";
+ const TNAdminEditSubmissionCard = () => {
      // swicth js start
      const [switchStates, setSwitchStates] = useState({
         Publish: false,
@@ -69,4 +69,4 @@ import "./TNEditSubmissionCard.css";
         </>
     )
 }
-export default TNEditSubmissionCard;
+export default TNAdminEditSubmissionCard;

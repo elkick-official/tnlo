@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
 const LegacyDataDigitilization = lazy(() => import("./LegacyDataDigitilization/LegacyDataDigitilization"))
-const TNEditSubmissionCard = lazy(() => import("./DynamicForms/TNEditSubmissionCard/TNEditSubmissionCard"))
+const TNAdminEditSubmissionCard = lazy(() => import("./DynamicForms/TNAdminEditSubmissionCard/TNAdminEditSubmissionCard"))
+const TNFormEditSubmissionCard = lazy(() => import("./DynamicForms/TNFormEditSubmissionCard/TNFormEditSubmissionCard"))
 
-export { LegacyDataDigitilization, TNEditSubmissionCard }
+export { LegacyDataDigitilization, TNAdminEditSubmissionCard, TNFormEditSubmissionCard }
