@@ -15,6 +15,10 @@
     background-color: var(--tnl-primary-rgb);
     border: 1px solid var(--tnl-primary-rgb);
 }
+.customButton span:hover{
+  background-color: var(--tnl-night-night);
+  border-color: var(--tnl-night-night);
+}
 .btn3::before,
 .btn3::after,
 .hoverBorder::before,

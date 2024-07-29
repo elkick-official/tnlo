@@ -31,12 +31,12 @@ export const TNButton: FC<TNButtonProps> = ({
       disabled={disabled}
       className={clsx(
         ILBtnClass,
-        'customButton btn3 hoverBorder h5 fw-600 text-tnl-white transition-smooth relative cursor-pointer'
+        'customButton h5 fw-600 text-tnl-white transition-smooth relative cursor-pointer'
       )}
       onClick={handleChange}
       {...rest}
     >
-      <span className="flex items-center content-center">
+      <span className="flex items-center content-center transition-smooth">
         {children}
       </span>
     </button>
