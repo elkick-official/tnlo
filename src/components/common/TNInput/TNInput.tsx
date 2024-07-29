@@ -51,7 +51,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       {textAreaShow ? (
         <>
           <label
-            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
+            className={clsx("ILInputLabel w-full d-block", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (
@@ -70,7 +70,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               value={value}
               placeholder={placeholder}
               maxLength={maxLength}
-              className={clsx("ILTextInput form-control")}
+              className={clsx("ILTextInput form-control w-full")}
             //   onChange={handleChange}
               // prefix={prefix}
             //   autoSize={autoSize ? 'true' : undefined}
@@ -95,7 +95,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               name={name}
               value={value}
               placeholder={placeholder}
-              className={clsx("ILTextInput form-control")}
+              className={clsx("ILTextInput form-control w-full")}
               onChange={handleChange}
               // prefix={prefix}
               {...rest}
@@ -112,7 +112,7 @@ export const TNInput: React.FC<TNInputProps> = ({
       ) : (
         <>
           <label
-            className={clsx("ILInputLabel w-full", ILInputLabelClass)}
+            className={clsx("ILInputLabel w-full d-block", ILInputLabelClass)}
             htmlFor={id}
           >
             {label && (
@@ -131,7 +131,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               name={name}
               value={value}
               placeholder={placeholder}
-              className={"ILTextInput form-control"}
+              className={"ILTextInput form-control w-full"}
               onChange={handleChange}
               readOnly={readOnly}
               {...rest}

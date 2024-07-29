@@ -82,3 +82,21 @@ export const DROngoingIssuesData = [
         label: "Death"
     },
 ]
+export const DfAdminData = [
+    {
+        title: "Political Rally",
+        titleLabel: "Political rally in Thambaram ",
+        dateTime: "Jul 20, 2024, 2:44:30 PM",
+        show: "Published",
+        number: "10",
+        label: "Published"
+    },
+    {
+        title: "Political Rally",
+        titleLabel: "Political rally in Thambaram ",
+        dateTime: "Jul 20, 2024, 2:44:30 PM",
+        show: "Published",
+        number: "10",
+        label: "Published"
+    },
+]

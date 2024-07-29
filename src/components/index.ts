@@ -24,4 +24,9 @@ import {TNDRNoteTab} from "./TNDRNoteTab/TNDRNoteTab.tsx";
 import { TNDRNotes } from "./TNDRNoteTab/TNDRNotes/TNDRNotes.tsx"; 
 import { TNDROngoingIssues } from "./TNDRNoteTab/TNDROngoingIssues/TNDROngoingIssues.tsx";
 import { TNDatePicker } from "./common/TNDatePicker/TNDatePicker.tsx";
-export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker }
+import { TNDynamicFormsTab } from "./TNDynamicFormsTab/TNDynamicFormsTab.tsx";
+import { TNEditSubmissionTab } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNEditSubmissionTab.tsx";
+import { TNEditForm } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNEditForm.tsx";
+import { TNSubmissionForm } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNSubmissionForm.tsx";
+export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, 
+    TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker, TNDynamicFormsTab, TNEditSubmissionTab, TNEditForm, TNSubmissionForm }

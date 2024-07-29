@@ -1,4 +1,4 @@
-import { LegacyDataDigitilization } from "../page";
+import { LegacyDataDigitilization, TNEditSubmissionCard } from "../page";
 import CalendarForecast from "../page/CalendarForecast/CalendarForecast";
 import Dashboard from "../page/Dashboard/Dashboard";
 import DataRepository from "../page/DataRepository/DataRepository";
@@ -41,5 +41,10 @@ export const routeList: routeListProps[] = [
     id: "ROUTE-6",
     to: "/press-note",
     element: <PressNote />,
+  },
+  {
+    id: "ROUTE-7",
+    to: "/edit-submission-card",
+    element: <TNEditSubmissionCard />,
   },
 ];

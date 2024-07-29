@@ -14,10 +14,19 @@
     overflow: hidden;
     background-color: var(--tnl-primary-rgb);
     border: 1px solid var(--tnl-primary-rgb);
+    justify-content: center;
+    font-family: var(--tnl-primary-font)
 }
 .customButton span:hover{
-  background-color: var(--tnl-night-night);
-  border-color: var(--tnl-night-night);
+  background-color: var(--tnl-night-dark);
+  border-color: var(--tnl-night-dark);
+}
+.btn-transparent span{
+  background-color: transparent;
+  color: var(--tnl-primary-rgb);
+}
+.btn-transparent span:hover{
+  color: var(--tnl-white);
 }
 .btn3::before,
 .btn3::after,
