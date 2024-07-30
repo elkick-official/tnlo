@@ -1,81 +1,82 @@
-.data-legency-folder-view{
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 25px;
+.data-legency-folder-view {
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 25px;
 }
-.data-legency-folder-box{
-    width: 100%;
-    min-height: 115px;
-    border-radius: 20px;
-    padding: 12px 24px;
-    background-color: var(--tnl-tristesse);
+.data-legency-folder-box {
+  width: 100%;
+  /* min-height: 115px; */
+  border-radius: 20px;
+  padding: 12px 24px;
+  background-color: var(--tnl-tristesse);
 }
-.data-legency-folder-box h4{
-    color: var(--tnl-black);
+.data-legency-folder-box h4 {
+  color: var(--tnl-black);
 }
-.data-legency-folder-box h6{
-    color: var(--tnl-grey-les);
+.data-legency-folder-box h6 {
+  color: var(--tnl-grey-les);
 }
-.data-legency-folder-box:hover{
-    background-color: var(--tnl-primary-rgb-light);
+.data-legency-folder-box:hover {
+  background-color: var(--tnl-primary-rgb-light);
 }
-.data-legency-folder-box:hover h4{
-    color: var(--tnl-white);
+.data-legency-folder-box:hover h4 {
+  color: var(--tnl-white);
 }
-.data-legency-folder-box:hover h6{
-    color: var(--tnl-dr-white);
+.data-legency-folder-box:hover h6 {
+  color: var(--tnl-dr-white);
 }
-.data-legency-files-view{
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 25px;
+.data-legency-files-view {
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 25px;
 }
-.notes-grid-wrap{
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 24px;
+.notes-grid-wrap {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
 }
-.notes-col{
-    min-width: 200px;
-    background-color: var(--tnl-dark-rift);
-    padding: 16px;
-    border-radius: 16px;
-    border: 1px solid var(--tnl-insignia-white);
+.notes-col {
+  min-width: 200px;
+  background-color: var(--tnl-dark-rift);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--tnl-insignia-white);
 }
-.notes-col:hover{
-    background-color: var(--tnl-primary-rgb);
+.notes-col:hover {
+  background-color: var(--tnl-primary-rgb);
 }
-.notes-col h3{
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.019em;
-    text-align: left;
-    color: var(--tnl-black);
+.notes-col h3 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.019em;
+  text-align: left;
+  color: var(--tnl-black);
 }
-.notes-col p,.notes-col h5{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: -0.019em;
-    text-align: left;
-    color: var(--tnl-black);
+.notes-col p,
+.notes-col h5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.019em;
+  text-align: left;
+  color: var(--tnl-black);
 }
-.notes-col h5.date-label-text{
-    color: var(--tnl-grey-les-light);
+.notes-col h5.date-label-text {
+  color: var(--tnl-grey-les-light);
 }
-.notes-col .note-label{
-    border-radius: 30px;
-    min-width: 70px;
-    min-height: 30px;
-    padding: 2px 20px;
-    background-color: var(--tnl-tristesse);
+.notes-col .note-label {
+  border-radius: 30px;
+  min-width: 70px;
+  min-height: 30px;
+  padding: 2px 20px;
+  background-color: var(--tnl-tristesse);
 }
-.notes-col .note-label span{
-    font-size: 14px;
-    font-weight: 700;
+.notes-col .note-label span {
+  font-size: 14px;
+  font-weight: 700;
 }
 .notes-col:hover h3,
 .notes-col:hover p,
-.notes-col:hover h5{
-    color: var(--tnl-dr-white);
+.notes-col:hover h5 {
+  color: var(--tnl-dr-white);
 }
-.data-repository-seacrhbar-input input{
-    min-width: 400px;
+.data-repository-seacrhbar-input input {
+  min-width: 400px;
 }

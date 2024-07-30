@@ -6,12 +6,12 @@ import { configProvider, lightTheme } from "./utils";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { TNFooter, TNHeader } from "./components";
 import LayoutMain from "./layout/Layout";
-import 'antd-css-utilities/utility.min.css'
+import "antd-css-utilities/utility.min.css";
 import "./App.css";
 function App() {
   return (
     <>
-    {/* <TNHeader/> */}
+      {/* <TNHeader/> */}
       <ErrorBoundary>
         <Suspense fallback={<>Loading</>}>
           <ConfigProvider {...configProvider} theme={lightTheme}>

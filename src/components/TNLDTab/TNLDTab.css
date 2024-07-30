@@ -1,0 +1,7 @@
+.tn-legacy-data-tabs .ant-tabs-nav-wrap {
+  justify-content: flex-end !important;
+}
+
+.tn-legacy-data-tabs .ant-tabs-nav::before {
+  border-bottom: none !important;
+}
