@@ -1,18 +1,9 @@
-import { Button, Form, Input, Modal } from "antd";
 import { useState } from "react";
-import {
-  TNButton,
-  TNHeader,
-  TNInput,
-  TNLDTab,
-  TNSelect,
-} from "../../components";
-import { legencyModifiedOptions, legencyTypeOptions } from "../../const/data";
-import { useLegacyDataDigitilization } from "../../hooks";
-import "./LegacyDataDigitilization.css";
-import { INewFolderFieldType } from "../../types/legacyData.types";
+import { TNButton, TNHeader, TNInput, TNLDTab } from "../../components";
 import TNCreateFolderModal from "../../components/TNFolderFiles/TNCreateFolderModal";
 import TNUploadFileModal from "../../components/TNFolderFiles/TNUploadFileModal";
+import { useLegacyDataDigitilization } from "../../hooks";
+import "./LegacyDataDigitilization.css";
 
 const LegacyDataDigitilization = () => {
   const {
@@ -45,14 +36,6 @@ const LegacyDataDigitilization = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-  };
-
-  const [selectedValue, setSelectedValue] = useState<
-    string | number | undefined
-  >(undefined);
-
-  const handleSelectChange = (value: string | number) => {
-    setSelectedValue(value);
   };
 
   return (
@@ -101,23 +84,8 @@ const LegacyDataDigitilization = () => {
               </TNButton>
             </div>
           </div>
-          <div className="legency-data-top-space legency-data-select-box flex items-center gap-6">
-            <TNSelect
-              label="Type"
-              options={legencyTypeOptions}
-              value={selectedValue}
-              onChange={handleSelectChange}
-              placeholder="Please select"
-            />
-            <TNSelect
-              label="Modified"
-              options={legencyModifiedOptions}
-              value={selectedValue}
-              onChange={handleSelectChange}
-              placeholder="Please select"
-            />
-          </div>
-          <div className="legency-data-tab-wrap bg-tnl-white">
+          <div className="legency-data-top-space legency-data-select-box flex items-center gap-6"></div>
+          <div className="legency-data-tab-wrap mt-0 bg-tnl-white">
             <TNLDTab
               currentFolders={currentFolders}
               currentFiles={currentFiles}

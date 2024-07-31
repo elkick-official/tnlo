@@ -41,11 +41,11 @@ export const TNLDTab = ({
 
   return (
     <>
-      <Tabs
-        defaultActiveKey="1"
-        items={items}
-        onChange={onChange}
-        className="tn-legacy-data-tabs"
+      <TNFolderFiles
+        currentFolders={currentFolders}
+        currentFiles={currentFiles}
+        breadcrumbs={breadcrumbs}
+        navigateToFolder={navigateToFolder}
       />
     </>
   );
