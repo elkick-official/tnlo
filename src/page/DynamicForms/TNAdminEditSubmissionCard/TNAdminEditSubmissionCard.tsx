@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TNButton, TNDynamicFormsTab, TNEditSubmissionTab, TNHeader, TNSwitch } from "../../../components";
+import { TNButton, TNEditSubmissionTab, TNHeader, TNSwitch } from "../../../components";
 import "./TNAdminEditSubmissionCard.css";
  const TNAdminEditSubmissionCard = () => {
      // swicth js start
@@ -41,7 +41,7 @@ import "./TNAdminEditSubmissionCard.css";
                         id="create"
                         datatestid="create-testid"
                         type="button"
-                        ILBtnClass="btn-transparent"
+                        ILBtnClass=""
                         handleChange={handleButtonClick}
                         disabled={false}
                         >
@@ -51,7 +51,7 @@ import "./TNAdminEditSubmissionCard.css";
                         id="close"
                         datatestid="close-testid"
                         type="button"
-                        ILBtnClass=""
+                        ILBtnClass="btn-transparent"
                         handleChange={handleButtonClick}
                         disabled={false}
                         >

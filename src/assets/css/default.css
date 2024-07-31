@@ -638,3 +638,6 @@ header .active {
   align-items: center;
   justify-content: center;
 }
+.width.w-auto {
+  width: auto !important;
+}

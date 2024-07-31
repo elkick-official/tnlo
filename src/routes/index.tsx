@@ -1,4 +1,4 @@
-import { LegacyDataDigitilization } from "../page";
+import { LegacyDataDigitilization, TNFormEditUserView } from "../page";
 import CalendarForecast from "../page/CalendarForecast/CalendarForecast";
 import Dashboard from "../page/Dashboard/Dashboard";
 import DataRepository from "../page/DataRepository/DataRepository";
@@ -72,4 +72,11 @@ export const routeList: routeListProps[] = [
     to: "/form-edit-submission-card",
     element: <TNFormEditSubmissionCard />,
   },
+  {
+    id: "ROUTE-9",
+    to: "/form-edit-user-view",
+    element: <TNFormEditUserView />,
+  },
+
+  
 ];

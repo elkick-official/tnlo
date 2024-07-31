@@ -176,3 +176,21 @@ export const dfAddSectionTypeOptions = [
     { label: "Email", value: "3" },
     { label: "Phone", value: "4" },
 ];
+export const DfFormEventData = [
+    {
+        name: "Natrajan R.",
+        time: "Jul 20, 2024, 2:44:30 PM"
+    },
+    {
+        name: "Natrajan R.",
+        time: "Jul 20, 2024, 2:44:30 PM"
+    },
+    {
+        name: "Natrajan R.",
+        time: "Jul 20, 2024, 2:44:30 PM"
+    },
+    {
+        name: "Natrajan R.",
+        time: "Jul 20, 2024, 2:44:30 PM"
+    },
+]

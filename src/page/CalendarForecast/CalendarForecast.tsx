@@ -27,7 +27,7 @@ const CalendarForecast = () => {
                     datatestid="calendar-search-testid"
                     type="text"
                     name="calendarSearch"
-                    value={inputValue}
+                    // value={inputValue}
                     label="Type something"
                     placeholder="Type something"
                     ILInputLabelClass="mb-0 data-repository-seacrhbar-input"

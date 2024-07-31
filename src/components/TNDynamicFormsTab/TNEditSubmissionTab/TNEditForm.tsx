@@ -86,7 +86,7 @@ export const TNEditForm = () => {
                         datatestid="df-name-testid"
                         type="text"
                         name="dfName"
-                        value={inputValue}
+                        // value={inputValue}
                         label={
                             <>
                                 Name
@@ -106,7 +106,7 @@ export const TNEditForm = () => {
                         datatestid="df-verified-testid"
                         type="number"
                         name="dfVerified"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Phone Number"
                         placeholder="Enter Phone Number"
                         ILInputLabelClass=""
@@ -140,7 +140,7 @@ export const TNEditForm = () => {
                         datatestid="df-Label-testid"
                         type="text"
                         name="dfLabel"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Label"
                         placeholder="Label the section"
                         ILInputLabelClass=""
@@ -164,7 +164,7 @@ export const TNEditForm = () => {
                         id="df-add-section"
                         datatestid="df-add-section-testid"
                         rows={6}
-                        value={inputValue}
+                        // value={inputValue}
                         placeholder="Describe, what this section is for. "
                         label="Description (Optional)"
                         ILInputLabelClass=""
@@ -181,7 +181,7 @@ export const TNEditForm = () => {
                         datatestid="df-Hint-testid"
                         type="text"
                         name="dfHint"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Hint"
                         placeholder="Enter Hint"
                         ILInputLabelClass=""
@@ -196,7 +196,7 @@ export const TNEditForm = () => {
                         datatestid="df-Placeholder-testid"
                         type="text"
                         name="dfPlaceholder"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Placeholder"
                         placeholder="Enter Placeholder"
                         ILInputLabelClass=""
@@ -211,7 +211,7 @@ export const TNEditForm = () => {
                         datatestid="df-Pattern-testid"
                         type="text"
                         name="dfPattern"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Pattern"
                         placeholder="Enter Pattern"
                         ILInputLabelClass=""
@@ -226,7 +226,7 @@ export const TNEditForm = () => {
                         datatestid="df-MinCharacters-testid"
                         type="number"
                         name="dfMinCharacters"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Min Characters"
                         placeholder="Enter Min Characters"
                         ILInputLabelClass=""
@@ -241,7 +241,7 @@ export const TNEditForm = () => {
                         datatestid="df-MaxCharacters-testid"
                         type="number"
                         name="dfMaxCharacters"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Max Characters"
                         placeholder="Enter Max Characters"
                         ILInputLabelClass=""
