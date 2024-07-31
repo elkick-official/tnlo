@@ -85,7 +85,7 @@ export const TNDFCreateNewFormModal = () => {
                     id="create"
                     datatestid="create-testid"
                     type="button"
-                    ILBtnClass="btn-transparent"
+                    ILBtnClass=""
                     handleChange={handleCancel}
                     disabled={false}
                     >
@@ -95,7 +95,7 @@ export const TNDFCreateNewFormModal = () => {
                     id="close"
                     datatestid="close-testid"
                     type="button"
-                    ILBtnClass=""
+                    ILBtnClass="btn-transparent"
                     handleChange={handleCancel}
                     disabled={false}
                     >

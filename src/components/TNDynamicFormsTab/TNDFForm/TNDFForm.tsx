@@ -75,7 +75,7 @@ import "./TNDFForm.css";
                     />
                    <TNDatePicker label="Modified" options={[]}/>
                 </div>
-                <div className="flex self-center gap-6 ml-auto">
+                {/* <div className="flex self-center gap-6 ml-auto">
                 <TNSwitch
                         label="Published"
                         handleChange={handleSwitchChange('published')}
@@ -86,7 +86,7 @@ import "./TNDFForm.css";
                         handleChange={handleSwitchChange('unpublished')}
                         checked={switchStates.unpublished}
                     />
-                </div>
+                </div> */}
             </div>
             <hr className="opacity-03 my-4"/>
             <div className="mt-3">

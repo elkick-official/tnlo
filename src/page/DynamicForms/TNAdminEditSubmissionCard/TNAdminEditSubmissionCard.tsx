@@ -41,7 +41,7 @@ import "./TNAdminEditSubmissionCard.css";
                         id="create"
                         datatestid="create-testid"
                         type="button"
-                        ILBtnClass="btn-transparent"
+                        ILBtnClass=""
                         handleChange={handleButtonClick}
                         disabled={false}
                         >
@@ -51,7 +51,7 @@ import "./TNAdminEditSubmissionCard.css";
                         id="close"
                         datatestid="close-testid"
                         type="button"
-                        ILBtnClass=""
+                        ILBtnClass="btn-transparent"
                         handleChange={handleButtonClick}
                         disabled={false}
                         >

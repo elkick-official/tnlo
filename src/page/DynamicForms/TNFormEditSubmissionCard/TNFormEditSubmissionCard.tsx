@@ -3,7 +3,7 @@ import { TNButton, TNDFCreateNewFormModal, TNDynamicFormsTab, TNEditSubmissionTa
 import "./TNFormEditSubmissionCard.css";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { Col, Row } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DfFormEventData } from "../../../const/data";
  const TNFormEditSubmissionCard = () => {
     // input js start
@@ -31,6 +31,11 @@ import { DfFormEventData } from "../../../const/data";
         console.log("Button clicked");
     };
     // button js end
+    // uselocation redirect form
+    const addDetailFormLocation = useNavigate();
+    const addDetailForm = () => {
+        addDetailFormLocation("/form-edit-user-view")
+    }
     return(
         <>
          <TNHeader children="Dynamic Forms"/>
@@ -69,7 +74,7 @@ import { DfFormEventData } from "../../../const/data";
                         datatestid="close-testid"
                         type="button"
                         ILBtnClass=""
-                        handleChange={handleButtonClick}
+                        handleChange={addDetailForm}
                         disabled={false}
                         >
                             <PlusCircleOutlined className="w-auto width min-w-auto pa-0 me-2 height min-h-auto"/>
