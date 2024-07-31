@@ -1,29 +1,12 @@
 import React, { useState } from "react";
 import {DfAdminData, drNoteOptions } from "../../../const/data";
-import { TNInput } from "../../common/TNInput/TNInput";
-import { TNButton } from "../../common/TNButton/TNButton";
-import { PlusCircleOutlined } from "@ant-design/icons";
 import { TNSelect } from "../../common/TNSelect/TNSelect";
 import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
 import { TNSwitch } from "../../common/TNSwitch/TNSwitch";
-import { Modal } from "antd";
 import { Link } from "react-router-dom";
 import "./TNDFAdmin.css";
-import { TNDFCreateNewFormModal } from "../TNDFCreateNewFormModal/TNDFCreateNewFormModal";
 
   export const TNDFAdmin = () => {
-     // button js start
-    const handleButtonClick = () => {
-        console.log("Button clicked");
-    };
-    // button js end
-    // input js start
-    const [inputValue, setInputValue] = useState<string>("");
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value);
-    };
-    // input js end
     // select option js start
     const [selectedValue, setSelectedValue] = useState<
         string | number | undefined
@@ -46,21 +29,6 @@ import { TNDFCreateNewFormModal } from "../TNDFCreateNewFormModal/TNDFCreateNewF
         }));
     };
     // swicth js end
-    // modal js start
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const showModal = () => {
-      setIsModalOpen(true);
-    };
-  
-    const handleOk = () => {
-      setIsModalOpen(false);
-    };
-  
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
-    // modal js end
     return(
         <>
            <div className="legency-data-digitization-head-wrap flex items-end mt-3">

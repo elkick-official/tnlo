@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { TNButton, TNDFCreateNewFormModal, TNDynamicFormsTab, TNEditSubmissionTab, TNHeader, TNInput, TNSwitch } from "../../../components";
-import "./TNFormEditSubmissionCard.css";
+import { TNButton, TNDFCreateNewFormModal, TNHeader, TNInput } from "../../../components";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { Col, Row } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { DfFormEventData } from "../../../const/data";
+import "./TNFormEditSubmissionCard.css";
  const TNFormEditSubmissionCard = () => {
     // input js start
    const [inputValue, setInputValue] = useState<string>("");
@@ -13,24 +13,6 @@ import { DfFormEventData } from "../../../const/data";
        setInputValue(e.target.value);
    };
    // input js end
-    // swicth js start
-     const [switchStates, setSwitchStates] = useState({
-        Publish: false,
-        unpublished: false
-    });
-
-    const handleSwitchChange = (key: 'Publish' | 'unpublished') => (checked: boolean) => {
-        setSwitchStates(prevState => ({
-            ...prevState,
-            [key]: checked
-        }));
-    };
-    // swicth js end
-    // button js start
-      const handleButtonClick = () => {
-        console.log("Button clicked");
-    };
-    // button js end
     // uselocation redirect form
     const addDetailFormLocation = useNavigate();
     const addDetailForm = () => {
@@ -46,7 +28,7 @@ import { DfFormEventData } from "../../../const/data";
                         datatestid="dr-note-search-testid"
                         type="text"
                         name="drNoteSearch"
-                        value={inputValue}
+                        // value={inputValue}
                         label="what are you looking for?"
                         placeholder="what are you looking for?"
                         ILInputLabelClass="mb-0 data-repository-seacrhbar-input width w-auto"

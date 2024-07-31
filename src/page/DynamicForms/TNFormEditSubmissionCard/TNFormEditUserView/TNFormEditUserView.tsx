@@ -54,7 +54,7 @@ const TNFormEditUserView = () => {
                         datatestid="df-name-testid"
                         type="text"
                         name="dfLname"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Name"
                         placeholder="Enter name"
                         ILInputLabelClass=""
@@ -62,6 +62,7 @@ const TNFormEditUserView = () => {
                         textAreaShow={false}
                         readOnly={false}
                         errorMsg="This is an error message"
+                        requiredField={true}
                         />
                     </Col>
                     <Col xl={8} xxl={6}>
@@ -70,13 +71,14 @@ const TNFormEditUserView = () => {
                         datatestid="df-Phone-Number-testid"
                         type="number"
                         name="dfPhoneNumber"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Phone Number"
                         placeholder="Enter phone number"
                         ILInputLabelClass=""
                         handleChange={handleInputChange}
                         textAreaShow={false}
                         readOnly={false}
+                        requiredField={true}
                         />
                     </Col>
                     <Col xl={8} xxl={6}>
@@ -85,7 +87,7 @@ const TNFormEditUserView = () => {
                         datatestid="df-EmailId-testid"
                         type="email"
                         name="dfEmailId"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Email Id"
                         placeholder="Enter email ID"
                         ILInputLabelClass=""
@@ -100,7 +102,7 @@ const TNFormEditUserView = () => {
                         datatestid="df-Location-testid"
                         type="text"
                         name="dfLocation"
-                        value={inputValue}
+                        // value={inputValue}
                         label="Location"
                         placeholder="Enter location"
                         ILInputLabelClass=""
@@ -114,7 +116,7 @@ const TNFormEditUserView = () => {
                         id="df-address"
                         datatestid="df-address-testid"
                         rows={6}
-                        value={inputValue}
+                        // value={inputValue}
                         placeholder="Enter address"
                         label="Address"
                         ILInputLabelClass=""

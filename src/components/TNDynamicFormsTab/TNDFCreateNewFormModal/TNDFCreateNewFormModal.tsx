@@ -55,7 +55,7 @@ export const TNDFCreateNewFormModal = () => {
                     datatestid="df-title-testid"
                     type="text"
                     name="dfTitle"
-                    value={inputValue}
+                    // value={inputValue}
                     label="Title"
                     placeholder="Enter title"
                     ILInputLabelClass=""
@@ -68,7 +68,7 @@ export const TNDFCreateNewFormModal = () => {
                         id="df-textarea"
                         datatestid="df-textarea-testid"
                         rows={6}
-                        value={inputValue}
+                        // value={inputValue}
                         placeholder="Enter Description (Optional)"
                         label="Description (Optional)"
                         ILInputLabelClass=""

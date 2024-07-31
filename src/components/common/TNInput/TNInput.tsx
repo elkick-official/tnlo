@@ -9,7 +9,7 @@ interface TNInputProps {
   datatestid?: string;
   type?: string;
   name?: string;
-  value: string;
+  value?: string;
   label?: string;
   placeholder?: string;
   ILInputLabelClass?: string;
@@ -24,6 +24,7 @@ interface TNInputProps {
   readOnly?: boolean;
   errorMsg?: string;
   deleteMsg?: boolean;
+  requiredField? : boolean;
   [rest: string]: any;
 }
 
@@ -47,6 +48,7 @@ export const TNInput: React.FC<TNInputProps> = ({
   readOnly,
   errorMsg,
   deleteMsg,
+  requiredField,
   ...rest
 }) => {
   return (
@@ -125,6 +127,7 @@ export const TNInput: React.FC<TNInputProps> = ({
                 )}
               >
                 {label}
+                {requiredField && <b className="error ms-1 fw-700">*</b>}
               </span>
             )}
             <div className="flex items-center gap-6">

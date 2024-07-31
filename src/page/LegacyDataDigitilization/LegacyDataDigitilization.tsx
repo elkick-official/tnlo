@@ -38,7 +38,7 @@ const LegacyDataDigitilization = () => {
               datatestid="legency-search-testid"
               type="text"
               name="legencySearch"
-              value={inputValue}
+              // value={inputValue}
               label="Seacrh something"
               placeholder="Type something"
               ILInputLabelClass="mb-0 legency-data-seacrhbar-input"

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TNButton, TNDynamicFormsTab, TNEditSubmissionTab, TNHeader, TNSwitch } from "../../../components";
+import { TNButton, TNEditSubmissionTab, TNHeader, TNSwitch } from "../../../components";
 import "./TNAdminEditSubmissionCard.css";
  const TNAdminEditSubmissionCard = () => {
      // swicth js start

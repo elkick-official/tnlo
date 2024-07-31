@@ -52,7 +52,7 @@ import "./TNDROngoingIssues.css";
                     datatestid="dr-note-search-testid"
                     type="text"
                     name="drNoteSearch"
-                    value={inputValue}
+                    // value={inputValue}
                     label="what are you looking for?"
                     placeholder="what are you looking for?"
                     ILInputLabelClass="mb-0 data-repository-seacrhbar-input"
