@@ -16,7 +16,10 @@ const items: TabsProps['items'] = [
 {
     key: '2',
     label: 'Forms',
-    children: <TNDFForm/>,
+    children: 
+    <>
+        <TNDFForm/>,
+    </>
 },
 ];
 export const TNDynamicFormsTab = () => {

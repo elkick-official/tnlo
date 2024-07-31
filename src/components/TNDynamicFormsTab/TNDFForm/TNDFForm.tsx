@@ -63,28 +63,9 @@ import "./TNDFForm.css";
     // modal js end
     return(
         <>
-            <div className="flex w-100">
-               <TNDFCreateNewFormModal/>
-            </div>
+           
            <div className="legency-data-digitization-head-wrap flex items-end mt-3">
-                <div>
-                    <TNInput
-                    id="dr-note-search"
-                    datatestid="dr-note-search-testid"
-                    type="text"
-                    name="drNoteSearch"
-                    value={inputValue}
-                    label="what are you looking for?"
-                    placeholder="what are you looking for?"
-                    ILInputLabelClass="mb-0 data-repository-seacrhbar-input"
-                    handleChange={handleInputChange}
-                    textAreaShow={false}
-                    readOnly={false}
-                    searchBarControl
-                    errorMsg="This is an error message"
-                    />
-                </div>
-                <div className="ml-auto flex gap-6">
+                <div className="flex item-center gap-6">
                     <TNSelect
                         label="Status"
                         options={drNoteOptions}
@@ -93,18 +74,18 @@ import "./TNDFForm.css";
                         placeholder="Please select value"
                     />
                    <TNDatePicker label="Modified" options={[]}/>
-                   <div className="flex self-center gap-6">
+                </div>
+                <div className="flex self-center gap-6 ml-auto">
+                <TNSwitch
+                        label="Published"
+                        handleChange={handleSwitchChange('published')}
+                        checked={switchStates.published}
+                    />
                     <TNSwitch
-                            label="Published"
-                            handleChange={handleSwitchChange('published')}
-                            checked={switchStates.published}
-                        />
-                        <TNSwitch
-                            label="Un Published"
-                            handleChange={handleSwitchChange('unpublished')}
-                            checked={switchStates.unpublished}
-                        />
-                   </div>
+                        label="Un Published"
+                        handleChange={handleSwitchChange('unpublished')}
+                        checked={switchStates.unpublished}
+                    />
                 </div>
             </div>
             <hr className="opacity-03 my-4"/>

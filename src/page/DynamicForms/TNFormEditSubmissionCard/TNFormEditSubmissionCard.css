@@ -2,3 +2,6 @@
     border: 1px solid var(--tnl-primary-rgb);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+.df-Form-event-data-card:hover h3{
+    color: var(--tnl-primary-rgb);
+}
