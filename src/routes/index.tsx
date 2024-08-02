@@ -77,6 +77,4 @@ export const routeList: routeListProps[] = [
     to: "/form-edit-user-view",
     element: <TNFormEditUserView />,
   },
-
-  
 ];

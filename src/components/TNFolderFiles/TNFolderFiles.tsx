@@ -43,7 +43,10 @@ export const TNFolderFiles = ({
   return (
     <>
       <div className="ldd-top-filters">
-        <h3 className="fw-500">Home</h3>
+        <FoldersBreadcrumbs
+          breadcrumbs={breadcrumbs}
+          navigateToFolder={navigateToFolder}
+        />
         <div>
           <Tabs defaultActiveKey="1" items={lddItems} onChange={onChange} />
         </div>
@@ -66,23 +69,23 @@ export const TNFolderFiles = ({
         />
       </div>
       <div className="mt-3">
-        {/* <FoldersBreadcrumbs
-          breadcrumbs={breadcrumbs}
-          navigateToFolder={navigateToFolder}
-        /> */}
         <h4 className="fw-500">Folders</h4>
-        {/* <hr className="opacity-03" /> */}
         <div className="data-legency-folder-view grid mt-5">
           {currentFolders.map((dlFolderItem, dlFolderIndex) => {
             return (
               <>
-                <div className="ldd-folder-n-file">
+                <div
+                  className="ldd-folder-n-file cursor-pointer"
+                  onClick={() =>
+                    navigateToFolder(dlFolderItem?.id, dlFolderItem?.name)
+                  }
+                >
                   <div className="ldd-folder-n-file-name">
                     <div className="flex gap-4">
                       <span>
                         {<FolderOpenOutlined style={{ fontSize: "16px" }} />}
                       </span>
-                      <span>Name</span>
+                      <span>{dlFolderItem?.name || ""}</span>
                     </div>
                     <span>
                       {" "}

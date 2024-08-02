@@ -15,6 +15,9 @@ export default defineConfig({
     //   shared: ['react', 'react-dom'],
     // }),
   ],
+  server: {
+    port: 8765
+  }
   // build: {
   //   modulePreload: false,
   //   target: "esnext",

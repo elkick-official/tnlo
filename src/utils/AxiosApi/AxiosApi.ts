@@ -1,8 +1,8 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 import { config } from '../../config';
 import { handleRequestInterceptor, handleResponseInterceptor, responseInterceptorErrorFunc, requestInterceptorErrorFunc, verifyTokenRequestInterceptor } from './AxiosApiService';
 
-const appBaseUrlInstance: AxiosInstance = axios.create({
+const appBaseUrlInstance = axios.create({
     baseURL: config.APP_URL,
 });
 

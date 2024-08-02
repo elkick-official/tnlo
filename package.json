@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode dev",
     "build:dev": "vite build --mode dev",
     "build:stage": "vite build --mode stage",
     "build:prod": "vite build --mode prod",
@@ -16,7 +16,7 @@
     "@originjs/vite-plugin-federation": "^1.3.5",
     "antd": "^5.19.1",
     "antd-css-utilities": "^2.1.0",
-    "axios": "^1.7.2",
+    "axios": "^1.7.1",
     "clsx": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

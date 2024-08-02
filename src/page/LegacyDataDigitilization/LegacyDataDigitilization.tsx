@@ -9,8 +9,8 @@ const LegacyDataDigitilization = () => {
   const {
     createFolder,
     uploadFile,
-    navigateToFolder,
     allFoldersNFiles,
+    navigateToFolder,
     currentFolderId,
     breadcrumbs,
     currentFolders,
@@ -25,12 +25,12 @@ const LegacyDataDigitilization = () => {
     isOpenUploadModal,
     handleUploadCOpen,
     handleUploadCancel,
-    uploadForm,
+    handleChangeTags,
+    fileList,
+    handleUpload,
+    handleFilelist,
+    isFileUploding,
   } = useLegacyDataDigitilization();
-
-  const handleButtonClick = () => {
-    console.log("Button clicked");
-  };
 
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -107,7 +107,12 @@ const LegacyDataDigitilization = () => {
       <TNUploadFileModal
         isOpenUploadModal={isOpenUploadModal}
         handleUploadCancel={handleUploadCancel}
-        uploadForm={uploadForm}
+        handleChangeTags={handleChangeTags}
+        fileList={fileList}
+        handleUpload={handleUpload}
+        handleFilelist={handleFilelist}
+        isFileUploding={isFileUploding}
+        currentFolder={currentFolderId}
       />
     </>
   );
