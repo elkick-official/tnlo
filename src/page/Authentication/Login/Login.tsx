@@ -107,7 +107,7 @@ const Login = () => {
                     <TNButton
                       id="create"
                       datatestid="create-testid"
-                      type="button"
+                      type="submit"
                       ILBtnClass="w-full"
                       //   handleChange={dashboardNavigate}
                       disabled={false}
