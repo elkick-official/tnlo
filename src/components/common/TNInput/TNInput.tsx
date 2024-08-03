@@ -24,7 +24,7 @@ interface TNInputProps {
   readOnly?: boolean;
   errorMsg?: string;
   deleteMsg?: boolean;
-  requiredField? : boolean;
+  requiredField?: boolean;
   [rest: string]: any;
 }
 
@@ -62,7 +62,7 @@ export const TNInput: React.FC<TNInputProps> = ({
             {label && (
               <span
                 className={clsx(
-                  "ILInputLabelText fw-500 text-tnl-white-edgar d-block",
+                  "ILInputLabelText fw-500 text-tnl-white-edgar d-block"
                 )}
               >
                 {label}
@@ -76,9 +76,9 @@ export const TNInput: React.FC<TNInputProps> = ({
               placeholder={placeholder}
               maxLength={maxLength}
               className={clsx("ILTextInput form-control w-full")}
-            //   onChange={handleChange}
+              //   onChange={handleChange}
               // prefix={prefix}
-            //   autoSize={autoSize ? 'true' : undefined}
+              //   autoSize={autoSize ? 'true' : undefined}
               {...rest}
             />
           </label>
@@ -87,7 +87,8 @@ export const TNInput: React.FC<TNInputProps> = ({
         <>
           <div
             className={clsx(
-              "searchBarWrap relative w-full", ILInputLabelClass,
+              "searchBarWrap relative w-full",
+              ILInputLabelClass,
               {
                 ["searchPositionStyle"]: searchIconPositionLeft,
               }
@@ -105,11 +106,7 @@ export const TNInput: React.FC<TNInputProps> = ({
               // prefix={prefix}
               {...rest}
             />
-            <span
-              className={clsx(
-                "searchIcon lh-0 absolute cursor-pointer",
-              )}
-            >
+            <span className={clsx("searchIcon lh-0 absolute cursor-pointer")}>
               {Icons.search}
             </span>
           </div>
@@ -123,7 +120,7 @@ export const TNInput: React.FC<TNInputProps> = ({
             {label && (
               <span
                 className={clsx(
-                  "ILInputLabelText fw-500 text-tnl-white-edgar d-block",
+                  "ILInputLabelText fw-500 text-tnl-white-edgar d-block"
                 )}
               >
                 {label}
@@ -143,18 +140,14 @@ export const TNInput: React.FC<TNInputProps> = ({
                 readOnly={readOnly}
                 {...rest}
               />
-               {deleteMsg && (
-                 <span className="lh-0 cursor-pointer">
-                 <DeleteOutlined className="icon-width-mid svg-hover-red"/>
-              </span>
-            )}
+              {deleteMsg && (
+                <span className="lh-0 cursor-pointer">
+                  <DeleteOutlined className="icon-width-mid svg-hover-red" />
+                </span>
+              )}
             </div>
             {errorMsg && (
-              <span
-                className={clsx(
-                  "edInputErrorMsg d-block mt-1 error",
-                )}
-              >
+              <span className={clsx("edInputErrorMsg d-block mt-1 error")}>
                 {errorMsg}
               </span>
             )}

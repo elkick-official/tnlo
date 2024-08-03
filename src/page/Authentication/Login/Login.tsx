@@ -57,7 +57,7 @@ const Login = () => {
                     <TNInput
                       id="username-input"
                       datatestid="df-Label-testid"
-                      type="password"
+                      type="email"
                       name="dfLabel"
                       // value={inputValue}
                       // label="Email"
