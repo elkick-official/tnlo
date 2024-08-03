@@ -31,15 +31,15 @@ function App() {
                   ))}
                 </Route>
                 <Route
-                    path="/"
-                    element={
-                      <ProtectedRoute isAuth={false}>
-                        <AuthLayout />
-                      </ProtectedRoute>
-                    }
-                  >
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                  path="/"
+                  element={
+                    <ProtectedRoute isAuth={false}>
+                      <AuthLayout />
+                    </ProtectedRoute>
+                  }
+                >
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
                 </Route>
               </Routes>
             </Router>

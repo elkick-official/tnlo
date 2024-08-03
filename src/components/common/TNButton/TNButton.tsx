@@ -1,11 +1,11 @@
-import React, { FC, MouseEventHandler, ReactNode } from 'react';
-import { clsx } from 'clsx';
-import './TNButton.css';
+import React, { FC, MouseEventHandler, ReactNode } from "react";
+import { clsx } from "clsx";
+import "./TNButton.css";
 
 interface TNButtonProps {
   id?: string;
   datatestid?: string;
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   ILBtnClass?: string;
   handleChange?: MouseEventHandler<HTMLButtonElement>;
   children?: ReactNode;
@@ -16,7 +16,7 @@ interface TNButtonProps {
 export const TNButton: FC<TNButtonProps> = ({
   id,
   datatestid,
-  type = 'button',
+  type = "button",
   ILBtnClass,
   handleChange,
   children,
@@ -26,14 +26,14 @@ export const TNButton: FC<TNButtonProps> = ({
   return (
     <button
       id={id}
-    //   datatestid={datatestid}
+      //   datatestid={datatestid}
       type={type}
       disabled={disabled}
       className={clsx(
         ILBtnClass,
-        'customButton h5 fw-600 text-tnl-white transition-smooth relative cursor-pointer'
+        "customButton h5 fw-600 text-tnl-white transition-smooth relative cursor-pointer"
       )}
-      onClick={handleChange}
+      // onClick={handleChange}
       {...rest}
     >
       <span className="flex items-center content-center transition-smooth">
