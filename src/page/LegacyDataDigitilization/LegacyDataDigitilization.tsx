@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { TNButton, TNHeader, TNInput, TNLDTab } from "../../components";
+import {
+  TNButton,
+  TNFolderFiles,
+  TNHeader,
+  TNInput,
+  TNLDTab,
+} from "../../components";
 import TNCreateFolderModal from "../../components/TNFolderFiles/TNCreateFolderModal";
 import TNUploadFileModal from "../../components/TNFolderFiles/TNUploadFileModal";
 import { useLegacyDataDigitilization } from "../../hooks";
@@ -30,6 +36,7 @@ const LegacyDataDigitilization = () => {
     handleUpload,
     handleFilelist,
     isFileUploding,
+    isFetchFiles,
   } = useLegacyDataDigitilization();
 
   const [inputValue, setInputValue] = useState<string>("");
@@ -86,11 +93,12 @@ const LegacyDataDigitilization = () => {
           </div>
           <div className="legency-data-top-space legency-data-select-box flex items-center gap-6"></div>
           <div className="legency-data-tab-wrap mt-0 bg-tnl-white">
-            <TNLDTab
+            <TNFolderFiles
               currentFolders={currentFolders}
               currentFiles={currentFiles}
               breadcrumbs={breadcrumbs}
               navigateToFolder={navigateToFolder}
+              isFetchFiles={isFetchFiles}
             />
           </div>
         </section>
@@ -112,7 +120,7 @@ const LegacyDataDigitilization = () => {
         handleUpload={handleUpload}
         handleFilelist={handleFilelist}
         isFileUploding={isFileUploding}
-        currentFolder={currentFolderId}
+        currentFolderId={currentFolderId}
       />
     </>
   );

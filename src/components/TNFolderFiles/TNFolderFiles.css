@@ -32,7 +32,7 @@
 .ldd-folder-n-file {
   background-color: var(--tnl-tristesse-01);
   padding: 12px 18px;
-  min-width: 150px;
+  min-width: 160px;
   border-radius: 8px;
   /* border: 1px solid grey; */
 }
@@ -53,4 +53,26 @@
   justify-content: space-between;
   width: 100%;
   margin: 1rem orem;
+}
+
+.tn-file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 130px;
+  font-weight: 500;
+}
+
+.tn-file-breadcrumbs {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 800px;
+}
+
+.tn-pdf-iframe {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }

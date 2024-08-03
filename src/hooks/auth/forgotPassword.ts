@@ -8,6 +8,7 @@ type ForgotPasswordHookReturnType = {
 
 export const useForgotPasswordHook = (): ForgotPasswordHookReturnType => {
   const navigate = useNavigate();
+
   const loginNavigate = () => {
     navigate("/login");
   };

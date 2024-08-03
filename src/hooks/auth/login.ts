@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { doLogin, getUserById } from "../../api";
 import useDetailStore from "../../store/useStore";
+import { infoNotification } from "../../utils/notification.util";
 
 type LoginHookReturnType = {
   handleLogin: (values: loginFormValues) => void;
@@ -18,13 +19,14 @@ export const useLoginHook = (): LoginHookReturnType => {
 
   const handleLogin = async (values: loginFormValues) => {
     const loginResponseData = await doLogin(values);
-    if (loginResponseData) {
+    console.log({ loginResponseData })
+    if (loginResponseData?.jwtToken) {
       localStorage.setItem("_token", loginResponseData?.jwtToken);
       const userDetailsResponse = await getUserById(loginResponseData?.userId);
       setUserDetails(userDetailsResponse);
       navigate("/");
     } else {
-      alert("Unauthorized.");
+      infoNotification("Unauthorized.");
     }
   };
 

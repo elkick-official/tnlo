@@ -1,9 +1,19 @@
 export interface IFolder {
-    id: number | null;
-    name: string;
+    folderId: number;
+    folderName: string;
     parentId?: null | string | number | undefined;
-    type?: string;
-    author?: string
+
+}
+
+export interface IFiles {
+    fileContent: string;
+    fileId: number;
+    fileName: string;
+    fileVersionId: null | number
+    folderId: number;
+    folderName: string;
+    sysFileName: string
+    tagData: string
 }
 
 export type IcurrentFolderId = string | number | null | undefined

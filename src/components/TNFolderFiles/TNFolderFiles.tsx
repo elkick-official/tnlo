@@ -1,25 +1,22 @@
-import React, { useState } from "react";
-import { noticeFile } from "../../const/imageData";
-import {
-  dataLegencyFile,
-  dataLegencyFolder,
-  legencyModifiedOptions,
-  legencyTypeOptions,
-} from "../../const/data";
-import "./TNFolderFiles.css";
-import { IBreadCrumbs, IFolder } from "../../types/legacyData.types";
-import FoldersBreadcrumbs from "./FoldersBreadcrumbs";
-import { FolderOpenOutlined, MoreOutlined } from "@ant-design/icons";
-import { pdf } from "../../assets";
-import { Image, Tabs } from "antd";
-import { TNSelect } from "../common/TNSelect/TNSelect";
+import { CloseOutlined } from "@ant-design/icons";
+import { Button, Modal, Tabs } from "antd";
+import { useState } from "react";
+import { legencyModifiedOptions, legencyTypeOptions } from "../../const/data";
 import { lddItems } from "../../constOptions/Ldd.options";
+import { IBreadCrumbs, IFolder } from "../../types/legacyData.types";
+import { TNSelect } from "../common/TNSelect/TNSelect";
+import FoldersBreadcrumbs from "./FoldersBreadcrumbs";
+import TNFilePreview from "./TNFilePreview";
+import TNFiles from "./TNFiles";
+import "./TNFolderFiles.css";
+import TNFolders from "./TNFolders";
 
 interface Props {
   currentFolders: IFolder[];
   currentFiles: IFolder[];
   breadcrumbs: IBreadCrumbs[];
   navigateToFolder: (params: string, param2: string) => void;
+  isFetchFiles: boolean;
 }
 
 export const TNFolderFiles = ({
@@ -27,10 +24,22 @@ export const TNFolderFiles = ({
   currentFiles,
   navigateToFolder,
   breadcrumbs,
+  isFetchFiles,
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
   >(undefined);
+  const [previewFileRequested, setPreviewFileRequested] = useState("");
+  const [isPreviewFileRequested, setIsPreviewFileRequested] = useState(false);
+
+  const handlePreviewFile = (fileUrl: string) => {
+    setIsPreviewFileRequested(true);
+    setPreviewFileRequested(fileUrl);
+  };
+
+  const handleClosePreviewModal = () => {
+    setIsPreviewFileRequested(false);
+  };
 
   const handleSelectChange = (value: string | number) => {
     setSelectedValue(value);
@@ -68,71 +77,31 @@ export const TNFolderFiles = ({
           placeholder="Please select"
         />
       </div>
-      <div className="mt-3">
-        <h4 className="fw-500">Folders</h4>
-        <div className="data-legency-folder-view grid mt-5">
-          {currentFolders.map((dlFolderItem, dlFolderIndex) => {
-            return (
-              <>
-                <div
-                  className="ldd-folder-n-file cursor-pointer"
-                  onClick={() =>
-                    navigateToFolder(dlFolderItem?.id, dlFolderItem?.name)
-                  }
-                >
-                  <div className="ldd-folder-n-file-name">
-                    <div className="flex gap-4">
-                      <span>
-                        {<FolderOpenOutlined style={{ fontSize: "16px" }} />}
-                      </span>
-                      <span>{dlFolderItem?.name || ""}</span>
-                    </div>
-                    <span>
-                      {" "}
-                      <MoreOutlined style={{ fontSize: "18px" }} />
-                    </span>
-                  </div>
-                </div>
-                {/* <div
-                  className="data-legency-folder-box-new flex justify-end flex-col transition-smooth"
-                  key={dlFolderIndex}
-                  onClick={() =>
-                    navigateToFolder(dlFolderItem?.id, dlFolderItem?.name)
-                  }
-                >
-                  <h4 className="fw-500 h5">{dlFolderItem?.name}</h4>
-                </div> */}
-              </>
-            );
-          })}
-        </div>
-      </div>
-      <div className="mt-7">
-        <h4 className="fw-500">Files</h4>
-        {/* <hr className="opacity-03" /> */}
-        <div className="data-legency-files-view grid mt-5">
-          {currentFiles.map((dlFileItem, dlFileIndex) => {
-            return (
-              <>
-                <div className="ldd-folder-n-file">
-                  <div className="ldd-folder-n-file-icon">
-                    <Image src={pdf} width={130} height={130} />
-                  </div>
-                  <div className="ldd-folder-n-file-name">
-                    <div className="flex gap-4">
-                      <span>Name</span>
-                    </div>
-                    <span>
-                      {" "}
-                      <MoreOutlined style={{ fontSize: "18px" }} />
-                    </span>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-        </div>
-      </div>
+      <TNFolders
+        currentFolders={currentFolders}
+        navigateToFolder={navigateToFolder}
+        isFetchFiles={isFetchFiles}
+      />
+      <TNFiles
+        currentFiles={currentFiles}
+        handlePreviewFile={handlePreviewFile}
+        isFetchFiles={isFetchFiles}
+      />
+
+      <Modal
+        title={<div>Upload a Document</div>}
+        open={isPreviewFileRequested}
+        onCancel={handleClosePreviewModal}
+        footer={() => (
+          <div className="flex justify-between w-full">
+            <Button type="primary">Download</Button>
+          </div>
+        )}
+        closeIcon={<CloseOutlined />}
+        width={800}
+      >
+        <TNFilePreview fileUrl={previewFileRequested} fullView={true} />
+      </Modal>
     </>
   );
 };

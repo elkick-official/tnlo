@@ -16,6 +16,7 @@ const TNUploadFileModal = ({
   currentFolderId,
   handleChangeTags,
 }: any) => {
+  console.log({ currentFolderId });
   const uploadProps: UploadProps = {
     name: "file",
     multiple: true,
@@ -86,7 +87,6 @@ const TNUploadFileModal = ({
             <Button className="mt-10">Browse</Button>
           </Dragger>
 
-          <p>Document Details</p>
           <Form name="basic" layout="vertical">
             <Row className="mt-6">
               <Col span={24}>

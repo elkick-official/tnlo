@@ -33,7 +33,7 @@ export const TNButton: FC<TNButtonProps> = ({
         ILBtnClass,
         "customButton h5 fw-600 text-tnl-white transition-smooth relative cursor-pointer"
       )}
-      // onClick={handleChange}
+      onClick={handleChange}
       {...rest}
     >
       <span className="flex items-center content-center transition-smooth">

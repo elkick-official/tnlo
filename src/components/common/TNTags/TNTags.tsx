@@ -12,7 +12,7 @@ const tagInputStyle: React.CSSProperties = {
 
 const TNTags = ({ handleChangeTags }: any) => {
   const { token } = theme.useToken();
-  const [tags, setTags] = useState<string[]>(["File"]);
+  const [tags, setTags] = useState<string[]>([]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [editInputIndex, setEditInputIndex] = useState(-1);
