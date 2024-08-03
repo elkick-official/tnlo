@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { doLogin, getUserById } from "../../api";
 import useDetailStore from "../../store/useStore";
-import { useEffect } from "react";
 
 type LoginHookReturnType = {
   handleLogin: (values: loginFormValues) => void;
@@ -17,17 +16,15 @@ export const useLoginHook = (): LoginHookReturnType => {
   const { userDetails, setUserDetails } = useDetailStore();
   const handleLogin = async (values: loginFormValues) => {
     const loginResponseData = await doLogin(values);
-    localStorage.setItem("_token", loginResponseData?.data?.jwtToken);
-    const userDetailsResponse = await getUserById(
-      loginResponseData?.data?.userId
-    );
-    setUserDetails(userDetailsResponse?.data);
-    navigate("/");
+    if (loginResponseData) {
+      localStorage.setItem("_token", loginResponseData?.jwtToken);
+      const userDetailsResponse = await getUserById(loginResponseData?.userId);
+      setUserDetails(userDetailsResponse);
+      navigate("/");
+    } else {
+      alert("Unauthorized.");
+    }
   };
-
-  useEffect(() => {
-    console.log({ userDetails });
-  }, [userDetails]);
   const onFinishFailed = () => {};
 
   return { handleLogin, onFinishFailed };

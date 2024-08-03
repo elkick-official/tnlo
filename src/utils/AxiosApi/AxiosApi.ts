@@ -1,17 +1,27 @@
-import axios from 'axios';
-import { config } from '../../config';
-import { handleRequestInterceptor, handleResponseInterceptor, responseInterceptorErrorFunc, requestInterceptorErrorFunc, verifyTokenRequestInterceptor } from './AxiosApiService';
+import axios from "axios";
+import { config } from "../../config";
+import {
+  handleRequestInterceptor,
+  handleResponseInterceptor,
+  responseInterceptorErrorFunc,
+  requestInterceptorErrorFunc,
+  verifyTokenRequestInterceptor,
+} from "./AxiosApiService";
 
 const appBaseUrlInstance = axios.create({
-    baseURL: config.APP_URL,
+  baseURL: config.APP_URL,
 });
 
 //Request Interceptor
-appBaseUrlInstance.interceptors.request.use(handleRequestInterceptor, requestInterceptorErrorFunc);
+appBaseUrlInstance.interceptors.request.use(
+  handleRequestInterceptor,
+  requestInterceptorErrorFunc
+);
 
 //Response Interceptor
-appBaseUrlInstance.interceptors.response.use(handleResponseInterceptor, responseInterceptorErrorFunc);
+appBaseUrlInstance.interceptors.response.use(
+  handleResponseInterceptor,
+  responseInterceptorErrorFunc
+);
 
-export {
-    appBaseUrlInstance
-}
+export { appBaseUrlInstance };
