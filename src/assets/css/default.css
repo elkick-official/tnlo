@@ -653,3 +653,7 @@ header .active {
 .overflow-y{
   overflow-y: auto;
 }
+.svg-icon-big-size svg{
+  width: 20px;
+  height: 20px;
+}

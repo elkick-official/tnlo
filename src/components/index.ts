@@ -29,5 +29,7 @@ import { TNEditSubmissionTab } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNE
 import { TNEditForm } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNEditForm.tsx";
 import { TNSubmissionForm } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNSubmissionForm.tsx";
 import { TNDFCreateNewFormModal } from "./TNDynamicFormsTab/TNDFCreateNewFormModal/TNDFCreateNewFormModal.tsx";
+import { TNSettingsTabingForm } from "./TNSettingsTabingForm/TNSettingsTabingForm.tsx";
+import { TNEditProfileTabData } from "./TNSettingsTabingForm/TNEditProfileTabData.tsx";
 export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, 
-    TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker, TNDynamicFormsTab, TNEditSubmissionTab, TNEditForm, TNSubmissionForm, TNDFCreateNewFormModal }
+    TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker, TNDynamicFormsTab, TNEditSubmissionTab, TNEditForm, TNSubmissionForm, TNDFCreateNewFormModal, TNSettingsTabingForm, TNEditProfileTabData }
