@@ -15,6 +15,7 @@ type loginFormValues = {
 export const useLoginHook = (): LoginHookReturnType => {
   const navigate = useNavigate();
   const { userDetails, setUserDetails } = useDetailStore();
+
   const handleLogin = async (values: loginFormValues) => {
     const loginResponseData = await doLogin(values);
     localStorage.setItem("_token", loginResponseData?.data?.jwtToken);
@@ -28,7 +29,8 @@ export const useLoginHook = (): LoginHookReturnType => {
   useEffect(() => {
     console.log({ userDetails });
   }, [userDetails]);
-  const onFinishFailed = () => {};
+
+  const onFinishFailed = () => { };
 
   return { handleLogin, onFinishFailed };
 };

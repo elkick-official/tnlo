@@ -11,8 +11,8 @@ export const useForgotPasswordHook = (): ForgotPasswordHookReturnType => {
   const loginNavigate = () => {
     navigate("/login");
   };
-  const handleForgotPassword = async (values: unknown) => {};
-  const onFinishFailed = () => {};
+  const handleForgotPassword = async (values: unknown) => { };
+  const onFinishFailed = () => { };
 
   return { handleForgotPassword, onFinishFailed, loginNavigate };
 };
