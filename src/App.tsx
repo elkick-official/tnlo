@@ -6,6 +6,9 @@ import { configProvider, lightTheme } from "./utils";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { TNFooter, TNHeader } from "./components";
 import LayoutMain from "./layout/Layout";
+import AuthLayout from "./layout/AuthLayout";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
+import { ForgotPassword, Login } from "./page";
 import "antd-css-utilities/utility.min.css";
 import "./App.css";
 function App() {
@@ -26,6 +29,17 @@ function App() {
                       element={route.element}
                     />
                   ))}
+                </Route>
+                <Route
+                    path="/"
+                    element={
+                      <ProtectedRoute isAuth={false}>
+                        <AuthLayout />
+                      </ProtectedRoute>
+                    }
+                  >
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
                 </Route>
               </Routes>
             </Router>

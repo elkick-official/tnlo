@@ -1,0 +1,19 @@
+.auth-left-col{
+ width: 50%;   
+ height: 100vh;
+ background-color: var(--tnl-primary-rgb);
+}
+.auth-right-col{
+    width: 50%;   
+    height: 100vh;
+
+}
+.auth-form-box{
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+.auth-form-box form{
+    width: 100%;
+    margin-top: 40px;
+}

@@ -1,4 +1,5 @@
-import { LegacyDataDigitilization, TNFormEditUserView } from "../page";
+import AuthLayout from "../layout/AuthLayout";
+import { LegacyDataDigitilization, Login, TNFormEditUserView } from "../page";
 import CalendarForecast from "../page/CalendarForecast/CalendarForecast";
 import Dashboard from "../page/Dashboard/Dashboard";
 import DataRepository from "../page/DataRepository/DataRepository";
