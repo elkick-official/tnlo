@@ -35,7 +35,7 @@ const DynamicForms = () => {
             searchBarControl
             errorMsg="This is an error message"
           />
-          <div className="flex w-100 flex-0-auto ml-auto">
+          <div className="ml-auto">
             <TNDFCreateNewFormModal />
           </div>
         </div>
