@@ -1,0 +1,3 @@
+.setting-tab-wrap{
+    height: calc(100vh - var(--header-height) - 70px);
+}

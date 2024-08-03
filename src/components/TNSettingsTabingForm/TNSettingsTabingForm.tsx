@@ -1,9 +1,10 @@
 import React from 'react';
 import { Tabs } from 'antd';
 import { TabsProps } from "antd";
-import { EditOutlined, HomeOutlined, ProfileOutlined } from '@ant-design/icons';
-import "./TNSettingsTabingForm.css";
+import { EditOutlined, HomeOutlined, LogoutOutlined, ProfileOutlined } from '@ant-design/icons';
 import { TNEditProfileTabData } from './TNEditProfileTabData';
+import "./TNSettingsTabingForm.css";
+import { Link } from 'react-router-dom';
 export const TNSettingsTabingForm = () => {
     const onChange = (key: string) => {
         console.log(key);
@@ -28,12 +29,18 @@ export const TNSettingsTabingForm = () => {
                 </span>
                 Default Landing Page
             </div>,
-            children: 'Content of Tab Pane 2',
+            children: 'Coming Soon',
         },
     ];
     return(
         <>
             <Tabs defaultActiveKey="1" items={items} onChange={onChange} tabPosition="left" className="setting-table-wrap"/>
+            <Link to="/login" className='flex items-center gap-4 setting-tab-logout-btn-wrap absolute'>
+                <span className='lh-0'>
+                    <LogoutOutlined className='svg-icon-big-size'/>
+                </span>
+                <h4>Logout</h4>
+            </Link>
         </>
     )
 }
