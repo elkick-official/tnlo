@@ -58,3 +58,13 @@ export const getAllFoldersNFiles = async (id: string | number) => {
         throw error;
     }
 };
+
+export const deleteFile = async (type: string, id: number) => {
+    try {
+        const response = await appBaseUrlInstance.delete(`api/${type}/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Failed to get folders:', error);
+        throw error;
+    }
+};

@@ -24,7 +24,7 @@ export const useLoginHook = (): LoginHookReturnType => {
       localStorage.setItem("_token", loginResponseData?.jwtToken);
       const userDetailsResponse = await getUserById(loginResponseData?.userId);
       setUserDetails(userDetailsResponse);
-      navigate("/");
+      navigate("/legacy-data-digitilization");
     } else {
       infoNotification("Unauthorized.");
     }

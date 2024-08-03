@@ -1,6 +1,6 @@
 import { Form } from "antd";
 import { useEffect, useRef, useState } from "react";
-import { createNewFolder, getAllFoldersNFiles } from "../../api/legacy.api";
+import { createNewFolder, deleteFile, getAllFoldersNFiles } from "../../api/legacy.api";
 import { IBreadCrumbs, IcurrentFolderId, IFiles, IFolder } from "../../types/legacyData.types";
 import { errorNotification, infoNotification } from "../../utils/notification.util";
 import { fileUpload } from "../../api/uploadDoc.api";
@@ -169,12 +169,26 @@ const useLegacyDataDigitilization = () => {
         setIsOpenUploadModal(false)
     }
 
-    const handleDeleteFile = async (fileId: number, type: strin) => {
+    const handleDeleteFile = async (fileId: number, type: string) => {
+        const obj = {
+            folder: "Folders",
+            file: "Files"
+        }
 
         if (type == "folder") {
-
+            const updatedFolders = folders?.filter(data => data?.folderId !== fileId)
+            setFolders(updatedFolders)
         } else {
+            const updatedFiles = files?.filter(data => data?.fileId !== fileId)
+            setFiles(updatedFiles)
+        }
 
+        try {
+            const res = await deleteFile(obj[type], fileId)
+
+            console.log({ res })
+        } catch (error) {
+            console.log(error)
         }
     }
 

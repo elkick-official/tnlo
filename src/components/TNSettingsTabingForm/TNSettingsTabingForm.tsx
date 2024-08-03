@@ -9,8 +9,9 @@ import {
 } from "@ant-design/icons";
 import { TNEditProfileTabData } from "./TNEditProfileTabData";
 import "./TNSettingsTabingForm.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const TNSettingsTabingForm = () => {
+  const navigate = useNavigate();
   const onChange = (key: string) => {
     console.log(key);
   };
@@ -41,6 +42,11 @@ export const TNSettingsTabingForm = () => {
       children: "Coming Soon",
     },
   ];
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
   return (
     <>
       <Tabs
@@ -50,15 +56,15 @@ export const TNSettingsTabingForm = () => {
         tabPosition="left"
         className="setting-table-wrap"
       />
-      <Link
-        to="/login"
-        className="flex items-center gap-4 setting-tab-logout-btn-wrap absolute"
+      <div
+        onClick={handleLogout}
+        className="flex items-center gap-4 setting-tab-logout-btn-wrap absolute cursor-pointer"
       >
         <span className="lh-0">
           <LogoutOutlined className="svg-icon-big-size" />
         </span>
         <h4>Logout</h4>
-      </Link>
+      </div>
     </>
   );
 };

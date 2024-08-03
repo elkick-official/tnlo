@@ -19,7 +19,13 @@ const TNFile = ({
   const items: MenuProps["items"] = [
     {
       label: (
-        <div className="flex gap-2">
+        <div
+          className="flex gap-2"
+          onClick={(e) => {
+            e.stopPropagation();
+            // handleDeleteFile(data?.id, type);
+          }}
+        >
           <EditOutlined />
           Rename
         </div>
@@ -31,7 +37,10 @@ const TNFile = ({
       label: (
         <div
           className="flex gap-2"
-          onClick={() => handleDeleteFile(data?.id, type)}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDeleteFile(data?.id, type);
+          }}
         >
           <DeleteOutlined />
           Delete
