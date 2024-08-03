@@ -17,6 +17,7 @@ interface Props {
   breadcrumbs: IBreadCrumbs[];
   navigateToFolder: (params: string, param2: string) => void;
   isFetchFiles: boolean;
+  handleDeleteFile: (params: number, param2: string) => void;
 }
 
 export const TNFolderFiles = ({
@@ -25,6 +26,7 @@ export const TNFolderFiles = ({
   navigateToFolder,
   breadcrumbs,
   isFetchFiles,
+  handleDeleteFile,
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
@@ -81,11 +83,13 @@ export const TNFolderFiles = ({
         currentFolders={currentFolders}
         navigateToFolder={navigateToFolder}
         isFetchFiles={isFetchFiles}
+        handleDeleteFile={handleDeleteFile}
       />
       <TNFiles
         currentFiles={currentFiles}
         handlePreviewFile={handlePreviewFile}
         isFetchFiles={isFetchFiles}
+        handleDeleteFile={handleDeleteFile}
       />
 
       <Modal

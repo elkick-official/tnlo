@@ -37,6 +37,7 @@ const LegacyDataDigitilization = () => {
     handleFilelist,
     isFileUploding,
     isFetchFiles,
+    handleDeleteFile,
   } = useLegacyDataDigitilization();
 
   const [inputValue, setInputValue] = useState<string>("");
@@ -99,6 +100,7 @@ const LegacyDataDigitilization = () => {
               breadcrumbs={breadcrumbs}
               navigateToFolder={navigateToFolder}
               isFetchFiles={isFetchFiles}
+              handleDeleteFile={handleDeleteFile}
             />
           </div>
         </section>

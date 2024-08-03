@@ -1,7 +1,12 @@
 import Loader from "../common/Loader/Loader";
 import TNFile from "./TNFile";
 
-const TNFiles = ({ currentFiles, handlePreviewFile, isFetchFiles }: any) => {
+const TNFiles = ({
+  currentFiles,
+  handlePreviewFile,
+  isFetchFiles,
+  handleDeleteFile,
+}: any) => {
   return (
     <div className="mt-7">
       <h4 className="fw-500">Files</h4>
@@ -30,6 +35,7 @@ const TNFiles = ({ currentFiles, handlePreviewFile, isFetchFiles }: any) => {
                   }}
                   navigateToFolder={() => {}}
                   handlePreviewFile={handlePreviewFile}
+                  handleDeleteFile={handleDeleteFile}
                 />
               </>
             );

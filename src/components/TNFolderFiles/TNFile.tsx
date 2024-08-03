@@ -1,5 +1,10 @@
-import { FolderOpenOutlined, MoreOutlined } from "@ant-design/icons";
-import { Image } from "antd";
+import {
+  DeleteOutlined,
+  EditOutlined,
+  FolderOpenOutlined,
+  MoreOutlined,
+} from "@ant-design/icons";
+import { Dropdown, Image, MenuProps, Space } from "antd";
 import { pdf } from "../../assets";
 import TNFilePreview from "./TNFilePreview";
 
@@ -9,7 +14,33 @@ const TNFile = ({
   type,
   navigateToFolder,
   handlePreviewFile = () => {},
+  handleDeleteFile,
 }: any) => {
+  const items: MenuProps["items"] = [
+    {
+      label: (
+        <div className="flex gap-2">
+          <EditOutlined />
+          Rename
+        </div>
+      ),
+      key: "0",
+    },
+
+    {
+      label: (
+        <div
+          className="flex gap-2"
+          onClick={() => handleDeleteFile(data?.id, type)}
+        >
+          <DeleteOutlined />
+          Delete
+        </div>
+      ),
+      key: "0",
+    },
+  ];
+
   return (
     <div
       key={key}
@@ -35,7 +66,21 @@ const TNFile = ({
             <span className="tn-file-name">{data?.name || ""}</span>
           </div>
           <span>
-            <MoreOutlined style={{ fontSize: "18px" }} />
+            <Dropdown menu={{ items }} trigger={["click"]}>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
+              >
+                <Space>
+                  <MoreOutlined
+                    className="cursor-pointer"
+                    style={{ fontSize: "18px" }}
+                  />
+                </Space>
+              </a>
+            </Dropdown>
           </span>
         </div>
       </div>

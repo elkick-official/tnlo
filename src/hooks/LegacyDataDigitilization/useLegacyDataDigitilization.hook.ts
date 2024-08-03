@@ -169,6 +169,14 @@ const useLegacyDataDigitilization = () => {
         setIsOpenUploadModal(false)
     }
 
+    const handleDeleteFile = async (fileId: number, type: strin) => {
+
+        if (type == "folder") {
+
+        } else {
+
+        }
+    }
 
     useEffect(() => {
         if (isNewFolder) {
@@ -208,7 +216,8 @@ const useLegacyDataDigitilization = () => {
         handleUpload,
         handleFilelist,
         isFileUploding,
-        isFetchFiles
+        isFetchFiles,
+        handleDeleteFile
     }
 
 }

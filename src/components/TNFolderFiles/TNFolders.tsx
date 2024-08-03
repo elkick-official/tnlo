@@ -7,7 +7,12 @@ interface TNFoldersProps {
   //   navigateToFolder
 }
 
-const TNFolders = ({ currentFolders, navigateToFolder, isFetchFiles }: any) => {
+const TNFolders = ({
+  currentFolders,
+  navigateToFolder,
+  isFetchFiles,
+  handleDeleteFile,
+}: any) => {
   return (
     <div className="mt-3">
       <h4 className="fw-500">Folders</h4>
@@ -33,6 +38,7 @@ const TNFolders = ({ currentFolders, navigateToFolder, isFetchFiles }: any) => {
                     id: data?.folderId || "",
                   }}
                   navigateToFolder={navigateToFolder}
+                  handleDeleteFile={handleDeleteFile}
                 />
               </>
             );
