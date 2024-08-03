@@ -1,0 +1,9 @@
+.setting-table-wrap .ant-tabs-tab-btn{
+    font-size: 16px;
+}
+.setting-table-wrap .ant-tabs-tab-btn .svg-icon-edit-profile{
+    transform: translateY(-1px);
+}
+.setting-table-wrap .ant-tabs-tab-btn .svg-icon-home{
+    transform: translateY(-3px);
+}

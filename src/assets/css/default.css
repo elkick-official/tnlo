@@ -40,7 +40,8 @@ html {
 
 /* TEXT COLORS START */
 .white.text-tnl-white,
-.text-tnl-white {
+.text-tnl-white,
+.white.text-tnl-white {
   color: var(--tnl-white);
 }
 .text-tnl-black {
@@ -55,7 +56,8 @@ html {
 .text-tnl-night-night {
   color: var(--tnl-night-night);
 }
-.text-tnl-rapunzel-silver {
+.text-tnl-rapunzel-silver ,
+.rapunzel-silver.text-tnl-rapunzel-silver{
   color: var(--tnl-rapunzel-silver);
 }
 .text-tnl-white-edgar {
@@ -120,6 +122,9 @@ html {
 }
 .bg-tnl-night-night {
   background-color: var(--tnl-night-night);
+}
+.bg-tnl-primary-rgb-light{
+  background-color: var(--tnl-primary-rgb-light);
 }
 .bg-tnl-rapunzel-silver {
   background-color: var(--tnl-rapunzel-silver);
@@ -272,6 +277,10 @@ p,
 
 .h-inherit {
   height: inherit;
+}
+
+.w-100{
+  width: 100%;
 }
 
 /* COMMON CSS */
@@ -640,4 +649,11 @@ header .active {
 }
 .width.w-auto {
   width: auto !important;
+}
+.overflow-y{
+  overflow-y: auto;
+}
+.svg-icon-big-size svg{
+  width: 20px;
+  height: 20px;
 }
