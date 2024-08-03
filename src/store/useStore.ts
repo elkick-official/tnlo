@@ -1,13 +1,11 @@
-import create from 'zustand';
+import { create } from "zustand";
 
-const useStore = create((set) => ({
-    count: 0,
-    increaseCount: () => set((state) => ({ count: state.count + 1 })),
-    decreaseCount: () => set((state) => ({ count: state.count - 1 })),
+const useDetailStore = create((set) => ({
+  userDetails: {},
+  setUserDetails: (newUser) => set({ userDetails: newUser }),
 }));
 
-export default useStore;
-
+export default useDetailStore;
 
 // const YourComponent = () => {
 //     const count = useStore((state) => state.count);

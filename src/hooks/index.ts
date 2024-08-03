@@ -1,5 +1,4 @@
-import useLegacyDataDigitilization from "./LegacyDataDigitilization/useLegacyDataDigitilization.hook"
+import useLegacyDataDigitilization from "./LegacyDataDigitilization/useLegacyDataDigitilization.hook";
 
-export {
-    useLegacyDataDigitilization
-}
+export * from "./auth";
+export { useLegacyDataDigitilization };

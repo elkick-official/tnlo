@@ -1,23 +1,10 @@
-import { Col, Form, Input, Row } from "antd";
+import { Col, Form, Row } from "antd";
 import { TNButton, TNInput } from "../../../components";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useLoginHook } from "../../../hooks";
 import "./../Authentication.css";
 const Login = () => {
-  // input js start
-  const [inputValue, setInputValue] = useState<string>("");
-
-  const handleLogin = (values) => {
-    console.log({ values });
-  };
-
-  const onFinishFailed = () => {};
-  // input js end
-  //  LoginNavigate
-  const dashboardPage = useNavigate();
-  const dashboardNavigate = () => {
-    dashboardPage("/");
-  };
+  const { handleLogin, onFinishFailed } = useLoginHook();
   return (
     <>
       <div className="auth-section flex">
@@ -59,11 +46,8 @@ const Login = () => {
                       datatestid="df-Label-testid"
                       type="email"
                       name="dfLabel"
-                      // value={inputValue}
-                      // label="Email"
                       placeholder="Enter your email"
                       ILInputLabelClass=""
-                      // handleChange={handleInputChange}
                       textAreaShow={false}
                       readOnly={false}
                       errorMsg=""
@@ -86,10 +70,8 @@ const Login = () => {
                       datatestid="df-Label-testid"
                       type="password"
                       name="dfLabel"
-                      // value={inputValue}
                       placeholder="Enter your password"
                       ILInputLabelClass=""
-                      // handleChange={handleInputChange}
                       textAreaShow={false}
                       readOnly={false}
                       errorMsg=""
@@ -109,7 +91,6 @@ const Login = () => {
                       datatestid="create-testid"
                       type="submit"
                       ILBtnClass="w-full"
-                      //   handleChange={dashboardNavigate}
                       disabled={false}
                       htmlType="submit"
                     >

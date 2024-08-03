@@ -1,21 +1,11 @@
 import { Col, Form, Row } from "antd";
 import { TNButton, TNInput } from "../../../components";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./../Authentication.css";
+import { useForgotPasswordHook } from "../../../hooks";
 const ForgotPassword = () => {
-  // input js start
-  const [inputValue, setInputValue] = useState<string>("");
+  const { handleForgotPassword, onFinishFailed, loginNavigate } =
+    useForgotPasswordHook();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
-  // input js end
-  //  LoginNavigate
-  const loginPage = useNavigate();
-  const loginNavigate = () => {
-    loginPage("/login");
-  };
   return (
     <>
       <div className="auth-section flex">
@@ -32,36 +22,53 @@ const ForgotPassword = () => {
               send you a code to reset your password.
             </h6>
             <Row gutter={24} className="">
-              <Form>
+              <Form
+                name="forgotPassword"
+                layout="vertical"
+                initialValues={{ remember: false }}
+                onFinish={handleForgotPassword}
+                className="mt-8"
+                onFinishFailed={onFinishFailed}
+                requiredMark={false}
+                autoComplete="off"
+              >
                 <Col xs={24}>
-                  <TNInput
-                    id="df-Label"
-                    datatestid="df-Label-testid"
-                    type="email"
-                    name="dfLabel"
-                    // value={inputValue}
-                    label="Email"
-                    placeholder="Enter your email address"
-                    ILInputLabelClass=""
-                    handleChange={handleInputChange}
-                    textAreaShow={false}
-                    readOnly={false}
-                    // errorMsg="Please input your user name!"
-                  />
+                  <Form.Item
+                    name="username"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your username!",
+                      },
+                    ]}
+                  >
+                    <TNInput
+                      id="username-input"
+                      datatestid="df-Label-testid"
+                      type="email"
+                      name="dfLabel"
+                      label="Email"
+                      placeholder="Enter your email"
+                      ILInputLabelClass=""
+                      textAreaShow={false}
+                      readOnly={false}
+                      errorMsg=""
+                    />
+                  </Form.Item>
                 </Col>
                 <Col xs={24} className="mt-10 mb-3">
-                  <TNButton
-                    id="create"
-                    datatestid="create-testid"
-                    type="button"
-                    ILBtnClass="w-full btn-transparent"
-                    handleChange={() => {
-                      return false;
-                    }}
-                    disabled={false}
-                  >
-                    Send Code
-                  </TNButton>
+                  <Form.Item>
+                    <TNButton
+                      id="create"
+                      datatestid="create-testid"
+                      type="submit"
+                      ILBtnClass="w-full btn-transparent"
+                      disabled={false}
+                      htmlType="submit"
+                    >
+                      Send Code
+                    </TNButton>
+                  </Form.Item>
                 </Col>
                 <Col xs={24}>
                   <TNButton

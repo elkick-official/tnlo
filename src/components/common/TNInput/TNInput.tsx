@@ -13,7 +13,7 @@ interface TNInputProps {
   label?: string;
   placeholder?: string;
   ILInputLabelClass?: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   prefix?: React.ReactNode;
   textAreaShow?: boolean;
   rows?: number;
