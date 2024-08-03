@@ -1,5 +1,7 @@
 @media (max-width: 1439px) {
-   
+    .big.primary-title {
+        font-size: 36px;
+    }
 }
 @media (max-width: 1360px) {
     :root{
@@ -13,12 +15,10 @@
     .primary-title{
         font-size: 26px;
     }
-}
-@media (max-width: 991px) {
-    :root{
-        --container-size: calc(100% - 30px);
+    .big.primary-title {
+        font-size: 30px;
     }
-     h1 {
+    h1 {
         font-size: 28px;
     }
     
@@ -33,9 +33,15 @@
     .h3.big {
         font-size: 18px;
     }
-    h4 {
+    h4,.title-label {
         font-size: 16px;
     }
+}
+@media (max-width: 991px) {
+    :root{
+        --container-size: calc(100% - 30px);
+    }
+  
 }
 @media (max-width: 767px) {
     :root{
@@ -46,6 +52,7 @@
     .primary-title{
         font-size: 22px;
     }
+    
     .secondary-title{
         font-size: 18px;
     }
@@ -55,7 +62,10 @@
     }
 }
 @media (max-width: 575px){
-     h1 {
+    .big.primary-title {
+        font-size: 26px;
+    }
+     h1,.primary-title {
         font-size: 24px;
     }
     
@@ -70,7 +80,7 @@
     .h3.big {
         font-size: 16px;
     }
-    h4 {
+    h4,.title-label {
         font-size: 14px;
     }
 }
