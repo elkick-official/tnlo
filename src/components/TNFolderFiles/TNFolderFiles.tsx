@@ -32,15 +32,19 @@ export const TNFolderFiles = ({
     string | number | undefined
   >(undefined);
   const [previewFileRequested, setPreviewFileRequested] = useState("");
+  const [previewNameRequested, setPreviewFileNameRequested] = useState("");
   const [isPreviewFileRequested, setIsPreviewFileRequested] = useState(false);
 
-  const handlePreviewFile = (fileUrl: string) => {
+  const handlePreviewFile = (fileUrl: string, name: string) => {
     setIsPreviewFileRequested(true);
     setPreviewFileRequested(fileUrl);
+    setPreviewFileNameRequested(name);
   };
 
   const handleClosePreviewModal = () => {
     setIsPreviewFileRequested(false);
+    setPreviewFileRequested("");
+    setPreviewFileNameRequested("");
   };
 
   const handleSelectChange = (value: string | number) => {
@@ -49,6 +53,15 @@ export const TNFolderFiles = ({
 
   const onChange = (key: string) => {
     console.log(key);
+  };
+
+  const handleDownloadFile = (fileUrl: string, filename: string) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -93,11 +106,16 @@ export const TNFolderFiles = ({
       />
 
       <Modal
-        title={<div>Upload a Document</div>}
+        title={<div>{previewNameRequested}</div>}
         open={isPreviewFileRequested}
         onCancel={handleClosePreviewModal}
         footer={() => (
-          <div className="flex justify-center w-full items-center">
+          <div
+            className="flex justify-center w-full items-center"
+            onClick={() =>
+              handleDownloadFile(previewFileRequested, previewNameRequested)
+            }
+          >
             <Button type="primary">Download</Button>
           </div>
         )}

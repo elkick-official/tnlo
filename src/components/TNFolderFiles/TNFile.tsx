@@ -38,7 +38,7 @@ const TNFile = ({
         <div
           className="flex gap-2"
           onClick={(e) => {
-            e.stopPropagation();
+            // e.stopPropagation();
             handleDeleteFile(data?.id, type);
           }}
         >
@@ -50,25 +50,25 @@ const TNFile = ({
     },
   ];
 
+  const handleDynamicClick = () => {
+    type == "folder"
+      ? navigateToFolder(data?.id, data?.name)
+      : handlePreviewFile(data?.preview, data?.name);
+  };
   return (
-    <div
-      key={key}
-      className="data-legency-files-view cursor-pointer"
-      onClick={() => {
-        type == "folder"
-          ? navigateToFolder(data?.id, data?.name)
-          : handlePreviewFile(data?.preview);
-      }}
-    >
+    <div key={key} className="data-legency-files-view ">
       <div className="ldd-folder-n-file">
         {type == "file" && (
-          <div className="ldd-folder-n-file-icon">
+          <div
+            className="ldd-folder-n-file-icon cursor-pointer"
+            onClick={() => handleDynamicClick()}
+          >
             <TNFilePreview fileUrl={data?.preview || ""} />
             {/* <Image src={pdf} width={130} height={130} /> */}
           </div>
         )}
-        <div className="ldd-folder-n-file-name">
-          <div className="flex gap-4">
+        <div className="ldd-folder-n-file-name cursor-pointer">
+          <div className="flex gap-4" onClick={() => handleDynamicClick()}>
             {type == "folder" && (
               <span>{<FolderOpenOutlined style={{ fontSize: "16px" }} />}</span>
             )}
@@ -78,8 +78,7 @@ const TNFile = ({
             <Dropdown menu={{ items }} trigger={["click"]}>
               <a
                 onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
+                  // e.stopPropagation();
                 }}
               >
                 <Space>

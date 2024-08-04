@@ -62,6 +62,9 @@ const TNFilePreview = ({
           width={dimension}
           height={dimension}
           preview={false}
+          style={{
+            objectFit: "contain",
+          }}
         />
       );
       break;

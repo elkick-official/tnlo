@@ -82,6 +82,6 @@
 }
 @media (max-width: 1599px){
     .data-legency-folder-view {
-        grid-gap: 8px;
+        grid-gap: 12px;
     }
 }

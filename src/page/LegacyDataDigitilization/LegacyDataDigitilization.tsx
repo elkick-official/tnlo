@@ -38,13 +38,9 @@ const LegacyDataDigitilization = () => {
     isFileUploding,
     isFetchFiles,
     handleDeleteFile,
+    handleSearch,
+    searchVal,
   } = useLegacyDataDigitilization();
-
-  const [inputValue, setInputValue] = useState<string>("");
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
 
   return (
     <>
@@ -58,11 +54,11 @@ const LegacyDataDigitilization = () => {
                 datatestid="legency-search-testid"
                 type="text"
                 name="legencySearch"
-                value={inputValue}
+                value={searchVal}
                 label="Seacrh something"
                 placeholder="Type something"
                 ILInputLabelClass="mb-0 legency-data-seacrhbar-input"
-                handleChange={handleInputChange}
+                handleChange={handleSearch}
                 textAreaShow={false}
                 readOnly={false}
                 searchBarControl

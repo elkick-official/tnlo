@@ -30,6 +30,7 @@ const useLegacyDataDigitilization = () => {
     const [fileList, setFileList] = useState();
     const [isFileUploding, setIsFileUploding] = useState(false);
     const [isFetchFiles, setIsFetchFiles] = useState(false)
+    const [searchVal, setSearchVal] = useState<string>("");
 
     const handleUploadCancel = () => {
         setIsOpenUploadModal(false)
@@ -115,6 +116,10 @@ const useLegacyDataDigitilization = () => {
     const handleFilelist = (fileList: any) => {
         setFileList(fileList)
     }
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchVal(e.target.value?.toLowerCase());
+    };
 
     const fetchAllFolderNFiles = async (folderId: any) => {
         try {
@@ -208,8 +213,13 @@ const useLegacyDataDigitilization = () => {
     }, [])
 
 
-    const currentFolders = folders?.filter((data) => data?.parentId == currentFolderId)
-    const currentFiles = files?.filter((data) => data?.folderId == currentFolderId)
+    let currentFolders = folders?.filter((data) => data?.parentId == currentFolderId)
+    let currentFiles = files?.filter((data) => data?.folderId == currentFolderId)
+
+    if (searchVal?.length) {
+        currentFolders = currentFolders.filter((data) => data?.folderName?.toLowerCase().includes(searchVal))
+        currentFiles = currentFiles?.filter((data) => data?.fileName?.toLowerCase().includes(searchVal))
+    }
 
     return {
         createFolder, uploadFile, navigateToFolder, currentFolderId, breadcrumbs,
@@ -231,7 +241,9 @@ const useLegacyDataDigitilization = () => {
         handleFilelist,
         isFileUploding,
         isFetchFiles,
-        handleDeleteFile
+        handleDeleteFile,
+        handleSearch,
+        searchVal
     }
 
 }
