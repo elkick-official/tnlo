@@ -59,26 +59,29 @@ const useLegacyDataDigitilization = () => {
 
     const createFolder = async (name: string) => {
 
-        let count = 0;
-        const currentFoldersNFiles = folders?.filter(
-            (data) => data?.parentId == currentFolderId
-        );
+        // let count = 0;
+        // const currentFoldersNFiles = folders?.filter(
+        //     (data) => data?.parentId == currentFolderId
+        // );
 
-        if (currentFoldersNFiles?.length) {
-            const currentFolders = currentFoldersNFiles?.filter(
-                (data) => data?.folderId ? true : false
-            );
+        // if (currentFoldersNFiles?.length) {
+        //     const currentFolders = currentFoldersNFiles?.filter(
+        //         (data) => data?.folderId ? true : false
+        //     );
 
-            currentFolders?.map((data) => {
-                if (data?.folderName.includes(name)) {
-                    count++;
-                }
-            });
-        }
+        //     currentFolders?.map((data) => {
+        //         if (data?.folderName.includes(name)) {
+        //             count++;
+        //         }
+        //     });
+        // }
 
         // infoNotification("Creating...", 0, "bottomRight")
+
+        // folderName: name + (count == 0 ? "" : ` (${count})`),
+
         const newFolder = {
-            folderName: name + (count == 0 ? "" : ` (${count})`),
+            folderName: name,
             parentId: currentFolderId,
         };
         try {
