@@ -26,7 +26,7 @@ const useLegacyDataDigitilization = () => {
     );
 
     const [currentFolderId, setCurrentFolderId] = useState<IcurrentFolderId>(1);
-    const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumbs[]>([{ id: 1, name: 'My Documents' }]);
+    const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumbs[]>([{ id: 1, name: 'Home' }]);
     const [fileList, setFileList] = useState();
     const [isFileUploding, setIsFileUploding] = useState(false);
     const [isFetchFiles, setIsFetchFiles] = useState(false)

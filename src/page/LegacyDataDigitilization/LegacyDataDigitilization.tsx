@@ -58,7 +58,7 @@ const LegacyDataDigitilization = () => {
                 name="legencySearch"
                 value={searchVal}
                 label="Seacrh something"
-                placeholder="Type something"
+                placeholder="Search"
                 ILInputLabelClass="mb-0 legency-data-seacrhbar-input"
                 handleChange={handleSearch}
                 textAreaShow={false}
