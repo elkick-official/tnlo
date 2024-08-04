@@ -63,7 +63,7 @@ export const TNSettingsTabingForm = () => {
         <span className="lh-0">
           <LogoutOutlined className="svg-icon-big-size" />
         </span>
-        <h4>Logout</h4>
+        <span>Logout</span>
       </div>
     </>
   );

@@ -56,8 +56,8 @@ html {
 .text-tnl-night-night {
   color: var(--tnl-night-night);
 }
-.text-tnl-rapunzel-silver ,
-.rapunzel-silver.text-tnl-rapunzel-silver{
+.text-tnl-rapunzel-silver,
+.rapunzel-silver.text-tnl-rapunzel-silver {
   color: var(--tnl-rapunzel-silver);
 }
 .text-tnl-white-edgar {
@@ -123,7 +123,7 @@ html {
 .bg-tnl-night-night {
   background-color: var(--tnl-night-night);
 }
-.bg-tnl-primary-rgb-light{
+.bg-tnl-primary-rgb-light {
   background-color: var(--tnl-primary-rgb-light);
 }
 .bg-tnl-rapunzel-silver {
@@ -279,7 +279,7 @@ p,
   height: inherit;
 }
 
-.w-100{
+.w-100 {
   width: 100%;
 }
 
@@ -563,7 +563,9 @@ header .active {
   z-index: 999;
 }
 
-.error,.ant-form-item-explain-error,.edInputErrorMsg {
+.error,
+.ant-form-item-explain-error,
+.edInputErrorMsg {
   font-size: 14px;
   color: var(--tnl-red);
   font-weight: 500;
@@ -651,10 +653,10 @@ header .active {
 .width.w-auto {
   width: auto !important;
 }
-.overflow-y{
+.overflow-y {
   overflow-y: auto;
 }
-.svg-icon-big-size svg{
-  width: 20px;
-  height: 20px;
+.svg-icon-big-size svg {
+  width: 15px;
+  height: 15px;
 }
