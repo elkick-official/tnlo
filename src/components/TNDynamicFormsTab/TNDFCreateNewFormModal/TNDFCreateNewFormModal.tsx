@@ -80,7 +80,7 @@ export const TNDFCreateNewFormModal = () => {
                         } }                    />
                 </div>
                 <hr className="opacity-03 mt-4"/>
-                <div className="flex items-center justify-end pt-4 ">
+                <div className="flex items-center justify-end pt-4 gap-6">
                     <TNButton
                     id="create"
                     datatestid="create-testid"

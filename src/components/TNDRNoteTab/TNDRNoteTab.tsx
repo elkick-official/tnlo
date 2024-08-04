@@ -1,8 +1,9 @@
 import { Tabs, TabsProps } from "antd";
 import { TNFolderFiles } from "../TNFolderFiles/TNFolderFiles";
 import { TNDRNotes } from "./TNDRNotes/TNDRNotes";
-import "./TNDRNoteTab.css";
 import { TNDROngoingIssues } from "./TNDROngoingIssues/TNDROngoingIssues";
+import { TNDRCourtDairy } from "./TNDRCourtDairy/TNDRCourtDairy";
+import "./TNDRNoteTab.css";
 const onChange = (key: string) => {
     console.log(key);
   };
@@ -21,7 +22,7 @@ const items: TabsProps['items'] = [
 {
     key: '3',
     label: 'Court Dairy',
-    children: 'Coming soon',
+    children: <TNDRCourtDairy/>,
 },
 ];
 export const TNDRNoteTab = () => {

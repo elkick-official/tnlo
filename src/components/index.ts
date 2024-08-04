@@ -31,5 +31,7 @@ import { TNSubmissionForm } from "./TNDynamicFormsTab/TNEditSubmissionTab/TNSubm
 import { TNDFCreateNewFormModal } from "./TNDynamicFormsTab/TNDFCreateNewFormModal/TNDFCreateNewFormModal.tsx";
 import { TNSettingsTabingForm } from "./TNSettingsTabingForm/TNSettingsTabingForm.tsx";
 import { TNEditProfileTabData } from "./TNSettingsTabingForm/TNEditProfileTabData.tsx";
+import { TNDRCourtDairy } from "./TNDRNoteTab/TNDRCourtDairy/TNDRCourtDairy.tsx";
+import { TNPressNoteData } from "./TNPressNoteData/TNPressNoteData.tsx";
 export { TNHeader, TNFooter, TNButton, TNInput, TNCheckbox, TNSelect, TNLDTab, TNUpload, TNAccordion, TNSidebar, TNFolders, TNFiles, TNTable, TNDropdown, TNModal, TNImageCard, TNEditor, TNPagination, TNSwitch, TNInfoCard, TNFullPageCalendar, TNFolderFiles, 
-    TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker, TNDynamicFormsTab, TNEditSubmissionTab, TNEditForm, TNSubmissionForm, TNDFCreateNewFormModal, TNSettingsTabingForm, TNEditProfileTabData }
+    TNDRNoteTab, TNDRNotes, TNDROngoingIssues, TNDatePicker, TNDynamicFormsTab, TNEditSubmissionTab, TNEditForm, TNSubmissionForm, TNDFCreateNewFormModal, TNSettingsTabingForm, TNEditProfileTabData, TNDRCourtDairy, TNPressNoteData }

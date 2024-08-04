@@ -7,5 +7,6 @@ const TNFormEditUserView = lazy(() => import("./DynamicForms/TNFormEditSubmissio
 const Login = lazy(() => import("./Authentication/Login/Login"))
 const ForgotPassword = lazy(() => import("./Authentication/ForgotPassword/ForgotPassword"))
 const Settings = lazy(() => import("./Settings/Settings"))
+const DatapressNote = lazy(() => import("./DatapressNote/DatapressNote"))
 
-export { LegacyDataDigitilization, TNAdminEditSubmissionCard, TNFormEditSubmissionCard, TNFormEditUserView, Login,ForgotPassword, Settings }
+export { LegacyDataDigitilization, TNAdminEditSubmissionCard, TNFormEditSubmissionCard, TNFormEditUserView, Login,ForgotPassword, Settings, DatapressNote }
