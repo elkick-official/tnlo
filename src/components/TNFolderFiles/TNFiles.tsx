@@ -20,7 +20,7 @@ const TNFiles = ({
           <span>No Files Available</span>
         </div>
       ) : (
-        <div className="data-legency-folder-view grid mt-5">
+        <div className="data-legency-folder-view flex mt-5">
           {currentFiles.map((data: any, index: any) => {
             console.log({ data });
             return (

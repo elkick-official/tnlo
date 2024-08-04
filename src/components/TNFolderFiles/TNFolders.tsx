@@ -26,7 +26,7 @@ const TNFolders = ({
           <span>No Folders Available</span>
         </div>
       ) : (
-        <div className="data-legency-folder-view grid mt-5">
+        <div className="data-legency-folder-view flex mt-5">
           {currentFolders.map((data: any, index: number) => {
             return (
               <>

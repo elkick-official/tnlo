@@ -1,6 +1,6 @@
 .data-legency-folder-view{
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 25px;
+    grid-gap: 15px;
+    flex-wrap: wrap;
 }
 .data-legency-folder-box{
     width: 100%;
@@ -25,8 +25,9 @@
     color: var(--tnl-dr-white);
 }
 .data-legency-files-view{
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 25px;
+    /* width: calc(100% / 6); */
+    max-width: 200px;
+    width: 100%;
 }
 .notes-grid-wrap{
     grid-template-columns: repeat(3, 1fr);
@@ -79,8 +80,8 @@
 .data-repository-seacrhbar-input input{
     min-width: 400px;
 }
-/* @media (max-width: 1599px){
+@media (max-width: 1599px){
     .data-legency-folder-view {
-      grid-template-columns: repeat(4, 1fr);
+        grid-gap: 8px;
     }
-} */
+}

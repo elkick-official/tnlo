@@ -1,7 +1,7 @@
-.data-legency-folder-view {
+/* .data-legency-folder-view {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 25px;
-}
+} */
 .data-legency-folder-box {
   width: 100%;
   min-height: 115px;
@@ -24,10 +24,10 @@
 .data-legency-folder-box:hover h6 {
   color: var(--tnl-dr-white);
 }
-.data-legency-files-view {
+/* .data-legency-files-view {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 25px;
-}
+} */
 
 .ldd-folder-n-file {
   background-color: var(--tnl-tristesse-01);
