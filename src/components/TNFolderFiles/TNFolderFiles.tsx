@@ -97,7 +97,7 @@ export const TNFolderFiles = ({
         open={isPreviewFileRequested}
         onCancel={handleClosePreviewModal}
         footer={() => (
-          <div className="flex justify-between w-full">
+          <div className="flex justify-center w-full items-center">
             <Button type="primary">Download</Button>
           </div>
         )}

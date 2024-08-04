@@ -601,7 +601,7 @@ header .active {
   padding-right: var(--xx-space);
 }
 .yy-space {
-  padding-top: calc(var(--yy-space) + 20px);
+  padding-top: calc(var(--yy-space) + 0px);
   padding-bottom: var(--yy-space);
 }
 /* block */

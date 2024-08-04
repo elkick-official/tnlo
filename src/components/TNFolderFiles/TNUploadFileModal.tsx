@@ -23,7 +23,7 @@ const TNUploadFileModal = ({
     action: "",
     disabled: isFileUploading,
     fileList,
-    accept: ".pdf, .jpeg, .jpg, .xlsx, .csv, .docx, .zip",
+    accept: ".pdf, .jpeg, .jpg, .png, .docx",
     beforeUpload(file) {
       const allowedTypes = [
         "application/pdf",
