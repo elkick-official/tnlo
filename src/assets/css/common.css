@@ -3,3 +3,6 @@
     padding: 15px 25px 25px;
     border-radius: 16px;
 }
+.ant-form-item .ILInputLabel, .searchBarWrap{
+    margin-bottom: 0;
+}

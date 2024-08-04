@@ -91,7 +91,7 @@ export const TNEditProfileTabData = () => {
                                 errorMsg=""
                                 />
                         </Col>
-                        <Col xs={24} className="flex gap-4 mt-1">
+                        <Col xs={24} className="flex gap-6 mt-1">
                             <TNButton
                                 id="create"
                                 datatestid="create-testid"

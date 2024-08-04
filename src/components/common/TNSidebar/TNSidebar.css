@@ -47,3 +47,34 @@
     min-width: 80px !important;
     width: 80px !important;
 }
+.ant-layout-sider.custom-sidebar .ant-layout-sider-zero-width-trigger{
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    top: 22px;
+    inset-inline-end: -15px;
+    background: var(--tnl-orignal-gray);
+    z-index: 1000;
+}
+.ant-layout-sider.custom-sidebar .ant-layout-sider-zero-width-trigger span{
+    display: none;
+}
+.ant-layout-sider.custom-sidebar .ant-layout-sider-zero-width-trigger::after{
+    content: '';
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iY3VycmVudENvbG9yIj48cGF0aCBkPSJNMTYuMTcxNiAxMC45OTk5TDEwLjgwNzYgNS42MzU4OUwxMi4yMjE4IDQuMjIxNjhMMjAgMTEuOTk5OUwxMi4yMjE4IDE5Ljc3OEwxMC44MDc2IDE4LjM2MzhMMTYuMTcxNiAxMi45OTk5SDRWMTAuOTk5OUgxNi4xNzE2WiI+PC9wYXRoPjwvc3ZnPg==);
+    transform: rotate(180deg);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+.ant-layout-sider.ant-layout-sider-collapsed .ant-layout-sider-zero-width-trigger::after{
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+.ant-layout-sider.custom-sidebar .ant-layout-sider-zero-width-trigger:hover::after{
+    background-color: unset;
+}

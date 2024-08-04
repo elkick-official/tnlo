@@ -1,3 +1,6 @@
 .setting-tab-wrap{
     height: calc(100vh - var(--header-height) - 70px);
 }
+.setting-tab-wrap .ant-tabs-nav .ant-tabs-nav-wrap .ant-tabs-tab{
+    padding: 8px 70px;
+}

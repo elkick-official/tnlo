@@ -1,3 +1,6 @@
+/* .ant-form-item-control{
+  margin-bottom: 20px;
+} */
 .form-control {
   padding: 4px var(--mid-space);
   min-height: 46px;
@@ -36,7 +39,7 @@ textarea.form-control {
 
 .ILInputLabel,
 .searchBarWrap {
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
 }
 .ILInputLabelText {
   font-size: 14px;

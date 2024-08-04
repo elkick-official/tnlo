@@ -563,7 +563,8 @@ header .active {
   z-index: 999;
 }
 
-.error {
+.error,.ant-form-item-explain-error,.edInputErrorMsg {
+  font-size: 14px;
   color: var(--tnl-red);
   font-weight: 500;
 }

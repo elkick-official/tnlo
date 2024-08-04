@@ -9,9 +9,9 @@ import { TNButton } from "../../common/TNButton/TNButton";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { TNSelect } from "../../common/TNSelect/TNSelect";
 import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
-import "./TNDROngoingIssues.css";
+import "./TNDRCourtDairy.css";
 
-export const TNDROngoingIssues = () => {
+export const TNDRCourtDairy = () => {
   // button js start
   const handleButtonClick = () => {
     console.log("Button clicked");
@@ -79,7 +79,7 @@ export const TNDROngoingIssues = () => {
       </div>
       <hr className="opacity-03 my-4" />
       <div className="mt-3">
-        <h3 className="pb-3 fw-500">Ongoing Issues</h3>
+        <h3 className="pb-3 fw-500">Court Dairy</h3>
         <div className="notes-grid-wrap grid">
           {DROngoingIssuesData.map((DRnotesItem, DRnotesIndex) => {
             return (
