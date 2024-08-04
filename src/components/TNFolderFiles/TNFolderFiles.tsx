@@ -103,8 +103,11 @@ export const TNFolderFiles = ({
         )}
         closeIcon={<CloseOutlined />}
         width={800}
+        centered
       >
-        <TNFilePreview fileUrl={previewFileRequested} fullView={true} />
+        <div style={{ width: "100%", height: "70vh" }}>
+          <TNFilePreview fileUrl={previewFileRequested} fullView={true} />
+        </div>
       </Modal>
     </>
   );

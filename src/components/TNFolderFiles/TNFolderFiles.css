@@ -45,6 +45,8 @@
   display: flex;
   justify-content: center;
   padding-bottom: 0.5rem;
+  height: 130px;
+  align-items: center;
 }
 
 .ldd-top-filters {
