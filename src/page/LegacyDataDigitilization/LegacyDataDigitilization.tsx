@@ -40,6 +40,8 @@ const LegacyDataDigitilization = () => {
     handleDeleteFile,
     handleSearch,
     searchVal,
+    selectedType,
+    handleTypeChange,
   } = useLegacyDataDigitilization();
 
   return (
@@ -97,6 +99,8 @@ const LegacyDataDigitilization = () => {
               navigateToFolder={navigateToFolder}
               isFetchFiles={isFetchFiles}
               handleDeleteFile={handleDeleteFile}
+              selectedType={selectedType}
+              handleTypeChange={handleTypeChange}
             />
           </div>
         </section>

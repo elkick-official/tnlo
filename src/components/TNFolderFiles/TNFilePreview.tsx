@@ -3,21 +3,22 @@ import { doc, image, pdf } from "../../assets";
 
 const TNFilePreview = ({
   fileUrl,
-  fullView,
+  fullView = false,
+  isListView = false,
 }: {
   fileUrl: string;
-  fullView: boolean;
+  fullView?: boolean;
+  isListView?: boolean;
 }) => {
   let value = <></>;
 
-  console.log({ fileUrl });
   const updatedFileUrl = import.meta.env.VITE_API_URL + fileUrl;
   const ext =
     fileUrl && fileUrl?.includes(".") ? fileUrl?.split(".")?.pop() : "docx";
 
   console.log({ ext });
 
-  const dimension = fullView ? "100%" : 80;
+  const dimension = isListView ? 20 : fullView ? "100%" : 80;
   switch (ext) {
     case "jpg":
     case "jpeg":

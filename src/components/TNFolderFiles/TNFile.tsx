@@ -17,21 +17,21 @@ const TNFile = ({
   handleDeleteFile,
 }: any) => {
   const items: MenuProps["items"] = [
-    {
-      label: (
-        <div
-          className="flex gap-2"
-          onClick={(e) => {
-            e.stopPropagation();
-            // handleDeleteFile(data?.id, type);
-          }}
-        >
-          <EditOutlined />
-          Rename
-        </div>
-      ),
-      key: "0",
-    },
+    // {
+    //   label: (
+    //     <div
+    //       className="flex gap-2"
+    //       onClick={(e) => {
+    //         e.stopPropagation();
+    //         // handleDeleteFile(data?.id, type);
+    //       }}
+    //     >
+    //       <EditOutlined />
+    //       Rename
+    //     </div>
+    //   ),
+    //   key: "0",
+    // },
 
     {
       label: (

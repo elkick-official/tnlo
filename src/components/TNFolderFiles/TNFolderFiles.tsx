@@ -10,6 +10,7 @@ import TNFilePreview from "./TNFilePreview";
 import TNFiles from "./TNFiles";
 import "./TNFolderFiles.css";
 import TNFolders from "./TNFolders";
+import TNFileExplorerTable from "./TNFileExplorerTable";
 
 interface Props {
   currentFolders: IFolder[];
@@ -18,6 +19,8 @@ interface Props {
   navigateToFolder: (params: string, param2: string) => void;
   isFetchFiles: boolean;
   handleDeleteFile: (params: number, param2: string) => void;
+  selectedType: string;
+  handleTypeChange: (params: string) => void;
 }
 
 export const TNFolderFiles = ({
@@ -27,12 +30,15 @@ export const TNFolderFiles = ({
   breadcrumbs,
   isFetchFiles,
   handleDeleteFile,
+  selectedType,
+  handleTypeChange,
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
   >(undefined);
   const [previewFileRequested, setPreviewFileRequested] = useState("");
   const [previewNameRequested, setPreviewFileNameRequested] = useState("");
+  const [isViewGrid, setisViewGrid] = useState(true);
   const [isPreviewFileRequested, setIsPreviewFileRequested] = useState(false);
 
   const handlePreviewFile = (fileUrl: string, name: string) => {
@@ -51,8 +57,8 @@ export const TNFolderFiles = ({
     setSelectedValue(value);
   };
 
-  const onChange = (key: string) => {
-    console.log(key);
+  const handleGirdChange = (key: string) => {
+    setisViewGrid(key == "1");
   };
 
   const handleDownloadFile = (fileUrl: string, filename: string) => {
@@ -72,38 +78,59 @@ export const TNFolderFiles = ({
           navigateToFolder={navigateToFolder}
         />
         <div>
-          <Tabs defaultActiveKey="1" items={lddItems} onChange={onChange} />
+          <Tabs
+            defaultActiveKey="1"
+            items={lddItems}
+            onChange={handleGirdChange}
+          />
         </div>
       </div>
 
       <div className="legency-data-top-space legency-data-select-box flex items-center gap-6 pt-0 pb-6">
         <TNSelect
-          label="Type"
+          label=""
           options={legencyTypeOptions}
-          value={selectedValue}
-          onChange={handleSelectChange}
-          placeholder="Please select"
+          value={selectedType}
+          onChange={handleTypeChange}
+          placeholder="Type"
+          allowClear
         />
         <TNSelect
-          label="Modified"
+          label=""
           options={legencyModifiedOptions}
           value={selectedValue}
-          onChange={handleSelectChange}
-          placeholder="Please select"
+          // onChange={handleModifiedChange}
+          placeholder="Modified"
+          allowClear
         />
       </div>
-      <TNFolders
-        currentFolders={currentFolders}
-        navigateToFolder={navigateToFolder}
-        isFetchFiles={isFetchFiles}
-        handleDeleteFile={handleDeleteFile}
-      />
-      <TNFiles
-        currentFiles={currentFiles}
-        handlePreviewFile={handlePreviewFile}
-        isFetchFiles={isFetchFiles}
-        handleDeleteFile={handleDeleteFile}
-      />
+
+      {isViewGrid ? (
+        <>
+          {!selectedType?.length && (
+            <TNFolders
+              currentFolders={currentFolders}
+              navigateToFolder={navigateToFolder}
+              isFetchFiles={isFetchFiles}
+              handleDeleteFile={handleDeleteFile}
+            />
+          )}
+          <TNFiles
+            currentFiles={currentFiles}
+            handlePreviewFile={handlePreviewFile}
+            isFetchFiles={isFetchFiles}
+            handleDeleteFile={handleDeleteFile}
+          />
+        </>
+      ) : (
+        <TNFileExplorerTable
+          currentFiles={currentFiles}
+          currentFolders={currentFolders}
+          handlePreviewFile={handlePreviewFile}
+          isFetchFiles={isFetchFiles}
+          navigateToFolder={navigateToFolder}
+        />
+      )}
 
       <Modal
         title={<div>{previewNameRequested}</div>}

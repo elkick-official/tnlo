@@ -45,7 +45,7 @@ export const TNDRCourtDairy = () => {
           disabled={false}
         >
           <PlusCircleOutlined className="w-auto width min-w-auto pa-0 me-2 height min-h-auto" />
-          Add Ongoing Issue
+          Add Court Diary
         </TNButton>
       </div>
       <div className="legency-data-digitization-head-wrap flex items-end mt-3">

@@ -31,6 +31,19 @@ const useLegacyDataDigitilization = () => {
     const [isFileUploding, setIsFileUploding] = useState(false);
     const [isFetchFiles, setIsFetchFiles] = useState(false)
     const [searchVal, setSearchVal] = useState<string>("");
+    const [selectedType, setselectedType] = useState();
+    const [selectedModifyDate, setSelectedModifyDate] = useState();
+
+
+    const handleTypeChange = (e) => {
+        setselectedType(e)
+    }
+
+
+
+    const handleModifiedChange = () => {
+
+    }
 
     const handleUploadCancel = () => {
         setIsOpenUploadModal(false)
@@ -45,9 +58,27 @@ const useLegacyDataDigitilization = () => {
     };
 
     const createFolder = async (name: string) => {
+
+        let count = 0;
+        const currentFoldersNFiles = folders?.filter(
+            (data) => data?.parentId == currentFolderId
+        );
+
+        if (currentFoldersNFiles?.length) {
+            const currentFolders = currentFoldersNFiles?.filter(
+                (data) => data?.folderId ? true : false
+            );
+
+            currentFolders?.map((data) => {
+                if (data?.folderName.includes(name)) {
+                    count++;
+                }
+            });
+        }
+
         // infoNotification("Creating...", 0, "bottomRight")
         const newFolder = {
-            folderName: name,
+            folderName: name + (count == 0 ? "" : ` (${count})`),
             parentId: currentFolderId,
         };
         try {
@@ -55,7 +86,6 @@ const useLegacyDataDigitilization = () => {
             if (res.folderId) {
                 setFolders([...folders, res]);
             }
-            console.log({ res })
         } catch (error) {
             console.log(error)
             errorNotification("Something Went Wrong")
@@ -125,7 +155,6 @@ const useLegacyDataDigitilization = () => {
         try {
             setIsFetchFiles(true)
             const res = await getAllFoldersNFiles(folderId)
-            console.log({ res })
             if (res.folderId) {
                 const newFolders = res?.subFolders ? res?.subFolders?.map((data: any) => {
                     return { ...data, parentId: folderId }
@@ -191,7 +220,6 @@ const useLegacyDataDigitilization = () => {
         try {
             const res = await deleteFile(obj[type], fileId)
 
-            console.log({ res })
         } catch (error) {
             console.log(error)
         }
@@ -221,6 +249,24 @@ const useLegacyDataDigitilization = () => {
         currentFiles = currentFiles?.filter((data) => data?.fileName?.toLowerCase().includes(searchVal))
     }
 
+    if (selectedType) {
+        currentFiles = currentFiles?.filter((data) => {
+
+            if (selectedType?.includes("png")) {
+                if (data?.fileName?.includes("png") || data?.fileName?.includes("jpg") || data?.fileName?.includes("jpeg")) {
+                    return true
+                }
+                return false
+            }
+
+            if (data?.fileName?.includes(selectedType)) {
+                return true
+            }
+
+            return false
+        })
+    }
+
     return {
         createFolder, uploadFile, navigateToFolder, currentFolderId, breadcrumbs,
         currentFolders,
@@ -243,7 +289,9 @@ const useLegacyDataDigitilization = () => {
         isFetchFiles,
         handleDeleteFile,
         handleSearch,
-        searchVal
+        searchVal,
+        selectedType,
+        handleTypeChange
     }
 
 }

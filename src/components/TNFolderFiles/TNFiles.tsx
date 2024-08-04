@@ -22,7 +22,6 @@ const TNFiles = ({
       ) : (
         <div className="data-legency-folder-view flex mt-5">
           {currentFiles.map((data: any, index: any) => {
-            console.log({ data });
             return (
               <>
                 <TNFile

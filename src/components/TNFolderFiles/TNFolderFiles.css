@@ -83,3 +83,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 } */
+
+.cursor-pointer-table .antd-table-tbody > tr:hover {
+  cursor: pointer;
+}
