@@ -1,12 +1,13 @@
-import { Col, Form, Row } from "antd";
+import { Col, Form, Row, Spin } from "antd";
 import { TNButton, TNInput } from "../../../components";
 import { Link } from "react-router-dom";
 import { useLoginHook } from "../../../hooks";
 import "./../Authentication.css";
 import { logo } from "../../../const/imageData";
+import Loader from "../../../components/common/Loader/Loader";
 const Login = () => {
   // input js start
-  const { handleLogin, onFinishFailed } = useLoginHook();
+  const { handleLogin, onFinishFailed, isLoginLoading } = useLoginHook();
   return (
     <>
       <div className="auth-section flex">
@@ -20,12 +21,13 @@ const Login = () => {
           </div>
           <span className="d-block py-2 auth-powered-label text-tnl-white h5 text-center flex items-center justify-center gap-4">
             Powered by{" "}
-            <Link
-              to="https://tejis.ai/"
+            <a
+              target="_blank"
+              href="https://tejis.ai/"
               className="py-1 fw-700 white text-tnl-white"
             >
               Tejis.ai
-            </Link>
+            </a>
           </span>
         </div>
         <div className="auth-box-col w-100 auth-right-col flex py-5 py-md-8">
@@ -52,7 +54,7 @@ const Login = () => {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your username!",
+                        message: "Please input your email!",
                       },
                     ]}
                   >
@@ -101,16 +103,18 @@ const Login = () => {
                 </Col>
                 <Col xs={24}>
                   <Form.Item>
-                    <TNButton
-                      id="create"
-                      datatestid="create-testid"
-                      type="submit"
-                      ILBtnClass="w-full"
-                      disabled={false}
-                      htmlType="submit"
-                    >
-                      Sign In
-                    </TNButton>
+                    <Spin spinning={isLoginLoading}>
+                      <TNButton
+                        id="create"
+                        datatestid="create-testid"
+                        type="submit"
+                        ILBtnClass="w-full"
+                        disabled={isLoginLoading}
+                        htmlType="submit"
+                      >
+                        Sign In
+                      </TNButton>
+                    </Spin>
                   </Form.Item>
                 </Col>
               </Form>

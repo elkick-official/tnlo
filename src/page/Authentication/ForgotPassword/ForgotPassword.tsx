@@ -20,12 +20,13 @@ const ForgotPassword = () => {
           </div>
           <span className="d-block py-2 auth-powered-label text-tnl-white h5 text-center flex items-center justify-center gap-4">
             Powered by{" "}
-            <Link
-              to="https://tejis.ai/"
+            <a
+              target="_blank"
+              href="https://tejis.ai/"
               className="py-1 fw-700 white text-tnl-white"
             >
               Tejis.ai
-            </Link>
+            </a>
           </span>
         </div>
         <div className="auth-box-col w-100 auth-right-col flex py-5 py-md-8">
@@ -52,7 +53,7 @@ const ForgotPassword = () => {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your username!",
+                        message: "Please input your email!",
                       },
                     ]}
                   >

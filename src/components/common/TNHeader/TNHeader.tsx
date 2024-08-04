@@ -20,8 +20,9 @@ export const TNHeader: FC<TNButtonProps> = ({ children, ...rest }) => {
           <div className="flex items-center gap-4">
             <span className="lh-0">{Icons.userProfileIcon}</span>
             <Link to="/login" className="h4 mb-0 fw-500">
-              {`${userDetails?.firstName} ${userDetails?.lastName}`}
+              {`${userDetails?.firstName || ""}`}
             </Link>
+            {/* ${userDetails?.lastName} */}
           </div>
         </div>
       </Header>

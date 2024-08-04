@@ -11,6 +11,7 @@ import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { ForgotPassword, Login } from "./page";
 import "antd-css-utilities/utility.min.css";
 import "./App.css";
+import LoginProtectedRoute from "./routes/LoginProtectedRoute";
 function App() {
   return (
     <>
@@ -20,8 +21,13 @@ function App() {
           <ConfigProvider {...configProvider} theme={lightTheme}>
             <Router>
               <Routes>
-                {/* <Route path="/" element={<h1>Login</h1>} /> */}
-                <Route element={<LayoutMain />}>
+                <Route
+                  element={
+                    <ProtectedRoute isAuth={false}>
+                      <LayoutMain />
+                    </ProtectedRoute>
+                  }
+                >
                   {routeList.map((route: routeListProps) => (
                     <Route
                       key={route.id}
@@ -33,9 +39,9 @@ function App() {
                 <Route
                   path="/"
                   element={
-                    <ProtectedRoute isAuth={false}>
+                    <LoginProtectedRoute isAuth={false}>
                       <AuthLayout />
-                    </ProtectedRoute>
+                    </LoginProtectedRoute>
                   }
                 >
                   <Route path="/login" element={<Login />} />
