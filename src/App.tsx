@@ -8,10 +8,10 @@ import { TNFooter, TNHeader } from "./components";
 import LayoutMain from "./layout/Layout";
 import AuthLayout from "./layout/AuthLayout";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
-import { ForgotPassword, Login } from "./page";
+import { ForgotPassword, Login, Register } from "./page";
+import LoginProtectedRoute from "./routes/LoginProtectedRoute";
 import "antd-css-utilities/utility.min.css";
 import "./App.css";
-import LoginProtectedRoute from "./routes/LoginProtectedRoute";
 function App() {
   return (
     <>
@@ -46,6 +46,7 @@ function App() {
                 >
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/register" element={<Register />} />
                 </Route>
               </Routes>
             </Router>
