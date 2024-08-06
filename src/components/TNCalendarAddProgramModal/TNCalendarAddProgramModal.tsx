@@ -139,7 +139,7 @@ export const TNCalendarAddProgramModal = () => {
                     Add Program
             </TNButton>
               {/* Create New Form modal */}
-              <Modal title="Create New Program" open={isAddProgramModalOpen} onOk={handleAddProgramOk} onCancel={handleAddProgramCancel} centered width={845} className="remove-footer-btn">
+            <Modal title="Create New Program" open={isAddProgramModalOpen} onOk={handleAddProgramOk} onCancel={handleAddProgramCancel} centered width={845} className="remove-footer-btn">
                 <hr className="opacity-03 mb-4"/>
                 <div>
                     <TNInput
@@ -286,6 +286,59 @@ export const TNCalendarAddProgramModal = () => {
                     </TNButton>
                 </div>
             </Modal>
+            {/* view modal */}
+            {/* <Modal title="" open={isAddProgramModalOpen} onOk={handleAddProgramOk} onCancel={handleAddProgramCancel} centered width={845} className="remove-footer-btn hidden">
+                <Row gutter={[16, 16]}>
+                    <Col xs={24}>
+                        <h4 className="mb-1 fw-600">Title</h4>
+                        <h5 className="fw-400 h5">Rally Discussion in Mylapore</h5>
+                    </Col>
+                    <Col xs={24}>
+                       <p className="paragraph-sm-text">Agenda is to come up with a strategy to manage the rally, as there are high profile individuals involved.</p>
+                    </Col>
+                    <Col xs={24}>
+                        <h4 className="mb-1 fw-600">Program State date and End Date</h4>
+                        <h5 className="fw-400 h5">Fri 5, Jul 2024 | 10:30 am - 11:00 am</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Repeat</h4>
+                        <h5 className="fw-400 h5">Do not repeat</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Jurisdictions</h4>
+                        <h5 className="fw-400 h5">Statewide</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Program Type</h4>
+                        <h5 className="fw-400 h5">One</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Zone</h4>
+                        <h5 className="fw-400 h5">Surat</h5>
+                    </Col>
+
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">District</h4>
+                        <h5 className="fw-400 h5">Surat</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">City</h4>
+                        <h5 className="fw-400 h5">Surat</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Station</h4>
+                        <h5 className="fw-400 h5">Surat</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Organizer</h4>
+                        <h5 className="fw-400 h5">BJP</h5>
+                    </Col>
+                    <Col xs={24} md={8}>
+                        <h4 className="mb-1 fw-600">Learder</h4>
+                        <h5 className="fw-400 h5">Guruji</h5>
+                    </Col>
+                </Row>
+            </Modal> */}
         </>
     )
 }
