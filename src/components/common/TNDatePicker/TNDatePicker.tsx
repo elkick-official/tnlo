@@ -13,7 +13,7 @@ export const TNDatePicker:React.FC<CustomDatePickerProps>  = ({
 }) => {
     return(
         <>
-            <div>
+            <div className="date-picker-wrap">
                 {label && <label className="ILInputLabelText fw-500 text-tnl-white-edgar d-block">{label}</label>}
                 <RangePicker {...rest}/>
             </div>

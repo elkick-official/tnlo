@@ -41,7 +41,7 @@ textarea.form-control {
 }
 
 .ILInputLabel,
-.searchBarWrap {
+.searchBarWrap,.custom-select-container, .date-picker-wrap {
   margin-bottom: 20px;
 }
 .ILInputLabelText {

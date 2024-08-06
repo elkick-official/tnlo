@@ -206,3 +206,58 @@ export const DfFormEventData = [
     time: "Jul 20, 2024, 2:44:30 PM",
   },
 ];
+export const calendarRepeatTypeOptions = [
+  { label: "Do not repeat", value: "1" },
+  { label: "Weekly", value: "2" },
+  { label: "Monthly", value: "3" },
+  { label: "Yearly", value: "4" },
+];
+export const calendarJurisdictionsTypeOptions = [
+  { label: "Statewide", value: "1" },
+  { label: "Districts", value: "2" },
+  { label: "City", value: "3" },
+  { label: "Multiple", value: "4" },
+];
+export const calendarProgramTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+
+export const calendarZoneTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+export const calendarDistrictTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+export const calendarCityTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+export const calendarStationTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+export const calendarOrganizerTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];
+export const calendarLearderTypeOptions = [
+  { label: "One", value: "1" },
+  { label: "Two", value: "2" },
+  { label: "Three", value: "3" },
+  { label: "Four", value: "4" },
+];

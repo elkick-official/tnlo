@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import { TNButton, TNFullPageCalendar, TNHeader, TNInput } from "../../components";
+import { TNButton, TNCalendarAddProgramModal, TNFullPageCalendar, TNHeader, TNInput } from "../../components";
 import { useState } from "react";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import "./CalendarForecast.css";
@@ -39,18 +39,7 @@ const CalendarForecast = () => {
                     />
                 </div>
                 <div className="ml-auto">
-                  <TNButton
-                    id="add-program"
-                    datatestid="add-program-testid"
-                    type="button"
-                    ILBtnClass="additional-class ml-auto"
-                    handleChange={handleButtonClick}
-                    disabled={false}
-                    >
-                      
-                        <PlusCircleOutlined className="w-auto width min-w-auto pa-0 me-2 height min-h-auto"/>
-                        Add Program
-                    </TNButton>
+                  <TNCalendarAddProgramModal/>
                 </div>
             </div>
             <Row gutter={30} className="mt-4">
