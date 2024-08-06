@@ -1,17 +1,16 @@
 import { ConfigProvider } from "antd";
-import React, { Suspense } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { routeList, routeListProps } from "./routes";
-import { configProvider, lightTheme } from "./utils";
-import { ErrorBoundary } from "./components/ErrorBoundary";
-import { TNFooter, TNHeader } from "./components";
-import LayoutMain from "./layout/Layout";
-import AuthLayout from "./layout/AuthLayout";
-import { ProtectedRoute } from "./routes/ProtectedRoute";
-import { ForgotPassword, Login, Register } from "./page";
-import LoginProtectedRoute from "./routes/LoginProtectedRoute";
 import "antd-css-utilities/utility.min.css";
+import { Suspense } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import AuthLayout from "./layout/AuthLayout";
+import LayoutMain from "./layout/Layout";
+import { ForgotPassword, Login, Register } from "./page";
+import { routeList, routeListProps } from "./routes";
+import LoginProtectedRoute from "./routes/LoginProtectedRoute";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
+import { configProvider, lightTheme } from "./utils";
 function App() {
   return (
     <>
