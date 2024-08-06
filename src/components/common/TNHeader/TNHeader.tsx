@@ -17,13 +17,15 @@ export const TNHeader: FC<TNButtonProps> = ({ children, ...rest }) => {
       >
         <h3>{children}</h3>
         <div className="ml-auto">
-          <div className="flex items-center gap-4">
-            <span className="lh-0">{Icons.userProfileIcon}</span>
-            <Link to="/login" className="h4 mb-0 fw-500">
-              {`${userDetails?.firstName || ""}`}
-            </Link>
-            {/* ${userDetails?.lastName} */}
-          </div>
+          {userDetails?.firstName && (
+            <div className="flex items-center gap-4">
+              <span className="lh-0">{Icons.userProfileIcon}</span>
+              <Link to="/settings" className="h4 mb-0 fw-500">
+                {`${userDetails?.firstName || ""}`}
+              </Link>
+              {/* ${userDetails?.lastName} */}
+            </div>
+          )}
         </div>
       </Header>
     </>

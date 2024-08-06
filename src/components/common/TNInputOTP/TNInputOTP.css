@@ -1,21 +1,21 @@
 /* TNInputOTP.css */
-.otp-input-wrap input{
-    width: 60px !important;
-    height: 60px !important;
-    font-size: 28px;
-    text-align: center;
-    border: 1px solid var(--tnl-whiteout);
-    border-radius: 5px;
-    transition: var(--transition-smooth);
+.otp-input-wrap input {
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 28px;
+  text-align: center;
+  border: 1px solid var(--tnl-whiteout);
+  border-radius: 5px;
+  transition: var(--transition-smooth);
+}
+.otp-input-wrap .ant-form-item-control-input-content > div {
+  justify-content: space-evenly;
+}
+.otp-separator {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .otp-input-wrap {
+    padding: 10px 0 20px;
   }
-  .ant-form-item-control-input-content > div{
-    justify-content: space-evenly;
-  }
-  .otp-separator {
-    font-size: 18px;
-  }
-  @media (min-width: 768px){
-    .otp-input-wrap{
-        padding: 10px 0 20px;
-    }
-  }
+}

@@ -3,6 +3,7 @@ import { create } from "zustand";
 const useDetailStore = create((set) => ({
   userDetails: {},
   setUserDetails: (newUser) => set({ userDetails: newUser }),
+  clearUserDetails: () => set({ userDetails: {} }),
 }));
 
 export default useDetailStore;

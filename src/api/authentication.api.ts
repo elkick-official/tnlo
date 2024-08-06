@@ -19,6 +19,25 @@ export const doLogin = async (requestBody: {
   }
 };
 
+export const getJwtToken = async (requestBody: {
+  userId: number;
+  otp: string;
+}) => {
+  try {
+    const response = await appBaseUrlInstance({
+      method: "POST",
+      url: `${API_BASE}/verify-otp`,
+      data: requestBody,
+    });
+    return response?.data;
+  } catch (error) {
+    console.error("Failed to login:", error);
+    throw error;
+  }
+};
+
+getJwtToken
+
 export const getUserById = async (userId: string) => {
   try {
     const response = await appBaseUrlInstance({

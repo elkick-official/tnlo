@@ -27,7 +27,7 @@ export const TNButton: FC<TNButtonProps> = ({
     <button
       id={id}
       //   datatestid={datatestid}
-      type={type}
+      // type={type}
       disabled={disabled}
       className={clsx(
         ILBtnClass,

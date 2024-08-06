@@ -1,5 +1,5 @@
-import React from "react";
-import { Tabs } from "antd";
+import React, { useState } from "react";
+import { Button, Modal, Tabs } from "antd";
 import { TabsProps } from "antd";
 import {
   EditOutlined,
@@ -10,10 +10,23 @@ import {
 import { TNEditProfileTabData } from "./TNEditProfileTabData";
 import "./TNSettingsTabingForm.css";
 import { Link, useNavigate } from "react-router-dom";
+import useDetailStore from "../../store/useStore";
 export const TNSettingsTabingForm = () => {
+  const { clearUserDetails } = useDetailStore();
+
   const navigate = useNavigate();
   const onChange = (key: string) => {
     console.log(key);
+  };
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
   };
 
   const items: TabsProps["items"] = [
@@ -45,6 +58,7 @@ export const TNSettingsTabingForm = () => {
 
   const handleLogout = () => {
     localStorage.clear();
+    clearUserDetails();
     navigate("/login");
   };
   return (
@@ -57,7 +71,7 @@ export const TNSettingsTabingForm = () => {
         className="setting-table-wrap"
       />
       <div
-        onClick={handleLogout}
+        onClick={showModal}
         className="flex items-center gap-4 setting-tab-logout-btn-wrap absolute cursor-pointer"
       >
         <span className="lh-0">
@@ -65,6 +79,29 @@ export const TNSettingsTabingForm = () => {
         </span>
         <span>Logout</span>
       </div>
+
+      <Modal
+        title=""
+        centered
+        open={isModalVisible}
+        onOk={handleLogout}
+        onCancel={handleCancel}
+        footer={[
+          <div className="flex items-center justify-center gap-5">
+            <Button key="no" onClick={handleCancel}>
+              No
+            </Button>
+
+            <Button key="yes" type="primary" onClick={handleLogout}>
+              Yes
+            </Button>
+          </div>,
+        ]}
+      >
+        <div className="flex items-center justify-center gap-5 mt-5">
+          <h3>Are you sure you want to logout?</h3>
+        </div>
+      </Modal>
     </>
   );
 };

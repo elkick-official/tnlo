@@ -8,8 +8,7 @@ import "./../Authentication.css";
 const Register = () => {
   const { handleForgotPassword, onFinishFailed, loginNavigate } =
     useForgotPasswordHook();
-  
- 
+
   return (
     <>
       <div className="auth-section flex">
@@ -33,12 +32,9 @@ const Register = () => {
           </span>
         </div>
         <div className="auth-box-col w-100 auth-right-col flex py-5 py-md-8">
-        <div className="auth-form-box">
+          <div className="auth-form-box">
             <h1 className="big primary-title text-center">Register Account</h1>
-            <h6 className="title-label text-center mt-4">
-              All good. Enter your account's registerd email address and we'll
-              send you a code to reset your password.
-            </h6>
+
             <Row gutter={24} className="">
               <Form
                 name="registerAccount"
