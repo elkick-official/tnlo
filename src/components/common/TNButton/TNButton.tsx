@@ -7,6 +7,7 @@ interface TNButtonProps {
   datatestid?: string;
   type?: "button" | "submit" | "reset";
   ILBtnClass?: string;
+  spanBtnClass? : string,
   handleChange?: MouseEventHandler<HTMLButtonElement>;
   children?: ReactNode;
   disabled?: boolean;
@@ -18,6 +19,7 @@ export const TNButton: FC<TNButtonProps> = ({
   datatestid,
   type = "button",
   ILBtnClass,
+  spanBtnClass,
   handleChange,
   children,
   disabled = false,
@@ -36,7 +38,7 @@ export const TNButton: FC<TNButtonProps> = ({
       onClick={handleChange}
       {...rest}
     >
-      <span className="flex items-center content-center transition-smooth">
+      <span className={clsx(spanBtnClass, "flex items-center content-center transition-smooth")}>
         {children}
       </span>
     </button>

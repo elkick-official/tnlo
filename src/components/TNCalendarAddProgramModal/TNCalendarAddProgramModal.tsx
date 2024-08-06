@@ -165,6 +165,7 @@ export const TNCalendarAddProgramModal = () => {
                             datatestid="-testid"
                             type="button"
                             ILBtnClass="mr-5 btn-transparent"
+                            spanBtnClass="width min-w-auto"
                             handleChange={() => {return false}}
                             disabled={false}
                             >
