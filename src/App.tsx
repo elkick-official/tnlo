@@ -11,6 +11,7 @@ import { routeList, routeListProps } from "./routes";
 import LoginProtectedRoute from "./routes/LoginProtectedRoute";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { configProvider, lightTheme } from "./utils";
+import FallBack404 from "./page/FallBack404";
 function App() {
   return (
     <>
@@ -47,6 +48,7 @@ function App() {
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/register" element={<Register />} />
                 </Route>
+                <Route path="*" element={<FallBack404 />}></Route>
               </Routes>
             </Router>
           </ConfigProvider>
