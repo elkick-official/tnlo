@@ -4,6 +4,7 @@ type ForgotPasswordHookReturnType = {
   handleForgotPassword: (values: unknown) => void;
   onFinishFailed: () => void;
   loginNavigate: () => void;
+  otpNavigate: () => void;
 };
 
 export const useForgotPasswordHook = (): ForgotPasswordHookReturnType => {
@@ -12,8 +13,11 @@ export const useForgotPasswordHook = (): ForgotPasswordHookReturnType => {
   const loginNavigate = () => {
     navigate("/login");
   };
+  const otpNavigate = () => {
+    navigate("/otp");
+  };
   const handleForgotPassword = async (values: unknown) => { };
   const onFinishFailed = () => { };
 
-  return { handleForgotPassword, onFinishFailed, loginNavigate };
+  return { handleForgotPassword, onFinishFailed, loginNavigate, otpNavigate };
 };

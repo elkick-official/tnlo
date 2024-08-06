@@ -17,7 +17,10 @@
 }
 .form-control:focus,
 .form-control:focus-within,
-.form-control:focus-visible {
+.form-control:focus-visible,
+.otp-input-wrap input:focus,
+.otp-input-wrap input:focus-within,
+.otp-input-wrap input:focus-visible {
   border-color: var(--tnl-primary-rgb);
   background-color: var(--tnl-tristesse);
   outline: none;

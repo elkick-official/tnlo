@@ -5,7 +5,7 @@ import { logo } from "../../../const/imageData";
 import { useForgotPasswordHook } from "../../../hooks";
 import "./../Authentication.css";
 const ForgotPassword = () => {
-  const { handleForgotPassword, onFinishFailed, loginNavigate } =
+  const { handleForgotPassword, onFinishFailed, loginNavigate, otpNavigate } =
     useForgotPasswordHook();
   return (
     <>
@@ -79,7 +79,8 @@ const ForgotPassword = () => {
                       type="submit"
                       ILBtnClass="w-full btn-transparent"
                       disabled={false}
-                      htmlType="submit"
+                      // htmlType="submit"
+                      handleChange={otpNavigate}
                     >
                       Send Code
                     </TNButton>
