@@ -6,6 +6,7 @@ import {
   HomeOutlined,
   LogoutOutlined,
   ProfileOutlined,
+  UserAddOutlined,
 } from "@ant-design/icons";
 import { TNEditProfileTabData } from "./TNEditProfileTabData";
 import "./TNSettingsTabingForm.css";
@@ -47,9 +48,9 @@ export const TNSettingsTabingForm = () => {
       label: (
         <div className="flex items-center gap-4">
           <span className="lh-0 svg-icon-home">
-            <HomeOutlined className="svg-icon-big-size" />
+            <UserAddOutlined className="svg-icon-big-size" />
           </span>
-          Notification
+          Create User
         </div>
       ),
       children: "Coming Soon",

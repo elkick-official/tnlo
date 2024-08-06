@@ -10,9 +10,8 @@ const tagInputStyle: React.CSSProperties = {
   verticalAlign: "top",
 };
 
-const TNTags = ({ handleChangeTags }: any) => {
+const TNTags = ({ handleChangeTags, tags }: any) => {
   const { token } = theme.useToken();
-  const [tags, setTags] = useState<string[]>([]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [editInputIndex, setEditInputIndex] = useState(-1);
@@ -33,7 +32,7 @@ const TNTags = ({ handleChangeTags }: any) => {
   const handleClose = (removedTag: string) => {
     const newTags = tags.filter((tag) => tag !== removedTag);
     console.log(newTags);
-    setTags(newTags);
+    handleChangeTags(newTags);
   };
 
   const showInput = () => {
@@ -47,7 +46,7 @@ const TNTags = ({ handleChangeTags }: any) => {
   const handleInputConfirm = () => {
     if (inputValue && !tags.includes(inputValue)) {
       const allTags = [...tags, inputValue];
-      setTags(allTags);
+      handleChangeTags(allTags);
       handleChangeTags(allTags);
     }
     setInputVisible(false);
@@ -61,7 +60,7 @@ const TNTags = ({ handleChangeTags }: any) => {
   const handleEditInputConfirm = () => {
     const newTags = [...tags];
     newTags[editInputIndex] = editInputValue;
-    setTags(newTags);
+    handleChangeTags(newTags);
     setEditInputIndex(-1);
     setEditInputValue("");
   };

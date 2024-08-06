@@ -42,6 +42,7 @@ const LegacyDataDigitilization = () => {
     searchVal,
     selectedType,
     handleTypeChange,
+    tags,
   } = useLegacyDataDigitilization();
 
   return (
@@ -101,6 +102,7 @@ const LegacyDataDigitilization = () => {
               handleDeleteFile={handleDeleteFile}
               selectedType={selectedType}
               handleTypeChange={handleTypeChange}
+              tags={tags}
             />
           </div>
         </section>
@@ -123,6 +125,7 @@ const LegacyDataDigitilization = () => {
         handleFilelist={handleFilelist}
         isFileUploding={isFileUploding}
         currentFolderId={currentFolderId}
+        tags={tags}
       />
     </>
   );

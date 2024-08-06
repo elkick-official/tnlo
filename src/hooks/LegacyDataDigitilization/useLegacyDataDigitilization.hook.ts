@@ -294,7 +294,8 @@ const useLegacyDataDigitilization = () => {
         handleSearch,
         searchVal,
         selectedType,
-        handleTypeChange
+        handleTypeChange,
+        tags
     }
 
 }

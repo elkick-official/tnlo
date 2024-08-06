@@ -15,6 +15,7 @@ const TNUploadFileModal = ({
   isFileUploding,
   currentFolderId,
   handleChangeTags,
+  tags,
 }: any) => {
   console.log({ currentFolderId });
   const uploadProps: UploadProps = {
@@ -91,7 +92,7 @@ const TNUploadFileModal = ({
             <Row className="mt-6">
               <Col span={24}>
                 <Form.Item name="tags" label="Tags">
-                  <TNTags handleChangeTags={handleChangeTags} />
+                  <TNTags handleChangeTags={handleChangeTags} tags={tags} />
                 </Form.Item>
               </Col>
             </Row>

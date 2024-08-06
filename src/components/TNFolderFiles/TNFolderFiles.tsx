@@ -95,14 +95,14 @@ export const TNFolderFiles = ({
           placeholder="Type"
           allowClear
         />
-        <TNSelect
+        {/* <TNSelect
           label=""
           options={legencyModifiedOptions}
           value={selectedValue}
           // onChange={handleModifiedChange}
           placeholder="Modified"
           allowClear
-        />
+        /> */}
       </div>
 
       {isViewGrid ? (

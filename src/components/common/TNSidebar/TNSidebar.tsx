@@ -38,12 +38,12 @@ function getItem(
   } as MenuItem;
 }
 const items: MenuItem[] = [
-  getItem(
-    <Link to="/">Dashboard</Link>,
-    "1",
-    // <AppstoreOutlined style={{ fontSize: "20px", color: "black" }} />
-   <b className="text-tnl-rapunzel-silver">{Icons.dashboardIcon}</b>
-  ),
+  // getItem(
+  //   <Link to="/">Dashboard</Link>,
+  //   "1",
+  //   // <AppstoreOutlined style={{ fontSize: "20px", color: "black" }} />
+  //  <b className="text-tnl-rapunzel-silver">{Icons.dashboardIcon}</b>
+  // ),
   getItem(
     <Link to="/legacy-data-digitilization">Legacy Data Digitization</Link>,
     "2",
@@ -56,12 +56,12 @@ const items: MenuItem[] = [
     // <CodeSandboxOutlined style={{ fontSize: "20px", color: "black" }} />
     <b className="text-tnl-rapunzel-silver">{Icons.dataRepositoryIcon}</b>
   ),
-  getItem(
-    <Link to="/dynamic-forms">Dynamic Forms</Link>,
-    "4",
-    // <FormOutlined style={{ fontSize: "20px", color: "black" }} />
-    <b className="text-tnl-rapunzel-silver">{Icons.dynamicFormsIcon}</b>
-  ),
+  // getItem(
+  //   <Link to="/dynamic-forms">Dynamic Forms</Link>,
+  //   "4",
+  //   // <FormOutlined style={{ fontSize: "20px", color: "black" }} />
+  //   <b className="text-tnl-rapunzel-silver">{Icons.dynamicFormsIcon}</b>
+  // ),
   getItem(
     <Link to="/calendar-forecast">Calendar Forecast</Link>,
     "5",
