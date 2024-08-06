@@ -1,4 +1,4 @@
-import { Col, DatePicker, Modal, Row } from "antd";
+import { Col, Modal, Row } from "antd";
 
 import { useState } from "react";
 import { PlusCircleOutlined } from "@ant-design/icons";
@@ -158,7 +158,7 @@ export const TNCalendarAddProgramModal = () => {
                     />
                 </div>
                 <div className="flex items-center justify-space-between gap-5 flex-wrap">
-                    <TNDatePicker label="Program State date and End Date" showTime options={[]} />
+                    <TNDatePicker label="Program State date and End Date" showTimeOption={true} options={[]} />
                     <div className="ms-auto flex items-center">
                         <TNButton
                             id=""
