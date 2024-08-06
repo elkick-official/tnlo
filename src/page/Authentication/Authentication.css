@@ -35,7 +35,7 @@
 
 .otp-back-button {
   position: absolute;
-  top: 30px;
+  top: 20px;
 }
 @media (min-width: 992px) {
   .auth-box-col {
@@ -50,9 +50,6 @@
   .auth-left-col {
     min-height: 200px;
   }
-  .otp-back-button {
-    top: 55%;
-  }
 }
 @media (max-width: 767px) {
   .auth-form-box form {
@@ -60,8 +57,5 @@
   }
   .auth-form-box {
     padding: 0 15px;
-  }
-  .otp-back-button {
-    top: 55%;
   }
 }

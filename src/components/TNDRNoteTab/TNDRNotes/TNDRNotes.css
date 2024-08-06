@@ -28,10 +28,6 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 25px;
 } */
-.notes-grid-wrap {
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 24px;
-}
 .notes-col {
   min-width: 200px;
   background-color: var(--tnl-dark-rift);
@@ -76,9 +72,6 @@
 .notes-col:hover p,
 .notes-col:hover h5 {
   color: var(--tnl-dr-white);
-}
-.data-repository-seacrhbar-input input {
-  min-width: 400px;
 }
 /* @media (max-width: 1599px){
   .data-legency-folder-view {

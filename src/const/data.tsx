@@ -149,31 +149,37 @@ export const submitColumns = [
     title: "Name",
     dataIndex: "name",
     key: "name",
+    // width: 100,
   },
   {
     title: "ID",
     dataIndex: "id",
     key: "id",
+    // width: 100,
   },
   {
     title: "SID",
     dataIndex: "sid",
     key: "sid",
+    // width: 100,
   },
   {
     title: "Phone Number",
     dataIndex: "phoneNumber",
     key: "phoneNumber",
+    // width: 100,
   },
   {
     title: "Email",
     dataIndex: "email",
     key: "email",
+    // width: 100,
   },
   {
     title: "Submitted On",
     dataIndex: "submittedOn",
     key: "submittedOn",
+    // width: 100,
   },
 ];
 export const dfAddSectionTypeOptions = [

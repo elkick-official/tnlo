@@ -47,7 +47,7 @@ textarea.form-control {
 .ILInputLabelText {
   font-size: 14px;
   font-weight: 500;
-  color: var(--tnl-tristesse);
+  color: var(--tnl-black);
   margin-bottom: 8px;
 }
 

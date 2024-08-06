@@ -45,7 +45,7 @@ const Login = () => {
             </a>
           </span>
         </div>
-        <div className="auth-box-col w-100 auth-right-col flex py-5 py-md-8">
+        <div className="auth-box-col w-100 auth-right-col flex py-5 py-md-8 relative">
           {/* // Login start */}
 
           {/* // Login end */}

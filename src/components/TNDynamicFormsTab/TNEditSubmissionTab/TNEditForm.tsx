@@ -60,8 +60,8 @@ export const TNEditForm = () => {
     // swicth js end
     return(
         <>
-            <Row gutter={24}>
-                <Col xs={6}>
+            <Row gutter={[24, 24]}>
+                <Col xs={24} lg={8} xl={6}>
                     <div className="legency-data-tab-wrap bg-tnl-white mt-0 box-shadow-default">
                         <h3 className="pb-3 fw-500">Sections</h3>
                         <hr className="opacity-03 mb-3"/>
@@ -79,7 +79,7 @@ export const TNEditForm = () => {
                         </div>
                     </div>
                 </Col>
-                <Col xs={18}>
+                <Col xs={24} lg={16} xl={18}>
                     <div className="legency-data-tab-wrap bg-tnl-white mt-0 box-shadow-default">
                         <TNInput
                         id="df-name"

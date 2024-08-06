@@ -13,35 +13,42 @@
         --container-size: calc(100% - 40px);
     }
     .primary-title{
-        font-size: 26px;
+        font-size: 24px;
     }
     .big.primary-title {
-        font-size: 30px;
+        font-size: 28px;
     }
     h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
     
     h2 {
-        font-size: 22px;
-    }
-    
-    h3 {
         font-size: 20px;
     }
     
-    .h3.big {
+    h3 {
         font-size: 18px;
     }
+    
+    .h3.big {
+        font-size: 17px;
+    }
     h4,.title-label {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 @media (max-width: 991px) {
     :root{
         --container-size: calc(100% - 30px);
+        --tnl-space-md: 35px;
+        --tnl-space-sm: 25px;
+        --xx-space: 25px;
+        --yy-space: 25px;
+        --mid-space: 15px;
     }
-  
+    .form-control,.form-control::placeholder{
+        font-size: 14px;
+    }
 }
 @media (max-width: 767px) {
     :root{

@@ -45,7 +45,7 @@ import "./TNFormEditSubmissionCard.css";
             <div className="w-full legency-data-tab-wrap bg-tnl-white mt-4 edit-submission-card">
                 <div className="flex items-center flex-wrap gap-3 mb-4">
                     <h3 className="mb-0">Student Rally</h3>
-                    <h5 className="ml-auto date-label-text fw fw-500 transition-smooth"><b>Updated at :</b>&nbsp;Jul 20, 2024, 2:44:30 PM</h5>
+                    <h5 className="ml-auto date-label-text fw fw-500 transition-smooth text-right"><b>Updated at :</b>&nbsp;Jul 20, 2024, 2:44:30 PM</h5>
                 </div>
                 <h3 className="mb-12 fw-500">Student rally in Thambaram</h3>
                 <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ import "./TNFormEditSubmissionCard.css";
                     <Col xs={12}>
                         <Link to={"/form-edit-user-view"} className="legency-data-tab-wrap bg-tnl-white mt-0 flex items-center gap-4 px-5 py-8 df-Form-event-data-card" key={eventIndex}>
                             <h3 className="mb-0 fw fw-500 text-tnl-black transition-smooth">{eventItem.name}</h3>
-                            <h5 className="ml-auto date-label-text fw fw-500 transition-smooth mb-0 text-tnl-black"><b>Updated at :</b>&nbsp;{eventItem.time}</h5>
+                            <h5 className="ml-auto date-label-text fw fw-500 transition-smooth text-right mb-0 text-tnl-black"><b>Updated at :</b>&nbsp;{eventItem.time}</h5>
                         </Link>
                     </Col>
                     )

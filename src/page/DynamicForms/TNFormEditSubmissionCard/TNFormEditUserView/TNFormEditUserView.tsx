@@ -44,7 +44,7 @@ const TNFormEditUserView = () => {
          <section className="xx-space">
             <div className="legency-data-tab-wrap bg-tnl-white mt-0 flex items-center gap-4 px-5 py-8 df-Form-event-data-card">
                 <h3 className="mb-0 fw fw-500 text-tnl-black transition-smooth">Submission by Natrajan R.</h3>
-                <h5 className="ml-auto date-label-text fw fw-500 transition-smooth mb-0 text-tnl-black"><b>Updated at :</b>&nbsp;Jul 20, 2024, 2:44:30 PM</h5>
+                <h5 className="ml-auto date-label-text fw fw-500 transition-smooth text-right mb-0 text-tnl-black"><b>Updated at :</b>&nbsp;Jul 20, 2024, 2:44:30 PM</h5>
             </div>
             <div className="legency-data-tab-wrap bg-tnl-white mt-4">
                 <Row gutter={24}>

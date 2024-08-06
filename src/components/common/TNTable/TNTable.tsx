@@ -11,7 +11,7 @@ export const TNTable:FC<tableProps> = ({
 }) => {
     return(
         <>
-            <Table dataSource={dataSource} columns={columns} />;
+            <Table dataSource={dataSource} columns={columns} scroll={{ x: 1920, y: 600 }}/>;
         </>
     )
 }

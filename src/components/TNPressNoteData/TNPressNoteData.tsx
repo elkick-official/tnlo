@@ -44,7 +44,7 @@ export const TNPressNoteData = () => {
                 Add New Note
                 </TNButton>
             </div>
-           <div className="legency-data-digitization-head-wrap flex items-end mt-3">
+           <div className="legency-data-digitization-head-wrap flex items-end mt-3 gap-5 legency-data-digitization-head-tab-wrap">
                 <div>
                     <TNInput
                     id="dr-note-search"
@@ -62,7 +62,7 @@ export const TNPressNoteData = () => {
                     errorMsg="This is an error message"
                     />
                 </div>
-                <div className="ml-auto flex gap-6">
+                <div className="ml-auto flex gap-6 mt-4">
                     <TNSelect
                         label="Status"
                         options={drNoteOptions}

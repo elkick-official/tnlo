@@ -53,15 +53,15 @@ const CalendarForecast = () => {
                     </TNButton>
                 </div>
             </div>
-            <Row gutter={30}>
-              <Col xs={6}>
+            <Row gutter={30} className="mt-4">
+              <Col xl={9} xxl={6}>
                 <div className="legency-data-tab-wrap bg-tnl-white mt-3">
                   <h3 className="pb-3 fw-500">Calander</h3>
                   <hr className="opacity-03"/>
                   <TNFullPageCalendar fullscreen={false}/>
                 </div>
               </Col>
-              <Col xs={18}>
+              <Col xl={15} xxl={18}>
                 <div className="legency-data-tab-wrap bg-tnl-white mt-3">
                   <h3 className="pb-3 fw-500">Time Picker</h3>
                   <hr className="opacity-03"/>

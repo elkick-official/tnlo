@@ -45,7 +45,7 @@ import "./TNDRNotes.css";
                 Add New Note
                 </TNButton>
             </div>
-           <div className="legency-data-digitization-head-wrap flex items-end mt-3">
+           <div className="legency-data-digitization-head-wrap legency-data-digitization-head-tab-wrap flex items-end mt-3 gap-5">
                 <div>
                     <TNInput
                     id="dr-note-search"

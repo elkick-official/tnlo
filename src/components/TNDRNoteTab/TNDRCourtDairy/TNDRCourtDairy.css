@@ -85,3 +85,20 @@
         grid-gap: 12px;
     }
 }
+@media (max-width: 1199px){
+    .notes-grid-wrap{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .data-repository-seacrhbar-input input{
+        min-width: 300px;
+    }
+}
+@media (max-width: 991px){
+    .notes-grid-wrap{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .legency-data-digitization-head-tab-wrap{
+        flex-direction: column;
+        align-items: start;
+    }
+}
