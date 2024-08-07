@@ -6,15 +6,17 @@ import { PlusCircleOutlined } from "@ant-design/icons";
 import { TNButton } from "../../common/TNButton/TNButton";
 import { drNoteOptions, DRnotesData } from "../../../const/data";
 
-const TNWriteNote = () => {
-  const handleButtonClick = () => {
-    console.log("Button clicked");
+const TNWriteNote = ({ addBtnName }: any) => {
+  const [isWriteNote, setIsWriteNote] = useState(false);
+
+  const handleAddNoteButton = () => {
+    setIsWriteNote(true);
   };
 
-  const [inputValue, setInputValue] = useState<string>("");
+  const [searchVal, setSearchVal] = useState<string>("");
 
-  const handleAddNoteButton = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchVal(e.target.value);
   };
 
   const [selectedValue, setSelectedValue] = useState<
@@ -34,11 +36,11 @@ const TNWriteNote = () => {
             datatestid="dr-note-search-testid"
             type="text"
             name="drNoteSearch"
-            // value={inputValue}
+            value={searchVal}
             label="what are you looking for?"
             placeholder="what are you looking for?"
             ILInputLabelClass="mb-0 data-repository-seacrhbar-input"
-            // handleChange={handleInputChange}
+            handleChange={handleSearchChange}
             textAreaShow={false}
             readOnly={false}
             searchBarControl
@@ -51,11 +53,11 @@ const TNWriteNote = () => {
           datatestid="add-new-note-testid"
           type="button"
           ILBtnClass="additional-class ml-auto"
-          //   handleChange={handleAddNoteButton}
+          handleChange={handleAddNoteButton}
           disabled={false}
         >
           <PlusCircleOutlined className="w-auto width min-w-auto pa-0 me-2 height min-h-auto" />
-          Add New Note
+          {addBtnName || "Add New Note"}
         </TNButton>
       </div>
       <div className="legency-data-digitization-head-wrap legency-data-digitization-head-tab-wrap flex items-end mt-3 gap-5 hidden">
