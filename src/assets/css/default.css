@@ -660,3 +660,6 @@ header .active {
   width: 15px;
   height: 15px;
 }
+.justify-space-between{
+  justify-content: space-between;
+}
