@@ -158,7 +158,7 @@ const useLegacyDataDigitilization = () => {
         try {
             setIsFetchFiles(true)
             const res = await getAllFoldersNFiles(folderId)
-            if (res.folderId) {
+            if (res?.folderId) {
                 const newFolders = res?.subFolders ? res?.subFolders?.map((data: any) => {
                     return { ...data, parentId: folderId }
                 }) : []
@@ -183,7 +183,9 @@ const useLegacyDataDigitilization = () => {
         const appendTags = tags.join(",")
         const params = {
             FolderId: selectedFolderId,
-            TagData: appendTags
+            TagData: appendTags,
+            TypeId: "",
+            FileContent: ""
         }
 
         for (const [index, file] of Object.entries(selectedFileList)) {

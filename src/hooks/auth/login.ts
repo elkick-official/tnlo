@@ -40,7 +40,7 @@ export const useLoginHook = () => {
         console.log({ loginResponseData })
         if (loginResponseData?.jwtToken) {
           localStorage.setItem("_token", loginResponseData?.jwtToken);
-          const userDetailsResponse = await getUserById(loginResponseData?.userId);
+          const userDetailsResponse = await getUserById(loginResponseData?.userId, loginResponseData?.jwtToken);
           setUserDetails(userDetailsResponse);
           navigate("/legacy-data-digitilization");
         } else {

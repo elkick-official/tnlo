@@ -1,4 +1,4 @@
-import { appBaseUrlInstance } from "../utils/AxiosApi/AxiosApi";
+import { loginBaseUrlInstance } from "../utils/AxiosApi/AxiosApi";
 
 const API_BASE = "/api/Users";
 
@@ -7,7 +7,7 @@ export const doLogin = async (requestBody: {
   password: string;
 }) => {
   try {
-    const response = await appBaseUrlInstance({
+    const response = await loginBaseUrlInstance({
       method: "POST",
       url: `${API_BASE}/authenticate`,
       data: requestBody,
@@ -24,7 +24,7 @@ export const getJwtToken = async (requestBody: {
   otp: string;
 }) => {
   try {
-    const response = await appBaseUrlInstance({
+    const response = await loginBaseUrlInstance({
       method: "POST",
       url: `${API_BASE}/verify-otp`,
       data: requestBody,
@@ -38,11 +38,14 @@ export const getJwtToken = async (requestBody: {
 
 getJwtToken
 
-export const getUserById = async (userId: string) => {
+export const getUserById = async (userId: string, token: string) => {
   try {
-    const response = await appBaseUrlInstance({
+    const response = await loginBaseUrlInstance({
       method: "GET",
       url: `${API_BASE}/${userId}`,
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
     });
     return response?.data;
   } catch (error) {

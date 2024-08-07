@@ -17,7 +17,7 @@ function App() {
     <>
       {/* <TNHeader/> */}
       <ErrorBoundary>
-        <Suspense fallback={<>Loading</>}>
+        <Suspense fallback={<>Loading...</>}>
           <ConfigProvider {...configProvider} theme={lightTheme}>
             <Router>
               <Routes>

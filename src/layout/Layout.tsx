@@ -15,7 +15,7 @@ const LayoutMain = () => {
     try {
       const decoded = jwtDecode(token);
       if (decoded?.id) {
-        const userDetailsResponse = await getUserById(decoded?.id);
+        const userDetailsResponse = await getUserById(decoded?.id, token);
         setUserDetails(userDetailsResponse);
       }
     } catch (error) {
@@ -27,8 +27,9 @@ const LayoutMain = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("_token");
-    decodeToken(token);
+    if (token) decodeToken(token);
   }, []);
+
   return (
     <section>
       <Layout style={{ minHeight: "100vh" }}>
