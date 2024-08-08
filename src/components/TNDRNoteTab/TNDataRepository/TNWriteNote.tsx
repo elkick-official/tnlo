@@ -324,6 +324,7 @@ const TNWriteNote = ({
                   marginTop: "1rem",
                   display: "flex",
                   justifyContent: "flex-start",
+                  width: "300px",
                 }}
               >
                 <FolderSelectTree
