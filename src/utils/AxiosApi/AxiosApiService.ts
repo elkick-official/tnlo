@@ -1,11 +1,17 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { infoNotification } from '../notification.util';
+import { jwtDecode } from 'jwt-decode';
 
-function isTokenExpired(token: string): boolean {
-    // const payload = JSON.parse(atob(token.split('.')[1]));
-    // const expiry = payload.exp;
-    // const now = Math.floor(Date.now() / 1000);
-    // return now > expiry;
-}
+export const isTokenExpired = (token: string) => {
+    if (!token) {
+        return true; // If there's no token, consider it expired
+    }
+
+    const decodedToken = jwtDecode(token);
+    const currentTime = Date.now() / 1000;
+
+    return decodedToken.exp < currentTime;
+};
 
 export const handleRequestInterceptor = async (config: AxiosRequestConfig) => {
     // Retrieve token from localStorage or any other storage mechanism
@@ -17,12 +23,16 @@ export const handleRequestInterceptor = async (config: AxiosRequestConfig) => {
     }
 
     // Check token validity (optional)
-    // if (token && isTokenExpired(token)) {
-    //     // Log out user if token is expired
-    //     localStorage.removeItem('authToken');
-    //     window.location.href = '/login'; // Redirect to login page
-    //     return Promise.reject(new Error('Token expired. Please log in again.'));
-    // }
+    // console.log("Token expired")
+    if (isTokenExpired(token)) {
+        console.log("Token expired")
+        // Log out user if token is expired
+        localStorage.removeItem('_token');
+        window.location.replace('/login'); // Redirect to the login page
+        infoNotification("Session Expired, Please Login Again!")
+        return Promise.reject(new Error('Token expired. Please log in again.'));
+    }
+
 
     return config;
 }

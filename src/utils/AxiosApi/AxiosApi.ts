@@ -12,6 +12,10 @@ const appBaseUrlInstance = axios.create({
   baseURL: config.APP_URL,
 });
 
+const loginBaseUrlInstance = axios.create({
+  baseURL: config.APP_URL,
+});
+
 //Request Interceptor
 appBaseUrlInstance.interceptors.request.use(
   handleRequestInterceptor,
@@ -24,4 +28,4 @@ appBaseUrlInstance.interceptors.response.use(
   responseInterceptorErrorFunc
 );
 
-export { appBaseUrlInstance };
+export { appBaseUrlInstance, loginBaseUrlInstance };

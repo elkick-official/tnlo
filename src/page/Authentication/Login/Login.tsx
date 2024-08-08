@@ -191,12 +191,12 @@ const Login = () => {
                       </Spin>
                     </Form.Item>
                   </Col>
-                  <Col xs={24} className="text-center mt-4">
+                  {/* <Col xs={24} className="text-center mt-4">
                     <span>
                       Don't have an account?&nbsp;
                       <Link to="/register">Sign up now</Link>
                     </span>
-                  </Col>
+                  </Col> */}
                 </Form>
               </Row>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { isTokenExpired } from "../utils/AxiosApi/AxiosApiService";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -16,7 +17,8 @@ const LoginProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
   const token = localStorage.getItem("_token");
 
-  if (!token) {
+  if (isTokenExpired(token)) {
+    localStorage.removeItem("_token");
     return <>{children}</>;
   }
 
