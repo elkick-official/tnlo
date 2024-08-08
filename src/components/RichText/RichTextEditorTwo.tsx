@@ -14,6 +14,7 @@ function RichTextEditorTwo({ handleRichTextHtml, htmlContent }: any) {
       ],
       ["link", "image"],
       ["clean"],
+      ["table"],
     ],
     clipboard: {
       // toggle to add extra line breaks when pasting HTML:
@@ -33,6 +34,7 @@ function RichTextEditorTwo({ handleRichTextHtml, htmlContent }: any) {
     "indent",
     "link",
     "image",
+    "table",
   ];
 
   return (

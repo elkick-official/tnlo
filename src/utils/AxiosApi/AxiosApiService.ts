@@ -2,7 +2,7 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { infoNotification } from '../notification.util';
 import { jwtDecode } from 'jwt-decode';
 
-const isTokenExpired = (token: string) => {
+export const isTokenExpired = (token: string) => {
     if (!token) {
         return true; // If there's no token, consider it expired
     }
