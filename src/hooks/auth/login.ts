@@ -42,6 +42,7 @@ export const useLoginHook = () => {
           localStorage.setItem("_token", loginResponseData?.jwtToken);
           const userDetailsResponse = await getUserById(loginResponseData?.userId, loginResponseData?.jwtToken);
           setUserDetails(userDetailsResponse);
+          setIsLoginLoading(false)
           navigate("/legacy-data-digitilization");
         } else {
           infoNotification("Incorrect code. Please try again.");
