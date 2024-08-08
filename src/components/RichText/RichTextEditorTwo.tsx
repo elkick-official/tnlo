@@ -1,5 +1,6 @@
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import parse from "html-react-parser";
 
 function RichTextEditorTwo({ handleRichTextHtml, htmlContent }: any) {
   const modules = {
@@ -38,14 +39,16 @@ function RichTextEditorTwo({ handleRichTextHtml, htmlContent }: any) {
   ];
 
   return (
-    <ReactQuill
-      theme="snow"
-      value={htmlContent}
-      onChange={handleRichTextHtml}
-      modules={modules}
-      formats={formats}
-      style={{ height: "190px" }}
-    />
+    <>
+      <ReactQuill
+        theme="snow"
+        value={htmlContent}
+        onChange={handleRichTextHtml}
+        modules={modules}
+        formats={formats}
+        style={{ height: "190px" }}
+      />
+    </>
   );
 }
 

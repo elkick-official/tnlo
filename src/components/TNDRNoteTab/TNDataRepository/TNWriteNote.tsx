@@ -36,7 +36,7 @@ const TNWriteNote = ({
   handleChangeTags,
   tags,
   value,
-  handleonChange,
+  onChange,
   treeData,
   onLoadData,
   isPreview,
@@ -96,6 +96,7 @@ const TNWriteNote = ({
     },
   };
 
+  console.log({ allNotes });
   return (
     <>
       {isPreview && (
@@ -143,7 +144,7 @@ const TNWriteNote = ({
               <div className="selectFodler-home-element">
                 <FolderSelectTree
                   value={value}
-                  onChange={handleonChange}
+                  onChange={onChange}
                   treeData={treeData}
                   onLoadData={onLoadData}
                 />
@@ -327,7 +328,7 @@ const TNWriteNote = ({
               >
                 <FolderSelectTree
                   value={value}
-                  onChange={handleonChange}
+                  onChange={onChange}
                   treeData={treeData}
                   onLoadData={onLoadData}
                 />

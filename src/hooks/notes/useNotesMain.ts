@@ -14,7 +14,7 @@ const useNotesMain = (type: any) => {
     const { userDetails } = useDetailStore();
 
     const [isAddButton, setisAddButton] = useState(false);
-    const [allNotes, setAllNotes] = useState<any>([{ title: "Hello", fileContent: "<p>Venkz<p/>", tagData: "Hey,hi, SDFF, SDFDFDF, SDFSFFSDFFSFSDFSDFDFSDFSF" }])
+    const [allNotes, setAllNotes] = useState<any>([])
     const [title, setTitle] = useState("")
     const [htmlContent, sethtmlContent] = useState("");
     const [isEditMode, setEditMode] = useState(false)
@@ -25,7 +25,15 @@ const useNotesMain = (type: any) => {
     const [isPreview, setIsPreview] = useState(false);
     const [isNoteSubmitting, setNoteSubmitting] = useState(false)
     const [treeData, setTreeData] = useState<Omit<DefaultOptionType, "label">[]>(
-        []
+        [
+            {
+                id: 1,
+                pId: null,
+                value: 1,
+                title: "Home",
+                isLeaf: false,
+            }
+        ]
     );
     const [searchVal, setSearchVal] = useState();
 
@@ -119,8 +127,9 @@ const useNotesMain = (type: any) => {
                     return obj;
                 });
                 if (initialLoad) {
-                    setTreeData(formatToTreeStructure);
-                    setVal(folderId)
+                    // setTreeData(formatToTreeStructure);
+                    setTreeData(treeData.concat(formatToTreeStructure));
+                    setVal(1)
                 } else {
                     setTreeData(treeData.concat(formatToTreeStructure));
                 }
@@ -142,8 +151,8 @@ const useNotesMain = (type: any) => {
             const res = await getAllFoldersNFiles(value)
             if (res?.folderId) {
                 const newFiles = res?.files || []
-                const notesType = newFiles?.map((data: any) => data?.typeName == type)
-                setAllNotes([...newFiles])
+                const allNotesOfType = newFiles?.filter((data: any) => data?.typeName == type)
+                setAllNotes(allNotesOfType)
             }
             setNotesLoading(false)
         } catch (error) {
@@ -155,15 +164,16 @@ const useNotesMain = (type: any) => {
 
 
     const handleSubmit = async () => {
-        setNoteSubmitting(true)
-        if (!value?.length || !htmlContent?.length || !title?.length) {
+        console.log({ value, htmlContent, title })
+        if (!value || !htmlContent?.length || !title?.length) {
             infoNotification("Please Enter All the Details.")
             return
         }
 
+        setNoteSubmitting(true)
         try {
             const params = {
-                FolderId: value,
+                FolderId: value == "Home" ? 1 : value,
                 TagData: tags.join(","),
                 TypeId: typeId,
                 FileContent: htmlContent,
@@ -182,6 +192,8 @@ const useNotesMain = (type: any) => {
                 setAllNotes([{ ...res }, ...allNotes])
                 setisAddButton(false)
                 sethtmlContent("")
+                setTitle("")
+                setTags([])
             } else {
                 errorNotification("Something went wrong!")
             }
@@ -198,7 +210,7 @@ const useNotesMain = (type: any) => {
     }, []);
 
     useEffect(() => {
-        if (value) {
+        if (value && value !== "Home") {
             fetchAllFiles()
         }
     }, [value])

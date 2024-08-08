@@ -3,7 +3,7 @@ import TNWriteNote from "../TNDataRepository/TNWriteNote";
 import "./TNDROngoingIssues.css";
 
 export const TNDROngoingIssues = () => {
-  const noteType = "ongoing";
+  const noteType = "Ongoing Issue";
   const {
     handleAddNoteButton,
     isAddButton,

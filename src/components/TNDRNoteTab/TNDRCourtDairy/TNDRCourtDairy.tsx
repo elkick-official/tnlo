@@ -31,6 +31,7 @@ export const TNDRCourtDairy = () => {
     searchVal,
   } = useNotesMain(noteType);
 
+  return <div className="flex-center">Coming Soon</div>;
   return (
     <TNWriteNote
       handleAddNoteButton={handleAddNoteButton}

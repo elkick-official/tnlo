@@ -1,12 +1,12 @@
 export function getIdByType(type: string) {
     switch (type) {
-        case 'notes':
-            return 1;
-        case 'ongoing':
+        case 'Notes':
             return 2;
+        case 'Ongoing Issue':
+            return 3;
         case 'court':
             return 3;
-        case 'press':
+        case 'Press Notes / Articles / Others':
             return 4;
         default:
             return null;
@@ -15,13 +15,13 @@ export function getIdByType(type: string) {
 
 export function getBtnNameByType(type: string) {
     switch (type) {
-        case 'notes':
+        case 'Notes':
             return "Add New Note";
-        case 'ongoing':
+        case 'Ongoing Issue':
             return "Add Ongoing Issue";
         case 'court':
             return "Add Court Diary";
-        case 'press':
+        case 'Press Notes / Articles / Others':
             return "Add Press Note";
         default:
             return "Add New Note";
@@ -30,13 +30,13 @@ export function getBtnNameByType(type: string) {
 
 export function getTitleNameByType(type: string) {
     switch (type) {
-        case 'notes':
+        case 'Notes':
             return "Notes";
-        case 'ongoing':
+        case 'Ongoing Issue':
             return "Ongoing Issues";
         case 'court':
             return "Court Diary";
-        case 'press':
+        case 'Press Notes / Articles / Others':
             return "Press Notes";
         default:
             return "Add New Note";

@@ -2,7 +2,7 @@ import useNotesMain from "../../hooks/notes/useNotesMain";
 import TNWriteNote from "../TNDRNoteTab/TNDataRepository/TNWriteNote";
 
 export const TNPressNoteData = () => {
-  const noteType = "press";
+  const noteType = "Press Notes / Articles / Others";
   const {
     handleAddNoteButton,
     isAddButton,

@@ -3,7 +3,7 @@ import TNWriteNote from "../TNDataRepository/TNWriteNote";
 import "./TNDRNotes.css";
 
 export const TNDRNotes = () => {
-  const noteType = "notes";
+  const noteType = "Notes";
   const {
     handleAddNoteButton,
     isAddButton,
