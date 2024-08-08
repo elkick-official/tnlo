@@ -247,7 +247,7 @@ const useLegacyDataDigitilization = () => {
 
 
     let currentFolders = folders?.filter((data) => data?.parentId == currentFolderId)
-    let currentFiles = files?.filter((data) => data?.folderId == currentFolderId)
+    let currentFiles = files?.filter((data) => data?.folderId == currentFolderId && data?.typeName == "File")
 
     if (searchVal?.length) {
         currentFolders = currentFolders.filter((data) => data?.folderName?.toLowerCase().includes(searchVal))

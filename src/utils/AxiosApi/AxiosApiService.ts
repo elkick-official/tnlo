@@ -24,14 +24,14 @@ export const handleRequestInterceptor = async (config: AxiosRequestConfig) => {
 
     // Check token validity (optional)
     // console.log("Token expired")
-    // if (isTokenExpired(token)) {
-    //     console.log("Token expired")
-    //     // Log out user if token is expired
-    //     localStorage.removeItem('_token');
-    //     // window.location.replace('/login'); // Redirect to the login page
-    //     infoNotification("Session Expired, Please Login Again!")
-    //     return Promise.reject(new Error('Token expired. Please log in again.'));
-    // }
+    if (isTokenExpired(token)) {
+        console.log("Token expired")
+        // Log out user if token is expired
+        localStorage.removeItem('_token');
+        window.location.replace('/login'); // Redirect to the login page
+        infoNotification("Session Expired, Please Login Again!")
+        return Promise.reject(new Error('Token expired. Please log in again.'));
+    }
 
 
     return config;
