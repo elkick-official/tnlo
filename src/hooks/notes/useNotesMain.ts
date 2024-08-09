@@ -186,9 +186,10 @@ const useNotesMain = (type: any) => {
             const formData = new FormData();
             //     formData.append('UploadedDocument', file.originFileObj
             //     );
-            const res: any = await fileUpload(formData, params)
+            const data: any = await fileUpload(formData, params)
+            const res = data?.data || {}
 
-            if (res?.fileContent && res?.folderId) {
+            if (data?.status == 201) {
                 setAllNotes([{ ...res }, ...allNotes])
                 setisAddButton(false)
                 sethtmlContent("")

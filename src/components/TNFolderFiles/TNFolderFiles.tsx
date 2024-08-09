@@ -36,6 +36,16 @@ export const TNFolderFiles = ({
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
   >(undefined);
+
+  const files: any = [...currentFiles];
+  const folders: any = [...currentFolders];
+  const sortedFiles = files.sort(
+    (a: any, b: any) => new Date(b.createdOn) - new Date(a.createdOn)
+  );
+  const sortedFolders = folders.sort(
+    (a: any, b: any) => new Date(b.createdOn) - new Date(a.createdOn)
+  );
+
   const [previewFileRequested, setPreviewFileRequested] = useState("");
   const [previewNameRequested, setPreviewFileNameRequested] = useState("");
   const [isViewGrid, setisViewGrid] = useState(true);
@@ -109,14 +119,14 @@ export const TNFolderFiles = ({
         <>
           {!selectedType?.length && (
             <TNFolders
-              currentFolders={currentFolders}
+              currentFolders={sortedFolders}
               navigateToFolder={navigateToFolder}
               isFetchFiles={isFetchFiles}
               handleDeleteFile={handleDeleteFile}
             />
           )}
           <TNFiles
-            currentFiles={currentFiles}
+            currentFiles={sortedFiles}
             handlePreviewFile={handlePreviewFile}
             isFetchFiles={isFetchFiles}
             handleDeleteFile={handleDeleteFile}
@@ -124,8 +134,8 @@ export const TNFolderFiles = ({
         </>
       ) : (
         <TNFileExplorerTable
-          currentFiles={currentFiles}
-          currentFolders={currentFolders}
+          currentFiles={sortedFiles}
+          currentFolders={sortedFolders}
           handlePreviewFile={handlePreviewFile}
           isFetchFiles={isFetchFiles}
           navigateToFolder={navigateToFolder}

@@ -96,7 +96,11 @@ const TNWriteNote = ({
     },
   };
 
-  console.log({ allNotes });
+  const notes = [...allNotes];
+  const sortedNotes = notes.sort(
+    (a: any, b: any) => new Date(b.createdOn) - new Date(a.createdOn)
+  );
+
   return (
     <>
       {isPreview && (
@@ -184,7 +188,7 @@ const TNWriteNote = ({
           <hr className="opacity-03 my-4" />
           <div className="mt-3">
             <h3 className="pb-3 fw-500">{getTitleNameByType(noteType)}</h3>
-            {!allNotes?.length ? (
+            {!sortedNotes?.length ? (
               <div className="flex-center">No Items Available</div>
             ) : isNotesLoading ? (
               <div className="flex-center" style={{ width: "100%" }}>
@@ -194,8 +198,8 @@ const TNWriteNote = ({
 
             <div className="notes-grid-wrap grid">
               <>
-                {allNotes?.length && !isNotesLoading
-                  ? allNotes?.map((data: any, index: number) => {
+                {sortedNotes?.length && !isNotesLoading
+                  ? sortedNotes?.map((data: any, index: number) => {
                       const title =
                         data?.title?.length > 40
                           ? data?.title?.substring(0, 40) + "..."

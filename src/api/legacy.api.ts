@@ -30,7 +30,7 @@ const API_BASE = '/api/Folders';
 export const createNewFolder = async (payload: any) => {
     try {
         const response = await appBaseUrlInstance.post(API_BASE, payload);
-        return response.data;
+        return response;
     } catch (error) {
         console.error('Failed to create user:', error);
         throw error;

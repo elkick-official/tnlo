@@ -85,8 +85,13 @@ const useLegacyDataDigitilization = () => {
             parentId: currentFolderId,
         };
         try {
-            const res = await createNewFolder(newFolder)
-            if (res.folderId) {
+            const data = await createNewFolder(newFolder)
+            const res = data?.data
+            if (res == undefined) {
+                infoNotification("A folder with the same name already exists in this folder.")
+            }
+
+            if (data?.status == 201) {
                 setFolders([...folders, res]);
             }
         } catch (error) {
@@ -184,7 +189,7 @@ const useLegacyDataDigitilization = () => {
         const params = {
             FolderId: selectedFolderId,
             TagData: appendTags,
-            TypeId: "",
+            TypeId: 1,
             FileContent: ""
         }
 
@@ -194,9 +199,18 @@ const useLegacyDataDigitilization = () => {
             formData.append('UploadedDocument', file.originFileObj
             );
 
-            const res = await fileUpload(formData, params)
-            if (res?.fileId) {
-                newList.push(res)
+            try {
+                const data = await fileUpload(formData, params)
+                const res = data?.data
+
+                if (res == undefined) {
+                    infoNotification("A file with the same name already exists in this folder.")
+                }
+                if (data?.status == 201) {
+                    newList.push(res)
+                }
+            } catch (error) {
+                console.log({ error })
             }
 
         }
