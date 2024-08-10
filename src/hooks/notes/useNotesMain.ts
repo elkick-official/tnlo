@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { errorNotification, infoNotification } from "../../utils/notification.util";
-import { fileUpload } from "../../api/uploadDoc.api";
-import { DefaultOptionType } from "antd/es/select";
 import { TreeSelectProps } from "antd";
-import { deleteFile, getAllFoldersNFiles } from "../../api/legacy.api";
-import { getIdByType } from "../../utils/service.util";
+import { DefaultOptionType } from "antd/es/select";
+import { useEffect, useState } from "react";
+import { deleteFile, getAllFoldersNFiles, initialGetAllFolders } from "../../api/legacy.api";
+import { fileUpload } from "../../api/uploadDoc.api";
 import useDetailStore from "../../store/useStore";
+import { errorNotification, infoNotification } from "../../utils/notification.util";
+import { getIdByType } from "../../utils/service.util";
 
 const useNotesMain = (type: any) => {
 
@@ -26,13 +26,7 @@ const useNotesMain = (type: any) => {
     const [isNoteSubmitting, setNoteSubmitting] = useState(false)
     const [treeData, setTreeData] = useState<Omit<DefaultOptionType, "label">[]>(
         [
-            {
-                id: 1,
-                pId: null,
-                value: 1,
-                title: "Home",
-                isLeaf: false,
-            }
+
         ]
     );
     const [searchVal, setSearchVal] = useState();
@@ -100,7 +94,8 @@ const useNotesMain = (type: any) => {
 
     const onLoadData: TreeSelectProps["loadData"] = ({ id }) =>
         new Promise(async (resolve) => {
-            await fetchFolderNFiles(id, false);
+            const res = await fetchFolderNFiles(id, false);
+            resolve(res);
         });
 
     const fetchFolderNFiles = async (folderId: any, initialLoad: boolean) => {
@@ -126,13 +121,50 @@ const useNotesMain = (type: any) => {
 
                     return obj;
                 });
+
                 if (initialLoad) {
                     // setTreeData(formatToTreeStructure);
                     setTreeData(treeData.concat(formatToTreeStructure));
                     setVal(1)
+                    return
                 } else {
                     setTreeData(treeData.concat(formatToTreeStructure));
+                    return
                 }
+            } else {
+                errorNotification("Something went wrong")
+            }
+
+        } catch (error) {
+            console.log(error);
+
+            errorNotification("Something went wrong")
+        }
+    };
+
+
+    const initialFolderFetch = async () => {
+        try {
+            const res = await initialGetAllFolders();
+            if (res?.status == 200) {
+                const data = res.data || []
+
+
+                const formatToTreeStructure = data?.map((data: any) => {
+                    const obj = {
+                        id: data?.folderId ? data?.folderId : "",
+                        pId: null,
+                        value: data?.folderId ? data?.folderId : "",
+                        title: data?.folderName,
+                        isLeaf: false,
+                    };
+
+                    return obj;
+                });
+
+                setTreeData(treeData.concat(formatToTreeStructure));
+                setVal("Select Folder")
+
             } else {
                 errorNotification("Something went wrong")
             }
@@ -158,7 +190,6 @@ const useNotesMain = (type: any) => {
         } catch (error) {
             setNotesLoading(false)
             errorNotification("Something went wrong")
-
         }
     }
 
@@ -170,10 +201,15 @@ const useNotesMain = (type: any) => {
             return
         }
 
+        if (value == "Select Folder") {
+            infoNotification("Please select the folder.")
+            return
+        }
+
         setNoteSubmitting(true)
         try {
             const params = {
-                FolderId: value == "Home" ? 1 : value,
+                FolderId: value == "Select Folder" ? 1 : value,
                 TagData: tags.join(","),
                 TypeId: typeId,
                 FileContent: htmlContent,
@@ -207,11 +243,11 @@ const useNotesMain = (type: any) => {
     }
 
     useEffect(() => {
-        fetchFolderNFiles(1, true);
-    }, []);
+        initialFolderFetch();
+    }, [type]);
 
     useEffect(() => {
-        if (value && value !== "Home") {
+        if (value && value !== "Select Folder") {
             fetchAllFiles()
         }
     }, [value])

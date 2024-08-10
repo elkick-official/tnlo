@@ -1,4 +1,5 @@
 import { Tabs, TabsProps } from "antd";
+import { TNPressNoteData } from "../TNPressNoteData/TNPressNoteData";
 import { TNDRCourtDairy } from "./TNDRCourtDairy/TNDRCourtDairy";
 import { TNDRNotes } from "./TNDRNotes/TNDRNotes";
 import "./TNDRNoteTab.css";
@@ -22,6 +23,11 @@ const items: TabsProps["items"] = [
     key: "3",
     label: "Court Dairy",
     children: <TNDRCourtDairy />,
+  },
+  {
+    key: "4",
+    label: "Press Notes / Articles / Others",
+    children: <TNPressNoteData />,
   },
 ];
 

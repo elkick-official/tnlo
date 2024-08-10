@@ -41,7 +41,7 @@ export const createNewFolder = async (payload: any) => {
 export const getAllFolders = async () => {
     try {
         const response = await appBaseUrlInstance.get(`${API_BASE}`);
-        return response.data;
+        return response?.data;
     } catch (error) {
         console.error('Failed to get folders:', error);
         throw error;
@@ -52,17 +52,28 @@ export const getAllFolders = async () => {
 export const getAllFoldersNFiles = async (id: string | number) => {
     try {
         const response = await appBaseUrlInstance.get(`${API_BASE}/${id}`);
-        return response.data;
+        return response?.data;
     } catch (error) {
         console.error('Failed to get folders:', error);
         throw error;
     }
 };
 
+export const initialGetAllFolders = async () => {
+    try {
+        const response = await appBaseUrlInstance.get(`${API_BASE}`);
+        return response;
+    } catch (error) {
+        console.error('Failed to get folders:', error);
+        throw error;
+    }
+};
+
+
 export const deleteFile = async (type: string, id: number) => {
     try {
         const response = await appBaseUrlInstance.delete(`api/${type}/${id}`);
-        return response.data;
+        return response?.data;
     } catch (error) {
         console.error('Failed to get folders:', error);
         throw error;

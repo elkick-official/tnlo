@@ -79,16 +79,18 @@ const LegacyDataDigitilization = () => {
               >
                 Create Folder
               </TNButton>
-              <TNButton
-                id="upload-folder"
-                datatestid="upload-folder-testid"
-                type="button"
-                ILBtnClass="additional-class"
-                handleChange={handleUploadCOpen}
-                disabled={false}
-              >
-                Upload File
-              </TNButton>
+              {currentFolderId && (
+                <TNButton
+                  id="upload-folder"
+                  datatestid="upload-folder-testid"
+                  type="button"
+                  ILBtnClass="additional-class"
+                  handleChange={handleUploadCOpen}
+                  disabled={false}
+                >
+                  Upload File
+                </TNButton>
+              )}
             </div>
           </div>
           <div className="legency-data-top-space legency-data-select-box flex items-center gap-6"></div>
@@ -103,6 +105,7 @@ const LegacyDataDigitilization = () => {
               selectedType={selectedType}
               handleTypeChange={handleTypeChange}
               tags={tags}
+              currentFolderId={currentFolderId}
             />
           </div>
         </section>

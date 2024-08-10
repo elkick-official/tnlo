@@ -10,6 +10,7 @@ const TNFileExplorerTable = ({
   handlePreviewFile,
   navigateToFolder,
   isFetchFiles,
+  currentFolderId,
 }: any) => {
   const mergedFiles = [];
 

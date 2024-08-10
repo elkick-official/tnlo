@@ -1,6 +1,6 @@
 import { Form } from "antd";
 import { useEffect, useRef, useState } from "react";
-import { createNewFolder, deleteFile, getAllFoldersNFiles } from "../../api/legacy.api";
+import { createNewFolder, deleteFile, getAllFoldersNFiles, initialGetAllFolders } from "../../api/legacy.api";
 import { IBreadCrumbs, IcurrentFolderId, IFiles, IFolder } from "../../types/legacyData.types";
 import { errorNotification, infoNotification } from "../../utils/notification.util";
 import { fileUpload } from "../../api/uploadDoc.api";
@@ -25,8 +25,8 @@ const useLegacyDataDigitilization = () => {
         []
     );
 
-    const [currentFolderId, setCurrentFolderId] = useState<IcurrentFolderId>(1);
-    const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumbs[]>([{ id: 1, name: 'Home' }]);
+    const [currentFolderId, setCurrentFolderId] = useState<IcurrentFolderId>(null);
+    const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumbs[]>([{ id: null, name: 'Home' }]);
     const [fileList, setFileList] = useState();
     const [isFileUploding, setIsFileUploding] = useState(false);
     const [isFetchFiles, setIsFetchFiles] = useState(false)
@@ -244,6 +244,24 @@ const useLegacyDataDigitilization = () => {
         }
     }
 
+    const initialFetchAllFolders = async () => {
+        try {
+            setIsFetchFiles(true)
+            const res = await initialGetAllFolders()
+
+
+            if (res.status == 200) {
+                const data = res?.data
+                setFolders([...data])
+            }
+            setIsFetchFiles(false)
+
+        } catch (error) {
+            console.log(error)
+            setIsFetchFiles(false)
+        }
+    }
+
     useEffect(() => {
         if (isNewFolder) {
             setTimeout(() => {
@@ -256,7 +274,8 @@ const useLegacyDataDigitilization = () => {
     }, [isNewFolder]);
 
     useEffect(() => {
-        fetchAllFolderNFiles(currentFolderId)
+        // fetchAllFolderNFiles(currentFolderId)
+        initialFetchAllFolders()
     }, [])
 
 

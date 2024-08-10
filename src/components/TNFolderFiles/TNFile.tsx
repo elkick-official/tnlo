@@ -1,13 +1,11 @@
 import {
   DeleteOutlined,
-  EditOutlined,
   FolderOpenOutlined,
   MoreOutlined,
 } from "@ant-design/icons";
-import { Button, Dropdown, Image, MenuProps, Modal, Space } from "antd";
-import { pdf } from "../../assets";
-import TNFilePreview from "./TNFilePreview";
+import { Button, Dropdown, MenuProps, Modal, Space } from "antd";
 import { useState } from "react";
+import TNFilePreview from "./TNFilePreview";
 
 const TNFile = ({
   key,
@@ -20,22 +18,21 @@ const TNFile = ({
   const [isDeleteModal, setDeleteModal] = useState(false);
 
   const items: MenuProps["items"] = [
-    {
-      label: (
-        <div
-          className="flex gap-2"
-          onClick={(e) => {
-            e.stopPropagation();
-            // handleDeleteFile(data?.id, type);
-          }}
-        >
-          <EditOutlined />
-          Rename
-        </div>
-      ),
-      key: "0",
-    },
-
+    // {
+    //   label: (
+    //     <div
+    //       className="flex gap-2"
+    //       onClick={(e) => {
+    //         e.stopPropagation();
+    //         // handleDeleteFile(data?.id, type);
+    //       }}
+    //     >
+    //       <EditOutlined />
+    //       Rename
+    //     </div>
+    //   ),
+    //   key: "0",
+    // },
     {
       label: (
         <div

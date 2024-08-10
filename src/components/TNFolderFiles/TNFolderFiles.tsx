@@ -32,6 +32,7 @@ export const TNFolderFiles = ({
   handleDeleteFile,
   selectedType,
   handleTypeChange,
+  currentFolderId,
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState<
     string | number | undefined
@@ -125,12 +126,14 @@ export const TNFolderFiles = ({
               handleDeleteFile={handleDeleteFile}
             />
           )}
-          <TNFiles
-            currentFiles={sortedFiles}
-            handlePreviewFile={handlePreviewFile}
-            isFetchFiles={isFetchFiles}
-            handleDeleteFile={handleDeleteFile}
-          />
+          {currentFolderId && (
+            <TNFiles
+              currentFiles={sortedFiles}
+              handlePreviewFile={handlePreviewFile}
+              isFetchFiles={isFetchFiles}
+              handleDeleteFile={handleDeleteFile}
+            />
+          )}
         </>
       ) : (
         <TNFileExplorerTable
@@ -139,6 +142,7 @@ export const TNFolderFiles = ({
           handlePreviewFile={handlePreviewFile}
           isFetchFiles={isFetchFiles}
           navigateToFolder={navigateToFolder}
+          currentFolderId={currentFolderId}
         />
       )}
 
