@@ -19,6 +19,7 @@ const TNAddNote = ({
   tags = [],
   isNoteSubmitting = false,
   notesForm,
+  isEditMode,
 }: any) => {
   return (
     <Form
@@ -62,6 +63,7 @@ const TNAddNote = ({
             rules={[{ required: true, message: "Please select a folder" }]}
           >
             <FolderSelectTree
+              isEditMode={isEditMode}
               value={value}
               onChange={onChange}
               treeData={treeData}

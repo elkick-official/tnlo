@@ -2,7 +2,7 @@ import { Form, TreeSelectProps } from "antd";
 import { DefaultOptionType } from "antd/es/select";
 import { useEffect, useState } from "react";
 import { deleteFile, getAllFoldersNFiles, initialGetAllFolders } from "../../api/legacy.api";
-import { fileUpload } from "../../api/uploadDoc.api";
+import { EditFile, fileUpload } from "../../api/uploadDoc.api";
 import useDetailStore from "../../store/useStore";
 import { errorNotification, infoNotification } from "../../utils/notification.util";
 import { getIdByType } from "../../utils/service.util";
@@ -18,7 +18,6 @@ const useNotesMain = (type: any) => {
     const [allNotes, setAllNotes] = useState<any>([])
     const [title, setTitle] = useState("")
     const [htmlContent, sethtmlContent] = useState("");
-    const [isEditMode, setEditMode] = useState(false)
     const [tags, setTags] = useState([])
     const [value, setVal] = useState("")
     const [isNotesLoading, setNotesLoading] = useState(false);
@@ -31,6 +30,10 @@ const useNotesMain = (type: any) => {
         ]
     );
     const [searchVal, setSearchVal] = useState();
+    const [isEditMode, setisEditMode] = useState(false);
+    const [selectedFileForEdit, setselectedFileForEdit] = useState();
+
+
 
 
     const handleChangeSearch = (e) => {
@@ -77,6 +80,13 @@ const useNotesMain = (type: any) => {
 
     const handleBack = () => {
         setisAddButton(false)
+        if (isEditMode) {
+            notesForm.resetFields()
+            setisEditMode(false)
+            sethtmlContent("")
+            setTags([])
+            setselectedFileForEdit({})
+        }
     }
 
 
@@ -196,9 +206,7 @@ const useNotesMain = (type: any) => {
 
 
     const handleSubmit = async (values: any) => {
-        console.log({ values })
 
-        console.log({ value, htmlContent, title })
         if (!htmlContent?.length) {
             infoNotification("Please Add Content!")
             return
@@ -209,7 +217,68 @@ const useNotesMain = (type: any) => {
             return
         }
 
+        console.log({ isEditMode })
+
+        if (isEditMode) {
+            editNote(values)
+            return
+        }
+
+        createNote(values)
+    }
+
+    const editNote = async (values: any) => {
+
+        console.log({ values })
+        console.log({ selectedFileForEdit })
+
+        const params = {
+            id: selectedFileForEdit?.fileId,
+            FileId: selectedFileForEdit?.fileId,
+            TypeId: typeId,
+            Title: values?.title,
+            FileContent: htmlContent,
+            TagData: tags?.length ? tags.join(",") : null,
+            FileVersionId: selectedFileForEdit?.fileVersionId
+        }
+
+        console.log({ params })
+        const formData = new FormData();
+
+        try {
+            const res: any = await EditFile(formData, params)
+
+            // selectedFileForEdit
+
+            if (res?.status == 201) {
+                const dataRes = res?.data || {}
+                const updatedNotes = allNotes?.map((data: any) => {
+                    if (data?.fileId == selectedFileForEdit?.fileId) {
+                        return { ...dataRes }
+
+                    }
+                    return data
+                })
+                setAllNotes([updatedNotes])
+                setisAddButton(false)
+                setisEditMode(false)
+                setselectedFileForEdit({})
+                sethtmlContent("")
+                notesForm.resetFields()
+                setTags([])
+            } else {
+                errorNotification("Something went wrong!")
+            }
+        } catch (error) {
+            console.log(error)
+            errorNotification("Something went wrong!")
+            throw error
+        }
+    }
+
+    const createNote = async (values: any) => {
         setNoteSubmitting(true)
+
         try {
             const params = {
                 FolderId: values?.value,
@@ -238,10 +307,26 @@ const useNotesMain = (type: any) => {
                 errorNotification("Something went wrong!")
             }
             setNoteSubmitting(false)
+
         } catch (error) {
             setNoteSubmitting(false)
             setisAddButton(false)
             errorNotification("Something went wrong")
+        }
+
+    }
+
+    const handleEditFile = (currentId: any) => {
+
+        const getSelectedNote = allNotes?.find((data: any) => data?.fileId == currentId)
+        console.log({ getSelectedNote })
+        if (getSelectedNote?.fileId) {
+            setselectedFileForEdit(getSelectedNote)
+            setisEditMode(true)
+            setisAddButton(true)
+            notesForm.setFieldsValue({ title: getSelectedNote?.title })
+            sethtmlContent(getSelectedNote?.fileContent)
+            setTags(getSelectedNote?.tagData)
         }
     }
 
@@ -261,6 +346,8 @@ const useNotesMain = (type: any) => {
         filteredNotes = allNotes?.filter((data: any) => data?.title?.toLowerCase().includes(searchVal))
     }
 
+    console.log({ isEditMode })
+
     return {
         handleAddNoteButton,
         handleChangeTags,
@@ -278,7 +365,9 @@ const useNotesMain = (type: any) => {
         isNotesLoading,
         handleChangeSearch,
         searchVal,
-        notesForm
+        notesForm,
+        handleEditFile,
+        isEditMode
     }
 }
 

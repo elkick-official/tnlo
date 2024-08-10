@@ -1,12 +1,11 @@
-import { DeleteOutlined } from "@ant-design/icons";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { MenuProps } from "antd";
-import { useState } from "react";
 import { drNoteOptions } from "../../../const/data";
+import { useShowNotes } from "../../../hooks/notes/useShowNotes";
 import PreviewNote from "./PreviewNote";
 import TNAddNote from "./TNAddNote";
 import TNShowAllNotes from "./TNShowAllNotes";
 import "./TNWriteNote.css";
-import { useShowNotes } from "../../../hooks/notes/useShowNotes";
 
 const TNWriteNote = ({
   handleAddNoteButton,
@@ -35,10 +34,27 @@ const TNWriteNote = ({
   searchVal,
   noteType,
   notesForm,
+  handleEditFile,
+  isEditMode,
 }: any) => {
   const { currentId, setCurrentId, sortedNotes } = useShowNotes(allNotes);
 
   const items: MenuProps["items"] = [
+    {
+      label: (
+        <div
+          className="flex gap-2"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleEditFile(currentId);
+          }}
+        >
+          <EditOutlined />
+          Edit
+        </div>
+      ),
+      key: "0",
+    },
     {
       label: (
         <div
@@ -102,6 +118,7 @@ const TNWriteNote = ({
           handleSubmit={handleSubmit}
           isNoteSubmitting={isNoteSubmitting}
           notesForm={notesForm}
+          isEditMode={isEditMode}
         />
       )}
     </>

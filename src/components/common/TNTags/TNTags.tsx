@@ -73,50 +73,52 @@ const TNTags = ({ handleChangeTags, tags }: any) => {
 
   return (
     <Flex gap="4px 0" wrap>
-      {tags.map<React.ReactNode>((tag, index) => {
-        if (editInputIndex === index) {
-          return (
-            <Input
-              ref={editInputRef}
-              key={tag}
-              size="small"
-              style={tagInputStyle}
-              value={editInputValue}
-              onChange={handleEditInputChange}
-              onBlur={handleEditInputConfirm}
-              onPressEnter={handleEditInputConfirm}
-            />
-          );
-        }
-        const isLongTag = tag.length > 20;
-        const tagElem = (
-          <Tag
-            key={tag}
-            closable={true}
-            style={{ userSelect: "none" }}
-            onClose={() => handleClose(tag)}
-          >
-            <span
-              onDoubleClick={(e) => {
-                if (index !== 0) {
-                  setEditInputIndex(index);
-                  setEditInputValue(tag);
-                  e.preventDefault();
-                }
-              }}
-            >
-              {isLongTag ? `${tag.slice(0, 20)}...` : tag}
-            </span>
-          </Tag>
-        );
-        return isLongTag ? (
-          <Tooltip title={tag} key={tag}>
-            {tagElem}
-          </Tooltip>
-        ) : (
-          tagElem
-        );
-      })}
+      {tags && tags?.length
+        ? tags?.map<React.ReactNode>((tag, index) => {
+            if (editInputIndex === index) {
+              return (
+                <Input
+                  ref={editInputRef}
+                  key={tag}
+                  size="small"
+                  style={tagInputStyle}
+                  value={editInputValue}
+                  onChange={handleEditInputChange}
+                  onBlur={handleEditInputConfirm}
+                  onPressEnter={handleEditInputConfirm}
+                />
+              );
+            }
+            const isLongTag = tag.length > 20;
+            const tagElem = (
+              <Tag
+                key={tag}
+                closable={true}
+                style={{ userSelect: "none" }}
+                onClose={() => handleClose(tag)}
+              >
+                <span
+                  onDoubleClick={(e) => {
+                    if (index !== 0) {
+                      setEditInputIndex(index);
+                      setEditInputValue(tag);
+                      e.preventDefault();
+                    }
+                  }}
+                >
+                  {isLongTag ? `${tag.slice(0, 20)}...` : tag}
+                </span>
+              </Tag>
+            );
+            return isLongTag ? (
+              <Tooltip title={tag} key={tag}>
+                {tagElem}
+              </Tooltip>
+            ) : (
+              tagElem
+            );
+          })
+        : null}
       {inputVisible ? (
         <Input
           ref={inputRef}

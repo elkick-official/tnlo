@@ -7,7 +7,9 @@ const FolderSelectTree: React.FC = ({
   onChange,
   treeData,
   onLoadData,
+  isEditMode = false,
 }: any) => {
+  console.log({ isEditMode });
   return (
     <TreeSelect
       className="w-full"
@@ -19,6 +21,7 @@ const FolderSelectTree: React.FC = ({
       onChange={onChange}
       loadData={onLoadData}
       treeData={treeData}
+      disabled={isEditMode}
     />
   );
 };

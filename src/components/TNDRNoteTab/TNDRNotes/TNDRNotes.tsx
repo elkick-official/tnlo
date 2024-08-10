@@ -1,9 +1,7 @@
 import useNotesMain from "../../../hooks/notes/useNotesMain";
 import TNWriteNote from "../TNDataRepository/TNWriteNote";
-import "./TNDRNotes.css";
 
-export const TNDRNotes = () => {
-  const noteType = "Notes";
+export const TNDRNotes = ({ noteType }: { noteType: string }) => {
   const {
     handleAddNoteButton,
     isAddButton,
@@ -30,6 +28,8 @@ export const TNDRNotes = () => {
     handleChangeSearch,
     searchVal,
     notesForm,
+    handleEditFile,
+    isEditMode,
   } = useNotesMain(noteType);
 
   return (
@@ -60,6 +60,8 @@ export const TNDRNotes = () => {
       searchVal={searchVal}
       noteType={noteType}
       notesForm={notesForm}
+      handleEditFile={handleEditFile}
+      isEditMode={isEditMode}
     />
   );
 };

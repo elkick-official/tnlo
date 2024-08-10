@@ -15,3 +15,19 @@ export const fileUpload = async (formData: any, params: any) => {
         throw error;
     }
 };
+
+
+export const EditFile = async (formData: any, params: any,) => {
+    try {
+        const response = await appBaseUrlInstance({
+            url: `${API_BASE}/${params?.FileId}`,
+            method: "PUT",
+            params: params,
+            data: formData
+        })
+        return response;
+    } catch (error) {
+        console.error('Failed to create user:', error);
+        throw error;
+    }
+};
