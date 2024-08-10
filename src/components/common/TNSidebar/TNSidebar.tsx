@@ -68,12 +68,12 @@ const items: MenuItem[] = [
     // <CalendarOutlined style={{ fontSize: "20px", color: "black" }} />
     <b className="text-tnl-rapunzel-silver">{Icons.calendarIcon}</b>
   ),
-  getItem(
-    <Link to="/press-note">Press Note</Link>,
-    "6",
-    // <BookOutlined style={{ fontSize: "20px", color: "black" }} />
-    <b className="text-tnl-rapunzel-silver">{Icons.pressNoteIcon}</b>
-  ),
+  // getItem(
+  //   <Link to="/press-note">Press Note</Link>,
+  //   "6",
+  //   // <BookOutlined style={{ fontSize: "20px", color: "black" }} />
+  //   <b className="text-tnl-rapunzel-silver">{Icons.pressNoteIcon}</b>
+  // ),
   getItem(
     <Link to="/settings">Settings</Link>,
     "7",
