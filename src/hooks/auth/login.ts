@@ -51,6 +51,7 @@ export const useLoginHook = () => {
       } catch (error) {
         console.log(error)
         errorNotification("Something went wrong, please try again.")
+        setIsLoginLoading(false)
       }
     } else {
       infoNotification("Incomplete Code, Enter all 4 digits.")
