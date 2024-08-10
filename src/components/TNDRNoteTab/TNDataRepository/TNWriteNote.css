@@ -54,3 +54,49 @@
   text-overflow: ellipsis;
   width: 370px;
 }
+
+/* Add Note */
+.tn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.tn-content {
+  width: 70%;
+}
+
+.tn-input-label {
+  margin-bottom: 0;
+  margin-top: 4rem;
+}
+
+.tn-bottom-section {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.tn-folder-select {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  width: 300px;
+}
+
+.tn-tags {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tn-submit-section {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}

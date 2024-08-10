@@ -10,7 +10,7 @@ const FolderSelectTree: React.FC = ({
 }: any) => {
   return (
     <TreeSelect
-      className="ILTextInput w-full"
+      className="w-full"
       treeDataSimpleMode
       style={{ width: "100%" }}
       value={value}

@@ -29,6 +29,7 @@ export const TNDRNotes = () => {
     isNotesLoading,
     handleChangeSearch,
     searchVal,
+    notesForm,
   } = useNotesMain(noteType);
 
   return (
@@ -58,6 +59,7 @@ export const TNDRNotes = () => {
       handleChangeSearch={handleChangeSearch}
       searchVal={searchVal}
       noteType={noteType}
+      notesForm={notesForm}
     />
   );
 };

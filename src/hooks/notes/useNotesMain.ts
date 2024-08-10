@@ -1,4 +1,4 @@
-import { TreeSelectProps } from "antd";
+import { Form, TreeSelectProps } from "antd";
 import { DefaultOptionType } from "antd/es/select";
 import { useEffect, useState } from "react";
 import { deleteFile, getAllFoldersNFiles, initialGetAllFolders } from "../../api/legacy.api";
@@ -12,6 +12,7 @@ const useNotesMain = (type: any) => {
     const typeId = getIdByType(type)
 
     const { userDetails } = useDetailStore();
+    const [notesForm] = Form.useForm();
 
     const [isAddButton, setisAddButton] = useState(false);
     const [allNotes, setAllNotes] = useState<any>([])
@@ -194,10 +195,12 @@ const useNotesMain = (type: any) => {
     }
 
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (values: any) => {
+        console.log({ values })
+
         console.log({ value, htmlContent, title })
-        if (!value || !htmlContent?.length || !title?.length) {
-            infoNotification("Please Enter All the Details.")
+        if (!htmlContent?.length) {
+            infoNotification("Please Add Content!")
             return
         }
 
@@ -209,11 +212,11 @@ const useNotesMain = (type: any) => {
         setNoteSubmitting(true)
         try {
             const params = {
-                FolderId: value == "Select Folder" ? 1 : value,
+                FolderId: values?.value,
                 TagData: tags.join(","),
                 TypeId: typeId,
                 FileContent: htmlContent,
-                Title: title,
+                Title: values?.title,
                 CreatedBy: userDetails?.id
             }
 
@@ -275,6 +278,7 @@ const useNotesMain = (type: any) => {
         isNotesLoading,
         handleChangeSearch,
         searchVal,
+        notesForm
     }
 }
 
