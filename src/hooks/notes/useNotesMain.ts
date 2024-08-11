@@ -7,12 +7,14 @@ import useDetailStore from "../../store/useStore";
 import { errorNotification, infoNotification } from "../../utils/notification.util";
 import { getIdByType } from "../../utils/service.util";
 import { useSearchParams } from "react-router-dom";
+import notesStore from "../../store/notes.store";
 
 const useNotesMain = (type: any) => {
 
     const [searchParams, setSearchParams] = useSearchParams()
+    const currentTab = searchParams.get("selected-tab")
     const typeId = getIdByType(type)
-
+    const { notesFolderParams, setNotesFolderParams } = notesStore();
     const { userDetails } = useDetailStore();
     const [notesForm] = Form.useForm();
 
@@ -49,6 +51,12 @@ const useNotesMain = (type: any) => {
 
     const handleOnChange = (data: any) => {
         setVal(data)
+        searchParams.set("selected-folder", data)
+        setSearchParams(searchParams)
+        setNotesFolderParams({
+            ...notesFolderParams,
+            currentTab: data
+        })
     }
 
     const handleSelectedPreview = (data: any) => {
@@ -135,15 +143,9 @@ const useNotesMain = (type: any) => {
                     return obj;
                 });
 
-                if (initialLoad) {
-                    // setTreeData(formatToTreeStructure);
-                    setTreeData(treeData.concat(formatToTreeStructure));
-                    setVal(1)
-                    return
-                } else {
-                    setTreeData(treeData.concat(formatToTreeStructure));
-                    return
-                }
+
+                setTreeData(treeData.concat(formatToTreeStructure));
+                return
             } else {
                 errorNotification("Something went wrong")
             }
@@ -175,17 +177,36 @@ const useNotesMain = (type: any) => {
                     return obj;
                 });
 
-                setVal(formatToTreeStructure?.[0]?.value)
-                searchParams.set("selected-folder", formatToTreeStructure?.[0]?.value)
                 setTreeData(treeData.concat(formatToTreeStructure));
 
+                const storedSelectedFolder = notesFolderParams[currentTab] || null
+
+                console.log({ notesFolderParams })
+                let selectedFolder = ""
+                if (storedSelectedFolder) {
+                    setVal(storedSelectedFolder)
+                    selectedFolder = storedSelectedFolder
+                } else if (searchParams.get("selected-folder")) {
+                    const selectedFolderFromParams = searchParams.get("selected-folder")
+                    setVal(selectedFolderFromParams)
+                    selectedFolder = selectedFolderFromParams
+                } else {
+                    setVal(formatToTreeStructure?.[0]?.value)
+                    searchParams.set("selected-folder", formatToTreeStructure?.[0]?.value)
+                    setSearchParams(searchParams)
+                    selectedFolder = formatToTreeStructure?.[0]?.value
+                }
+
+                setNotesFolderParams({
+                    ...notesFolderParams,
+                    currentTab: selectedFolder
+                })
             } else {
                 errorNotification("Something went wrong")
             }
 
         } catch (error) {
             console.log(error);
-
             errorNotification("Something went wrong")
         }
     };
@@ -246,7 +267,6 @@ const useNotesMain = (type: any) => {
             FileVersionId: selectedFileForEdit?.fileVersionId
         }
 
-        console.log({ params })
         const formData = new FormData();
 
         try {
@@ -328,7 +348,7 @@ const useNotesMain = (type: any) => {
     const handleEditFile = (currentId: any) => {
 
         const getSelectedNote = allNotes?.find((data: any) => data?.fileId == currentId)
-        console.log({ getSelectedNote })
+
         if (getSelectedNote?.fileId) {
             setselectedFileForEdit(getSelectedNote)
             setisEditMode(true)
@@ -343,6 +363,8 @@ const useNotesMain = (type: any) => {
         initialFolderFetch();
     }, [type]);
 
+
+    // const currentFolder = searchParams.get("slect")
     useEffect(() => {
         if (value && value !== "Select Folder") {
             fetchAllFiles()
@@ -355,11 +377,7 @@ const useNotesMain = (type: any) => {
         filteredNotes = allNotes?.filter((data: any) => data?.title?.toLowerCase().includes(searchVal))
     }
 
-    console.log({ isEditMode })
 
-    useEffect(() => {
-
-    }, [])
 
     return {
         handleAddNoteButton,
