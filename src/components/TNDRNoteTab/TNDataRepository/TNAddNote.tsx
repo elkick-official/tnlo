@@ -86,7 +86,7 @@ const TNAddNote = ({
                 ILBtnClass="additional-class"
                 disabled={isNoteSubmitting}
               >
-                Submit
+                Publish
               </TNButton>
             </Form.Item>
           </Spin>

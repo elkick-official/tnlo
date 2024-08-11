@@ -1,37 +1,64 @@
 import { Tabs, TabsProps } from "antd";
 import { TNDRNotes } from "./TNDRNotes/TNDRNotes";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./TNDRNoteTab.css";
-const onChange = (key: string) => {
-  console.log(key);
-};
-
-const items: TabsProps["items"] = [
-  {
-    key: "1",
-    label: "Notes",
-    children: <TNDRNotes noteType="Notes" />,
-  },
-  {
-    key: "2",
-    label: "Ongoing Issues",
-    children: <TNDRNotes noteType="Ongoing Issue" />,
-  },
-  {
-    key: "3",
-    label: "Court Dairy",
-    children: <TNDRNotes noteType="Court Dairy" />,
-  },
-  {
-    key: "4",
-    label: "Press Notes / Articles / Others",
-    children: <TNDRNotes noteType="Press Notes / Articles / Others" />,
-  },
-];
 
 export const TNDRNoteTab = () => {
+  const [serachParams, setSearhParams] = useSearchParams();
+
+  const [activeTab, setActiveTab] = useState("notes");
+
+  const onChange = (key: string) => {
+    setActiveTab(key);
+    serachParams.set("selected-tab", key);
+    setSearhParams(serachParams);
+  };
+
+  const items: TabsProps["items"] = [
+    {
+      key: "notes",
+      label: "Notes",
+      children: <TNDRNotes noteType="Notes" />,
+    },
+    {
+      key: "on-going-issue",
+      label: "Ongoing Issues",
+      children: <TNDRNotes noteType="Ongoing Issue" />,
+    },
+    {
+      key: "3",
+      label: "court-dairy",
+      children: <TNDRNotes noteType="Court Dairy" />,
+    },
+    {
+      key: "press-notes",
+      label: "Press Notes / Articles / Others",
+      children: <TNDRNotes noteType="Press Notes / Articles / Others" />,
+    },
+  ];
+
+  useEffect(() => {
+    const myTabs = ["notes", "on-going-issue", "court-dairy", "press-notes"];
+    const tab = serachParams.get("selected-tab");
+
+    if (myTabs?.includes(tab)) {
+      setActiveTab(tab);
+    } else {
+      serachParams.set("selected-tab", "notes");
+      setSearhParams(serachParams);
+      setActiveTab("notes");
+    }
+  }, []);
+
   return (
     <>
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+      <Tabs
+        defaultActiveKey="notes"
+        items={items}
+        onChange={onChange}
+        activeKey={activeTab}
+      />
     </>
   );
 };

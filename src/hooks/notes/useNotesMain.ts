@@ -6,9 +6,11 @@ import { EditFile, fileUpload } from "../../api/uploadDoc.api";
 import useDetailStore from "../../store/useStore";
 import { errorNotification, infoNotification } from "../../utils/notification.util";
 import { getIdByType } from "../../utils/service.util";
+import { useSearchParams } from "react-router-dom";
 
 const useNotesMain = (type: any) => {
 
+    const [searchParams, setSearchParams] = useSearchParams()
     const typeId = getIdByType(type)
 
     const { userDetails } = useDetailStore();
@@ -19,7 +21,7 @@ const useNotesMain = (type: any) => {
     const [title, setTitle] = useState("")
     const [htmlContent, sethtmlContent] = useState("");
     const [tags, setTags] = useState([])
-    const [value, setVal] = useState("")
+    const [value, setVal] = useState("Select Folder")
     const [isNotesLoading, setNotesLoading] = useState(false);
     const [selectedPreview, setSelectedPreview] = useState();
     const [isPreview, setIsPreview] = useState(false);
@@ -173,8 +175,9 @@ const useNotesMain = (type: any) => {
                     return obj;
                 });
 
+                setVal(formatToTreeStructure?.[0]?.value)
+                searchParams.set("selected-folder", formatToTreeStructure?.[0]?.value)
                 setTreeData(treeData.concat(formatToTreeStructure));
-                setVal("Select Folder")
 
             } else {
                 errorNotification("Something went wrong")
@@ -229,6 +232,7 @@ const useNotesMain = (type: any) => {
 
     const editNote = async (values: any) => {
 
+        setNoteSubmitting(true)
         console.log({ values })
         console.log({ selectedFileForEdit })
 
@@ -250,8 +254,10 @@ const useNotesMain = (type: any) => {
 
             // selectedFileForEdit
 
-            if (res?.status == 201) {
+            console.log({ res })
+            if (res?.status == 200) {
                 const dataRes = res?.data || {}
+
                 const updatedNotes = allNotes?.map((data: any) => {
                     if (data?.fileId == selectedFileForEdit?.fileId) {
                         return { ...dataRes }
@@ -259,7 +265,8 @@ const useNotesMain = (type: any) => {
                     }
                     return data
                 })
-                setAllNotes([updatedNotes])
+
+                setAllNotes(updatedNotes)
                 setisAddButton(false)
                 setisEditMode(false)
                 setselectedFileForEdit({})
@@ -269,9 +276,11 @@ const useNotesMain = (type: any) => {
             } else {
                 errorNotification("Something went wrong!")
             }
+            setNoteSubmitting(false)
         } catch (error) {
             console.log(error)
             errorNotification("Something went wrong!")
+            setNoteSubmitting(false)
             throw error
         }
     }
@@ -300,8 +309,8 @@ const useNotesMain = (type: any) => {
             if (data?.status == 201) {
                 setAllNotes([{ ...res }, ...allNotes])
                 setisAddButton(false)
+                notesForm.resetFields()
                 sethtmlContent("")
-                setTitle("")
                 setTags([])
             } else {
                 errorNotification("Something went wrong!")
@@ -326,7 +335,7 @@ const useNotesMain = (type: any) => {
             setisAddButton(true)
             notesForm.setFieldsValue({ title: getSelectedNote?.title })
             sethtmlContent(getSelectedNote?.fileContent)
-            setTags(getSelectedNote?.tagData)
+            setTags(getSelectedNote?.tagData ? getSelectedNote?.tagData?.split(",") : [])
         }
     }
 
@@ -347,6 +356,10 @@ const useNotesMain = (type: any) => {
     }
 
     console.log({ isEditMode })
+
+    useEffect(() => {
+
+    }, [])
 
     return {
         handleAddNoteButton,

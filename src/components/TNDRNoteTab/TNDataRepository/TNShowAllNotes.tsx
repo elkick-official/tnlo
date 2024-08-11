@@ -1,5 +1,5 @@
 import { MoreOutlined, PlusCircleOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
+import { Dropdown, Empty, Space } from "antd";
 import parse from "html-react-parser";
 import moment from "moment";
 import { TNInput } from "../../common/TNInput/TNInput";
@@ -12,6 +12,7 @@ import FolderSelectTree from "../../Tree/FolderSelectTree";
 import { TNSelect } from "../../common/TNSelect/TNSelect";
 import { TNDatePicker } from "../../common/TNDatePicker/TNDatePicker";
 import Loader from "../../common/Loader/Loader";
+import NotesLoading from "./NotesLoading";
 
 const TNShowAllNotes = ({
   searchVal,
@@ -110,10 +111,15 @@ const TNShowAllNotes = ({
       <div className="mt-3">
         <h3 className="pb-3 fw-500">{getTitleNameByType(noteType)}</h3>
         {!sortedNotes?.length ? (
-          <div className="flex-center">No Items Available</div>
+          <div className="flex-center">
+            <Empty
+              imageStyle={{ height: "280px" }}
+              description="No Items Available"
+            />
+          </div>
         ) : isNotesLoading ? (
-          <div className="flex-center" style={{ width: "100%" }}>
-            <Loader />
+          <div style={{ width: "100%" }}>
+            <NotesLoading />
           </div>
         ) : null}
 
