@@ -16,6 +16,10 @@ const loginBaseUrlInstance = axios.create({
   baseURL: config.APP_URL,
 });
 
+const elasticSearchUrlInstance = axios.create({
+  baseURL: config.ELASTIC_SEARCH_URL,
+});
+
 //Request Interceptor
 appBaseUrlInstance.interceptors.request.use(
   handleRequestInterceptor,
@@ -28,4 +32,4 @@ appBaseUrlInstance.interceptors.response.use(
   responseInterceptorErrorFunc
 );
 
-export { appBaseUrlInstance, loginBaseUrlInstance };
+export { appBaseUrlInstance, loginBaseUrlInstance, elasticSearchUrlInstance };

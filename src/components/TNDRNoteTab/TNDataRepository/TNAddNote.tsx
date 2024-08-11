@@ -56,6 +56,10 @@ const TNAddNote = ({
           handleRichTextHtml={handleRichTextHtml}
           htmlContent={htmlContent}
         />
+        {/* <RichTextJoditEditor
+          handleRichTextHtml={handleRichTextHtml}
+          htmlContent={htmlContent}
+        /> */}
 
         <div className="tn-bottom-section">
           <Form.Item
